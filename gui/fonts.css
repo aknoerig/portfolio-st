@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Theissen-Nova';
+    src: url('theissen-nova-webfont.eot');
+    src: url('theissen-nova-webfont.eot?#iefix') format('embedded-opentype'),
+         url('theissen-nova-webfont.woff') format('woff'),
+         url('theissen-nova-webfont.ttf') format('truetype'),
+         url('theissen-nova-webfont.svg#theissen_novaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DidotT';
+    src: url('didotltstd-roman-webfont.eot');
+    src: url('didotltstd-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('didotltstd-roman-webfont.woff') format('woff'),
+         url('didotltstd-roman-webfont.ttf') format('truetype'),
+         url('didotltstd-roman-webfont.svg#DidotLTStdRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'sign_regular';
+    src: url('engravers_gothic_bt-st.eot');
+    src: url('engravers_gothic_bt-st.eot?#iefix') format('embedded-opentype'),
+         url('engravers_gothic_bt-st.woff') format('woff'),
+         url('engravers_gothic_bt-st.ttf') format('truetype'),
+         url('engravers_gothic_bt-st.svg#engraversgothic_btregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

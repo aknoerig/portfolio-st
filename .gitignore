@@ -1,0 +1,13 @@
+# binary data
+/USER
+/cms/images
+/cms/uploads
+
+# libraries
+/dompdf
+
+# sensitive files
+mysql.php
+
+# system files
+.DS_Store
