@@ -9,7 +9,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
   margin:0;
@@ -19,10 +19,10 @@ time, mark, audio, video {
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
-}                  
+}
 
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section { 
+footer, header, hgroup, menu, nav, section {
     display:block;
 }
 
@@ -64,7 +64,7 @@ mark { background:#000; color:#fff; text-shadow: none; padding: 0 2px; }
 
 button {  width: auto; overflow: visible; }
 
-a:link { -webkit-tap-highlight-color: none; } 
+a:link { -webkit-tap-highlight-color: none; }
 a, a:active, a:visited, a:hover, a:active {
 	outline: none,
 	color: #000;
@@ -72,31 +72,31 @@ a, a:active, a:visited, a:hover, a:active {
 	padding-bottom: 1px;
 }
 
-pre { 
-  padding: 15px; 
+pre {
+  padding: 15px;
   white-space: pre;
-  white-space: pre-wrap; 
-  white-space: pre-line; 
+  white-space: pre-wrap;
+  white-space: pre-line;
   word-wrap: break-word;
 }
 
 .right-space {
 	margin: 0 10px 0 0;
 	}
-	
+
 .right-5 {
 	padding-right: 5px;
 	}
 
 html, body {
-	background-color: #e6e4de; 
+	background-color: #e6e4de;
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
 	margin: 0;
     }
 
-.hidden { display: none; visibility: hidden; } 
+.hidden { display: none; visibility: hidden; }
 
 #turn-device {
 	display: none;
@@ -107,10 +107,10 @@ html, body {
 .hider {
 	display: none;
 	}
-	
+
 .indexing {
 	display: none !important;
-}	
+}
 
 .hide_unsub {
 	display: none !important;
@@ -143,8 +143,8 @@ html, body {
 	top: 180px !important;
 	display: block !important;
 	min-height: 400px !important;
-}	
-	
+}
+
 #info #c {
 	position: absolute;
 	width: 300px;
@@ -153,12 +153,12 @@ html, body {
 	left: 50%;
 	margin-left: -490px;
 	}
-	
+
 #info #r {
 	position: absolute;
 	width: 300px;
 	height: 200px;
-	top: 450px;
+	top: 410px;
 	left: 50%;
 	margin-left: 190px;
 	}
@@ -169,7 +169,7 @@ html, body {
 
 #info form {
 	text-align: center;
-}	
+}
 
 .un-top {
 	margin-top: 280px !important;
@@ -187,9 +187,9 @@ input:-moz-placeholder { color:#666; }
 	-web-border-radius: none;
 	border-radius: none;
 	padding: 10px;
-	border-top: none; 
-	border-right: none; 
-	border-left: none; 
+	border-top: none;
+	border-right: none;
+	border-left: none;
 	border-bottom: 1px solid #000;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -211,7 +211,7 @@ input:-moz-placeholder { color:#666; }
 .first .ltrm_inpt {
  	width: 180px
  }
- 
+
 .second .ltrm_inpt {
 	margin-bottom: 10px;
  	width: 209px;
@@ -237,16 +237,16 @@ input:-moz-placeholder { color:#666; }
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 12px;
 	letter-spacing: 0.25em;
 	text-align: center;
 	color: #fff;
-	cursor: pointer;		
+	cursor: pointer;
 }
 
 .reg_btn_off {
@@ -273,16 +273,16 @@ input:-moz-placeholder { color:#666; }
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 12px;
 	letter-spacing: 0.25em;
 	text-align: center;
 	color: #999;
-	cursor: pointer;		
+	cursor: pointer;
 }
 
 .ltr_btn:hover {
@@ -328,7 +328,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 .top-100 {
-	margin-top: 100px !important;	
+	margin-top: 100px !important;
 }
 
 .imprint, .create {
@@ -356,9 +356,9 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -367,15 +367,15 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 	margin: 75px auto 18px;
 	letter-spacing: 0.2em;
 	text-align: center;
-}	
+}
 
 #info h4 {
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	color: #000;
 	text-transform: uppercase;
@@ -425,11 +425,11 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 .white-points a, .white-points p {
 	color: #fff !important;
 	}
-	
+
 .books_timeout {
 	display: none;
 	}
-		
+
 #counter p, topper_ltr p {
 	color: #fff;
 	}
@@ -437,7 +437,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 #counter p {
 	margin:10px 0 0 10px;
 }
-	
+
 .white-points a:hover, .white-points p, .white-points p:hover, .white-points a.active {
 	border-bottom: 1px solid #fff !important;
 }
@@ -445,9 +445,9 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 #naviContainer ul, #subNavLtr ul {
 	text-align: center;
 	width: 60%;
-	padding: 0;	
+	padding: 0;
 	margin-left: -31%;
-	left: 50%;	
+	left: 50%;
 	position: relative;
 }
 
@@ -550,7 +550,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
   background-attachment: fixed;
   cursor: pointer;
 }
- 
+
 #content #welcome {
 	position: absolute;
 	height: 45px;
@@ -559,7 +559,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 	top: 90%;
 	margin-left: -200px;
 	text-align: center;
-}  
+}
 
 #content #intro.inner {
 	width: 20%;
@@ -641,9 +641,9 @@ visibility: visible;
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(0.8);
 	-ms-transform: scaleX(0.8);
-	-webkit-transform: scaleX(0.8); 
-	-o-transform: scaleX(0.8); 
-	-moz-transform: scaleX(0.8); 
+	-webkit-transform: scaleX(0.8);
+	-o-transform: scaleX(0.8);
+	-moz-transform: scaleX(0.8);
 	font-weight: 400;
 	color: #333;
 	text-transform: uppercase;
@@ -780,7 +780,7 @@ cursor: pointer;
   cursor: pointer;
 }
  */
- 
+
 #content #sign-onstate {
 	top: 5% !important;
 	}
@@ -789,9 +789,9 @@ cursor: pointer;
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleY(1.20);
 	-ms-transform: scaleY(1.20);
-	-webkit-transform: scaleY(1.2); 
-	-o-transform: scaleY(1.20); 
-	-moz-transform: scaleY(1.20); 
+	-webkit-transform: scaleY(1.2);
+	-o-transform: scaleY(1.20);
+	-moz-transform: scaleY(1.20);
 	font-weight: 400;
 	color: #333;
 	text-transform: uppercase;
@@ -848,7 +848,7 @@ cursor: pointer;
 }
 
 .bb_credits:hover {
-	border-bottom: 1px solid #333;	
+	border-bottom: 1px solid #333;
 	padding-bottom: 1px;
 }
 
@@ -889,7 +889,7 @@ color: #000 !important;
 }
 
 #overview #list {
-	margin-bottom: 50px;	
+	margin-bottom: 50px;
 }
 
 #overview #list-items {
@@ -927,9 +927,9 @@ color: #000 !important;
 	font-weight: 400;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	color: #fff;
 	background-color: rgb(26,27,32);
 	z-index: 1000;
@@ -1026,12 +1026,12 @@ color: #000 !important;
 	display: inline-block;
 	margin: 0 0 0 35px;
 }
-	
+
 #opener #credits-two p:first-child {
 	text-align: right;
 	margin: 0 25px 0 0;
 }
-	
+
 #content #overview #opener #divider {
 	width: 1205px !important;
 	height: 2px;
@@ -1074,7 +1074,7 @@ color: #000 !important;
 	margin: 0 0 -25px -385px;
 	text-align: center;
 	}
-	
+
 #client img {
 	width: 88px !important;
 	margin: 0 0 -3px 0 !important;
@@ -1084,9 +1084,9 @@ color: #000 !important;
 	font-family: 'DidotT' !important;
 	transform: scaleX(0.9) !important;
 	-ms-transform: scaleX(0.9) !important;
-	-webkit-transform: scaleX(0.9) !important; 
-	-o-transform: scaleX(0.9) !important; 
-	-moz-transform: scaleX(0.9) !important; 
+	-webkit-transform: scaleX(0.9) !important;
+	-o-transform: scaleX(0.9) !important;
+	-moz-transform: scaleX(0.9) !important;
 	font-size: 27px;
 	text-transform: uppercase;
 	letter-spacing: 0.25em !important;
@@ -1100,9 +1100,9 @@ color: #000 !important;
 #welcome h1 {
 	transform: scaleX(1.1) !important;
 	-ms-transform: scaleX(1.1) !important;
-	-webkit-transform: scaleX(1.1) !important; 
-	-o-transform: scaleX(1.1) !important; 
-	-moz-transform: scaleX(1.1) !important; 
+	-webkit-transform: scaleX(1.1) !important;
+	-o-transform: scaleX(1.1) !important;
+	-moz-transform: scaleX(1.1) !important;
 	letter-spacing: 0.2em !important;
 	font-size: 21px !important;
 }
@@ -1129,7 +1129,7 @@ color: #000 !important;
 	border-bottom: 1px solid #000;
 	padding-bottom: 6px;
 	display: inline;
-}	
+}
 
 #content #overview #opener h2 {
 	font-family: 'Theissen-Nova', sans-serif;
@@ -1148,9 +1148,9 @@ color: #000 !important;
 	line-height: 1.2em;
 	transform: scaleX(1.15);
 	-ms-transform: scaleX(1.15);
-	-webkit-transform: scaleX(1.15); 
-	-o-transform: scaleX(1.15); 
-	-moz-transform: scaleX(1.15); 
+	-webkit-transform: scaleX(1.15);
+	-o-transform: scaleX(1.15);
+	-moz-transform: scaleX(1.15);
 	text-transform: uppercase;
 	letter-spacing: 0.25em;
 	text-align: center;
@@ -1204,7 +1204,7 @@ color: #000 !important;
 #content #overview #project {
 	width: 380px;
 	height: 253px;
-	margin: 0 15px 30px 15px;	
+	margin: 0 15px 30px 15px;
 	background: #333;
 	cursor: pointer;
 }
@@ -1274,7 +1274,7 @@ color: #000 !important;
 #tear {
 	margin: 110px 65px -50px 65px;
 	}
-	
+
 #imgContainer {
 	overflow: hidden;
 }
@@ -1293,7 +1293,7 @@ color: #000 !important;
 }
 
 #carousel img {
-	float: left;	
+	float: left;
 }
 
 .sub, #pages {
@@ -1308,9 +1308,9 @@ color: #000 !important;
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	color: #000;
 	text-transform: uppercase;
@@ -1318,7 +1318,7 @@ color: #000 !important;
 	line-height: 1.2em;
 	letter-spacing: 0.15em;
 	text-align: center;
-	margin: 15px 0 5px 0;	
+	margin: 15px 0 5px 0;
 }
 
 #tear p, #tear p a {
@@ -1342,9 +1342,9 @@ color: #000 !important;
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	color: #000;
 	text-transform: uppercase;
@@ -1365,9 +1365,9 @@ color: #000 !important;
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	font-size: 11px !important;
 	letter-spacing: 0.1em;
 }
@@ -1376,9 +1376,9 @@ color: #000 !important;
 	font-family: 'Theissen-Nova', sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1); 
-	-o-transform: scaleX(1.1); 
-	-moz-transform: scaleX(1.1); 
+	-webkit-transform: scaleX(1.1);
+	-o-transform: scaleX(1.1);
+	-moz-transform: scaleX(1.1);
 	letter-spacing: 0.1em;
 }
 
@@ -1396,6 +1396,3 @@ box-shadow: 1px 1px 4px rgba(0,0,0,0.16);}
 -webkit-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.13);
 -moz-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.13);
 box-shadow: inset 1px 1px 4px rgba(0,0,0,0.13);}
-
-
-

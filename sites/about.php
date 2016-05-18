@@ -1,11 +1,11 @@
 <?php
 
-    include("../mysql.php"); 
+    include("../mysql.php");
 
 	$sql_info = "
-	
-			SELECT 
-			
+
+			SELECT
+
 				ID,
 				about_txt,
 				ustnr,
@@ -25,50 +25,50 @@
 				name_r,
 				web_r,
 				phone_r
-				
+
 			FROM	about
-						
+
 		";
 
-    $result_info = mysql_query($sql_info) OR die("<pre>".$sql_info."</pre>".mysql_error()); 
+    $result_info = mysql_query($sql_info) OR die("<pre>".$sql_info."</pre>".mysql_error());
 	$row_info = mysql_fetch_assoc($result_info);
 
 	$sql_clients = "
-	
-			SELECT 
-			
+
+			SELECT
+
 				ID,
 				name,
 				public
-				
+
 			FROM	clients
-			
+
 			WHERE	public = 'public'
-			
+
 			ORDER BY name ASC
-						
+
 		";
 
-    		$result_clients = mysql_query($sql_clients) OR die("<pre>".$sql_clients."</pre>".mysql_error()); 
+    		$result_clients = mysql_query($sql_clients) OR die("<pre>".$sql_clients."</pre>".mysql_error());
 
 		?>
 
 		<p class="default">
-			<?php echo "".htmlentities($row_info['about_txt'], ENT_QUOTES)."\n"; ?>	
+			<?php echo "".htmlentities($row_info['about_txt'], ENT_QUOTES)."\n"; ?>
 		</p>
-		
+
 		<h3>Among her clients are</h3>
 		<p class="default">
 			<?php
-			
+
 			while($row_clients = mysql_fetch_assoc($result_clients)) {
 
 			echo "".htmlentities($row_clients['name'], ENT_QUOTES)."<br />\n";
-			
+
 			}
-			
+
 			?>
-				
+
 		</p>
 
 
@@ -82,19 +82,28 @@
 		?>
 		</p>
 		</div>
-		
+
 		<div id="r">
 		<h3>Represented by</h3>
-		<p class="default">
-		<?php
-		echo "".htmlentities($row_info['agency'], ENT_QUOTES)."<br />\n";
-		if($row_info['name_r'] !="") {
-		echo "".htmlentities($row_info['name_r'], ENT_QUOTES)."<br />\n";
-		} else { ""; }
-		echo "".htmlentities($row_info['phone_r'], ENT_QUOTES)."<br />\n";
-		echo "<a href=\"http://".htmlentities($row_info['web_r'], ENT_QUOTES)."\" target=\"_blank\">".htmlentities($row_info['web_r'], ENT_QUOTES)."</a>\n";		
-		?>	
-		</p>
+    <p class="default">
+      AK/Kruse<br/>
+      <a href="tel:+494042326810">+49 40-42 32 68 10</a><br/>
+      <a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a><br/>
+      <br/>
+      Hall&Lundgren<br/>
+      <a href="tel:+46707556619">+46 707-556 619</a><br/>
+      <a href="http://hallundgren.com/" target="_blank">www.hallundgren.com</a>
+      <!--
+  		<?php
+  		echo "".htmlentities($row_info['agency'], ENT_QUOTES)."<br />\n";
+  		if($row_info['name_r'] !="") {
+  		echo "".htmlentities($row_info['name_r'], ENT_QUOTES)."<br />\n";
+  		} else { ""; }
+  		echo "".htmlentities($row_info['phone_r'], ENT_QUOTES)."<br />\n";
+  		echo "<a href=\"http://".htmlentities($row_info['web_r'], ENT_QUOTES)."\" target=\"_blank\">".htmlentities($row_info['web_r'], ENT_QUOTES)."</a>\n";
+  		?>
+    -->
+    </p>
 		</div>
 
 		<h3>Mailing list</h3>
@@ -104,7 +113,7 @@
 		</form>
 
 		<div id="response"></div>
-		
+
 		<h3>Imprint</h3>
 		<p class="default imprint">
 		<?php
@@ -121,5 +130,5 @@
 		echo "<br />VAT ID: ".htmlentities($row_info['ustnr'], ENT_QUOTES)."\n";
 		?>
 		</p>
-	
+
 		<div id="footer" class="height-35 top-65"><a class="bb_credits" href="http://www.buero-buero.org" target="_blank" title="Buero Buero. Inter things.">A Buero Buero Interweb</a></div>
