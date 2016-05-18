@@ -191,7 +191,7 @@ $(".light-switch").click(
 			$("#switcher_d").show().delay(600).animate({'opacity' : '1'},100);
 			$("#footer_d").show();
 			$("#counter p").addClass("switch_d");
-			$("html, body").css({ "background-color" : "#e6e4de", "-webkit-transition" : "0.6s linear", "-moz-transition" : "0.6s linear", "-o-transition" : "0.6s linear", "transition" : "0.6s linear" },0);			   
+			$("html, body").css({ "background-color" : "#f5f5f5", "-webkit-transition" : "0.6s linear", "-moz-transition" : "0.6s linear", "-o-transition" : "0.6s linear", "transition" : "0.6s linear" },0);			   
 
 		}
 );

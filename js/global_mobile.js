@@ -142,7 +142,7 @@ $(".showHide").toggle(function(){
 			$("#credits-two").css({'display' : 'inline-block'}).animate({'height' : '82px'},300);
 			$("#credits-three").css({'display' : 'inline-block'}).animate({'height' : '112px'},300);
 			$("#credits-four").css({'display' : 'inline-block'}).animate({'height' : '142px'},300);
-			$(this).animate({'marginTop' : '17px'},200).text("Hide Credits").css({'color' : '#333', 'background-color' : '#e6e4de'});
+			$(this).animate({'marginTop' : '17px'},200).text("Hide Credits").css({'color' : '#333', 'background-color' : '#f5f5f5'});
 		}, function(){  
 			$("#credits-two").animate({'height' : '0'},300).css({'display' : 'none'});
 			$("#credits-three").animate({'height' : '0'},300).css({'display' : 'none'});
@@ -200,7 +200,7 @@ $(".light-switch").click(
 			$("#switcher_d").show().delay(600).animate({'opacity' : '1'},100);
 			$("#footer_d").show();
 			$("#counter p").addClass("switch_d");
-			$("html, body").css({ "background-color" : "#e6e4de", "-webkit-transition" : "0.6s linear", "-moz-transition" : "0.6s linear", "-o-transition" : "0.6s linear", "transition" : "0.6s linear" },0);			   
+			$("html, body").css({ "background-color" : "#f5f5f5", "-webkit-transition" : "0.6s linear", "-moz-transition" : "0.6s linear", "-o-transition" : "0.6s linear", "transition" : "0.6s linear" },0);			   
 
 		}
 );

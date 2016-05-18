@@ -89,7 +89,7 @@ pre {
 	}
 
 html, body {
-	background-color: #e6e4de; 
+	background-color: #f5f5f5; 
 	width: 99%;
 	height: 100%;
     }
@@ -132,7 +132,7 @@ html, body {
 	left: 5px;
 	width: 100%;
 	min-height: 100%;
-	background: #e6e4de;
+	background: #f5f5f5;
 	z-index: 999;
 	display: none;
 	}
@@ -469,7 +469,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 	height: 50px;
 	width: 100%;
 	z-index: 1000;
-	background-color: #e6e4de;
+	background-color: #f5f5f5;
 	-webkit-box-shadow: -1px 2px 10px #666;
 	-moz-box-shadow: -1px 2px 10px #666;
 	box-shadow: -1px 2px 10px #666;
@@ -669,7 +669,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-	background-color: #e6e4de;
+	background-color: #f5f5f5;
 	}
 
 #content #intro {
@@ -964,7 +964,7 @@ cursor: pointer;
 	width: 100%;
 	left: 0;
 	margin: 0 !important;
-	background-color: #e6e4de;
+	background-color: #f5f5f5;
 }
 
 #content #overview #footer, #info #footer {
@@ -1033,7 +1033,7 @@ color: #000 !important;
 	display: inline-block;
 	left: 4.5%;
 	clear: both;
-	background-color: #e6e4de;
+	background-color: #f5f5f5;
 }
 
 #overview #list-items {
@@ -1113,7 +1113,7 @@ color: #000 !important;
 	-webkit-box-shadow: inset 0 -4px 8px rgb(190,190,190);
 	-moz-box-shadow: inset 0 -4px 8px rgb(190,190,190);
 	box-shadow: inset 0 -4px 8px rgb(190,190,190);
-	background-color: #e6e4de;
+	background-color: #f5f5f5;
 	}
 
 #opener #credits-four {

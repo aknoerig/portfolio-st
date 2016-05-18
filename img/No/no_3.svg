@@ -25,8 +25,8 @@
 	c0.501,0.792,0.751,1.726,0.751,2.802c0,1.868-0.841,3.451-2.521,4.75s-3.812,1.948-6.396,1.948c-2.049,0-3.883-0.365-5.503-1.095
 	c-1.619-0.729-3.137-1.874-4.55-3.433L66.024,15.929z"/>
 <rect y="44.809" fill="none" width="105.979" height="31.708"/>
-<text transform="matrix(0.9 0 0 1 20.5322 65.6582)" stroke="#E6E4DE" stroke-width="0.25" stroke-miterlimit="10" font-family="'EngraversGothicBT-Regular'" font-size="38" letter-spacing="3.333">N</text>
+<text transform="matrix(0.9 0 0 1 20.5322 65.6582)" stroke="#f5f5f5" stroke-width="0.25" stroke-miterlimit="10" font-family="'EngraversGothicBT-Regular'" font-size="38" letter-spacing="3.333">N</text>
 <text transform="matrix(1 0 0 1 44.9092 59.6582)" stroke="#000000" stroke-width="0.5" stroke-miterlimit="10" font-family="'EngraversGothicBT-Regular'" font-size="22">°</text>
 <text transform="matrix(0.9 0 0 1 52.1494 65.6582)" font-family="'EngraversGothicBT-Regular'" font-size="50" letter-spacing="-4.444"> </text>
-<text transform="matrix(0.9 0 0 1 62.6348 65.6582)" stroke="#E6E4DE" stroke-width="0.25" stroke-miterlimit="10" font-family="'EngraversGothicBT-Regular'" font-size="38">9</text>
+<text transform="matrix(0.9 0 0 1 62.6348 65.6582)" stroke="#f5f5f5" stroke-width="0.25" stroke-miterlimit="10" font-family="'EngraversGothicBT-Regular'" font-size="38">9</text>
 </svg>
