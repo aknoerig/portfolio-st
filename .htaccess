@@ -1,0 +1,41 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ http://%{HTTP_HOST}/$1/ [L,R=301]
+
+<FilesMatch ".(png|gif|jpe?g|js|css|ico|php|xml|xsl|htm|html|csv|txt|gz|swf|flv|eot|svgz?|ttf|woff)$">
+	RewriteEngine Off
+</FilesMatch>
+
+<FilesMatch "\.(ttf|otf|eot|svg|woff)$">
+	<IfModule mod_headers.c>
+		Header set Access-Control-Allow-Origin "*"
+	</IfModule>
+</FilesMatch>
+
+RewriteRule mobile/$ / [L]
+RewriteRule admin/$ /admin/index.php [L]
+RewriteRule cms/$ /cms/index.php [L]
+RewriteRule books/$ /?s=books [L]
+RewriteRule cuts/$ /?s=cuts [L]
+RewriteRule ^([^/]*)/?([^/]*)?/?([^/]*)?/$ /?s=$1&cat=$2&book=$3 [L]
+
+ErrorDocument 400 /index.php
+ErrorDocument 401 /index.php
+ErrorDocument 403 /index.php
+ErrorDocument 404 /index.php
+ErrorDocument 500 /index.php
+
+<IfModule mod_mime>
+AddType video/ogg .ogm
+AddType video/ogg .ogv
+AddType video/ogg .ogg
+AddType video/webm .webm
+AddType audio/webm .weba
+AddType video/mp4 .mp4
+AddType video/x-m4v .m4v
+</IfModule>
