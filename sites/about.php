@@ -127,7 +127,7 @@
 
 		<p class="default imprint">
 		<?php
-		echo "<br />VAT ID: ".htmlentities($row_info['ustnr'], ENT_QUOTES)."\n";
+		echo "VAT ID: ".htmlentities($row_info['ustnr'], ENT_QUOTES)."\n";
 		?>
 		</p>
 
