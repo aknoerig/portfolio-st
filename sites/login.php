@@ -2,18 +2,18 @@
 
 	<a href="/books/">
 		<!--<div id="sign"<?php echo "$_set_hider"; ?>></div>-->
-		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="http://www.sabrinatheissen.com/img/sabrina_theissen.svg" /></div>
+		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="../img/sabrina_theissen.svg" /></div>
 	</a>
 
 <div id="info"<?php echo "$_set_login"; ?>>
 
 
 <?php
-   	
+
 	$sql_info = "
-	
-			SELECT 
-			
+
+			SELECT
+
 				ID,
 				about_txt,
 				ustnr,
@@ -33,12 +33,12 @@
 				name_r,
 				web_r,
 				phone_r
-				
+
 			FROM	about
-						
+
 		";
 
-    $result_info = mysql_query($sql_info) OR die("<pre>".$sql_info."</pre>".mysql_error()); 
+    $result_info = mysql_query($sql_info) OR die("<pre>".$sql_info."</pre>".mysql_error());
 	$row_info = mysql_fetch_assoc($result_info);
 
 		?>
@@ -46,24 +46,24 @@
 <script>
 
 	$(document).ready(function() {
-	
+
 		$(".confirm").click(function() {
 			$('.getBtn').empty();
 			$('.getBtn').append('<input type="button" name="submit" id="submit" value="Set Up" onclick="createKey()" class="reg_btn"/>');
 		});
-	
+
 		$(".second").animate({'opacity' : '0'},0).hide();
-		
+
 			$(".do").click(function() {
 					$(".first").animate({'opacity' : '0'},0).hide();
-					$(".second").show().animate({'opacity' : '1'},300);			
+					$(".second").show().animate({'opacity' : '1'},300);
 			});
 
 			$(".back").click(function() {
 					$(".second").animate({'opacity' : '0'},0).hide();
-					$(".first").show().animate({'opacity' : '1'},300);			
+					$(".first").show().animate({'opacity' : '1'},300);
 			});
-		
+
 	});
 
 	</script>
@@ -71,7 +71,7 @@
 		<p class="default">
 			Access the whole archive and create your personal selection.
 		</p>
-		
+
 
 		<h3 class="first">Enter Lightroom</h3>
 		<h3 class="second">Set Up Account</h3>
@@ -93,9 +93,9 @@
 					</div>
 				</form>
 			</div>
-		
+
 		<div id="response"></p></div>
-		
+
 		<p class="default create do first">( <span>Set up an account here</span> )</p>
 		<p class="default create back second">( <span>Back</span> )</p>
 
