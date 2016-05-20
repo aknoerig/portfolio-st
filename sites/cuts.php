@@ -189,7 +189,7 @@
 
 
    		 		echo "</video>\n";
-         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>#".$tearDisplayId."</h3>\n";
+         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>N&deg; ".$tearDisplayId."</h3>\n";
 
    				echo "</div><br /><br />\n";
 
@@ -313,7 +313,7 @@
    				echo "</div>\n";
    				echo "</div>\n";
 
-         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>#".$tearDisplayId."</h3>\n";
+         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>N&deg; ".$tearDisplayId."</h3>\n";
    				echo "</div><br /><br />\n";
    		}
 
@@ -487,7 +487,7 @@
 
 
    		 		echo "</video>\n";
-         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>#".$tearDisplayId."</h3>\n";
+         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>N&deg; ".$tearDisplayId."</h3>\n";
 
    				echo "</div>\n";
 
@@ -607,7 +607,7 @@
    				echo "</div>\n";
    				echo "</div>\n";
 
-         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>#".$tearDisplayId."</h3>\n";
+         		echo "<a href=\"/cuts/".htmlentities($row_items['ID'], ENT_QUOTES)."/\"><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2></a><p>".$row_items['text']."</p><h3>N&deg; ".$tearDisplayId."</h3>\n";
    				echo "</div>\n";
    		}
 
