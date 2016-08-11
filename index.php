@@ -283,6 +283,7 @@
 
 	<link rel="stylesheet" href="/gui/fonts.css" media="screen" type="text/css" />
 	<link rel="stylesheet" href="/gui/player.css" type="text/css" media="screen" />
+	<script src="https://use.fontawesome.com/e0eb70210e.js"></script>
 
 	<script type="text/javascript" src="/js/jquerylib.js"></script>
 	<?php if(!isset($_GET['cat']))	{ ?>
@@ -421,11 +422,19 @@ function register(){$.ajax({type:"POST",url:"/sites/mailinglist.php",data:"mail=
 
 		<p class="caption">Contact</p>
 		<p class="text">
+		Sabrina Theissen<br/>
+		<a href="tel:+491774885817">+49 177 488 58 17</a><br/>
+		<!--
+			<?php
+			echo "".htmlentities($row_info['name'], ENT_QUOTES)."<br />\n";
+			echo "".htmlentities($row_info['mobile'], ENT_QUOTES)."<br />\n";
+			?>
+		-->
 		<?php
-		echo "".htmlentities($row_info['name'], ENT_QUOTES)."<br />\n";
-		echo "".htmlentities($row_info['mobile'], ENT_QUOTES)."<br />\n";
 		echo "<a href=\"mailto:".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;\"><u>".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;</u></a>\n";
 		?>
+		<br/>
+    <a href="https://www.instagram.com/sabrinatheissen/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> sabrinatheissen</a>
 		</p>
 
 		<p class="bull">&bull;</p>

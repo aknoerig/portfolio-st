@@ -80,6 +80,8 @@
 		echo "".htmlentities($row_info['mobile'], ENT_QUOTES)."<br />\n";
 		echo "<a href=\"mailto:".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;\">".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;</a>\n";
 		?>
+    <br />
+    <a href="https://www.instagram.com/sabrinatheissen/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> sabrinatheissen</a>
 		</p>
 		</div>
 
