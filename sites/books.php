@@ -15,7 +15,7 @@
 
 
 
-	<div id="welcome" class="handheld <?php echo $_set_intro; ?>"><img src="../img/loader.gif"><br /><br /><img src="../img/welcome.png"></div>
+	<div id="welcome" class="handheld <?php echo $_set_intro; ?>"><img src="/img/loader.gif"><br /><br /><img src="/img/welcome.png"></div>
 
 
 
@@ -51,13 +51,13 @@
 		$result_rand = mysql_query($sql_rand) OR die("<pre>".$sql_rand."</pre>".mysql_error());
 		while($row_rand = mysql_fetch_assoc($result_rand)) {
 
-			echo "<div id=\"intro\" class=\"introCol".$_set_intro."\" style=\"background-image: url('../cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-webkit-background-image: url('../cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-moz-background-image: url('../cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-o-background-image: url('../cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-ms-background-image: url('../cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');\"></div>";
+			echo "<div id=\"intro\" class=\"introCol".$_set_intro."\" style=\"background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-webkit-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-moz-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-o-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-ms-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');\"></div>";
 
 		}
 
 ?>
 
-	<div id="welcome" class="<?php echo $_set_intro; ?>"><img src="../img/welcome.png"></div>
+	<div id="welcome" class="<?php echo $_set_intro; ?>"><img src="/img/welcome.png"></div>
 
 
 <?php } ?>
@@ -67,7 +67,7 @@
 
 	<a href="/books/">
 		<!--<div id="sign"<?php echo "$_set_hider"; ?>></div>-->
-		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="../img/sabrina_theissen.svg" /></div>
+		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="/img/sabrina_theissen.svg" /></div>
 	</a>
 
 <div id="overview"<?php echo "$_set_overview"; ?>>
@@ -179,7 +179,7 @@ if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
 				}
 
 
-			echo "<div id=\"opener\"><a href=\"/books/".$pushCat."/".$_GET['book']."/\"><img class=\"o_img\" src=\"../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /></a><div id=\"client\"><img src=\"../img/No/no_".htmlentities($row_items['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
+			echo "<div id=\"opener\"><a href=\"/books/".$pushCat."/".$_GET['book']."/\"><img class=\"o_img\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /></a><div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_items['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
 			echo "";
 
 			}
@@ -210,7 +210,7 @@ if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
     		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 			while($row_img = mysql_fetch_assoc($result_img)) {
 
-			echo "<img class=\"less-margin\" src=\"../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
+			echo "<img class=\"less-margin\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
 
 			}
 
@@ -247,7 +247,7 @@ if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
 			$row_client = mysql_fetch_assoc($result_client);
 
 if($row_pushRank['recordListingID'] == "") {
-            echo "<meta http-equiv=\"refresh\" content=\"0; URL=../books/\">\n";
+            echo "<meta http-equiv=\"refresh\" content=\"0; URL=/books/\">\n";
 }
 
 		if($row_client_state['hair'] != $row_client_state['makeup'] AND $row_client_state['setdesign'] != ""){
@@ -274,7 +274,7 @@ if($row_pushRank['recordListingID'] == "") {
 
 
 
-			echo "<div id=\"client\"><img src=\"../img/No/no_".htmlentities($row_pushRank['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
+			echo "<div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_pushRank['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
 
 }
 
@@ -378,11 +378,11 @@ if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
 
 				}
 
-			echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\" title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\"><img src=\"../cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" /></a>";
+			echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\" title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\"><img src=\"/cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" /></a>";
 
 				if ($detect->isMobile() && !$detect->isTablet()) {
 
-					echo "<img src=\"../img/No/no_".htmlentities($row_items_list['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" />";
+					echo "<img src=\"/img/No/no_".htmlentities($row_items_list['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" />";
 
 				}	else {
 

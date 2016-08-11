@@ -14,7 +14,7 @@
 
 	<a href="/books/">
 	<!--	<div id="sign"<?php echo "$_set_hider"; ?>></div> -->
-		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="../img/sabrina_theissen.svg" /></div>
+		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="/img/sabrina_theissen.svg" /></div>
 	</a>
 
 	<?php
@@ -113,11 +113,11 @@
     		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 			$row_img = mysql_fetch_assoc($result_img);
 
-			$sizing = GetImageSize("../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
+			$sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
 			echo "<div id=\"tear\" class=\"item margin\" style=\"width:"; if($sizing[0] > 320) { echo "".($sizing[0]/3.5).""; } else { echo "".$sizing[0].""; } echo "px;\">\n";
 
-			echo "<video width=\""; if($sizing[0] > 320) { echo "".($sizing[0]/3.5).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 320) { echo "".($sizing[1]/3.5).""; } else { echo "".$sizing[1].""; } echo "\" poster=\"../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" controls=\"controls\" preload=\"none\">\n";
+			echo "<video width=\""; if($sizing[0] > 320) { echo "".($sizing[0]/3.5).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 320) { echo "".($sizing[1]/3.5).""; } else { echo "".$sizing[1].""; } echo "\" poster=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" controls=\"controls\" preload=\"none\">\n";
 
 
 		if ($detect->isMobile() && !$detect->isTablet()) {
@@ -180,7 +180,7 @@
 
 										if(substr("".htmlentities($row_img_array['content_img'], ENT_QUOTES)."", -3) != "png") {
 
-      									echo "<source type=\"video/".$setType."; ".$setCodec."\" src=\"../cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\""; if($sizing[0] > 320) { echo "".($sizing[0]/3.5).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 320) { echo "".($sizing[1]/3.5).""; } else { echo "".$sizing[1].""; } echo "\" />\n";
+      									echo "<source type=\"video/".$setType."; ".$setCodec."\" src=\"/cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\""; if($sizing[0] > 320) { echo "".($sizing[0]/3.5).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 320) { echo "".($sizing[1]/3.5).""; } else { echo "".$sizing[1].""; } echo "\" />\n";
 
 										}
 }
@@ -215,7 +215,7 @@
     		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 			$row_img = mysql_fetch_assoc($result_img);
 
-			$sizing = GetImageSize("../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
+			$sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
    			if(($sizing[0] > 299) AND ($sizing[0] <= 350)) { $quotient = "1.25"; };
    			if(($sizing[0] > 360) AND ($sizing[0] <= 460)) { $quotient = "1.8"; };
@@ -290,11 +290,11 @@
 */
 
 		echo "<div id=\"pages\" style=\"width:"; if($sizing[0] > 299) { echo "".($sizing[0]/$quotient).""; } else { echo "".$sizing[0].""; } echo "px; height:"; if($sizing[0] > 299) { echo "".($sizing[1]/$quotient).""; } else { echo "".$sizing[1].""; } echo "px;\"><h2 class=\"".htmlentities($row_items['pager'], ENT_QUOTES)."\" style=\"width:"; if($sizing[0] > 299) { echo "".($sizing[0]/$quotient).""; } else { echo "".$sizing[0].""; } echo "px; bottom: "; if($sizing[0] > 299) { echo "".((($sizing[1]/$quotient)-60)/2).""; } else { echo "".(($sizing[1]/$quotient)-35).""; } echo "px;\">1/".($row_img_count['COUNT(content_img)']+1)."</h2></div>";
-	   		         						echo "<img class=\"sub\" src=\"../cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\""; if($sizing[0] > 299) { echo "".($sizing[0]/$quotient).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 299) { echo "".($sizing[1]/$quotient).""; } else { echo "".$sizing[1].""; } echo "\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
+	   		         						echo "<img class=\"sub\" src=\"/cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\""; if($sizing[0] > 299) { echo "".($sizing[0]/$quotient).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 299) { echo "".($sizing[1]/$quotient).""; } else { echo "".$sizing[1].""; } echo "\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
 
    		      		}
 
-   		      		   		         		echo "<img class=\"last-tear\" src=\"../cms/images/".htmlentities($row_img_single['content_img'], ENT_QUOTES)."\" width=\""; if($sizing[0] > 299) { echo "".($sizing[0]/$quotient).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 299) { echo "".($sizing[1]/$quotient).""; } else { echo "".$sizing[1].""; } echo "\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
+   		      		   		         		echo "<img class=\"last-tear\" src=\"/cms/images/".htmlentities($row_img_single['content_img'], ENT_QUOTES)."\" width=\""; if($sizing[0] > 299) { echo "".($sizing[0]/$quotient).""; } else { echo "".$sizing[0].""; } echo "\" height=\""; if($sizing[0] > 299) { echo "".($sizing[1]/$quotient).""; } else { echo "".$sizing[1].""; } echo "\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
 
 
    			echo "<script type=\"text/javascript\">\n";
@@ -367,7 +367,7 @@
 
 	<a href="/books/">
 	<!--	<div id="sign"<?php echo "$_set_hider"; ?>></div> -->
-		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="../img/sabrina_theissen.svg" /></div>
+		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="/img/sabrina_theissen.svg" /></div>
 	</a>
 
 	<div id="overview"<?php echo "$_set_overview"; ?>>
@@ -432,11 +432,11 @@
     		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 			$row_img = mysql_fetch_assoc($result_img);
 
-			$sizing = GetImageSize("../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
+			$sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
 			echo "<div id=\"tear\" class=\"item margin\" style=\"width:".$sizing[0]."px;\">\n";
 
-			echo "<video width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" poster=\"../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" controls=\"controls\" preload=\"none\">\n";
+			echo "<video width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" poster=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" controls=\"controls\" preload=\"none\">\n";
 
 
 	$sql_img_array = "SELECT
@@ -478,7 +478,7 @@
 
 										if(substr("".htmlentities($row_img_array['content_img'], ENT_QUOTES)."", -3) != "png") {
 
-      									echo "<source type=\"video/".$setType."; ".$setCodec."\" src=\"../cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" />\n";
+      									echo "<source type=\"video/".$setType."; ".$setCodec."\" src=\"/cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" />\n";
 
 										}
 }
@@ -511,7 +511,7 @@
     		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 			$row_img = mysql_fetch_assoc($result_img);
 
-			$sizing = GetImageSize("../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
+			$sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
 
    	echo "<div id=\"tear\" class=\"item margin\" style=\"width:".$sizing[0]."px;\">\n";
@@ -584,11 +584,11 @@
 		echo "<div id=\"pages\" style=\"width:".$sizing[0]."px; height:".$sizing[1]."px;\"><h2 class=\"".htmlentities($row_items['pager'], ENT_QUOTES)."\" style=\"width:".$sizing[0]."px; bottom: ".(($sizing[1]/2)-35)."px;\">1/".($row_img_count['COUNT(content_img)']+1)."</h2></div>";
 
 
-	   		         						echo "<img class=\"sub\" src=\"../cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
+	   		         						echo "<img class=\"sub\" src=\"/cms/images/".htmlentities($row_img_array['content_img'], ENT_QUOTES)."\" width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
 
    		      		}
 
-   		      		   		         		echo "<img class=\"last-tear\" src=\"../cms/images/".htmlentities($row_img_single['content_img'], ENT_QUOTES)."\" width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
+   		      		   		         		echo "<img class=\"last-tear\" src=\"/cms/images/".htmlentities($row_img_single['content_img'], ENT_QUOTES)."\" width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" alt=\"Sabrina Theissen | &rsaquo;".htmlentities($row_items['caption'], ENT_QUOTES)."&lsaquo; ".$postTxt."\" />\n";
 
 
    			echo "<script type=\"text/javascript\">\n";
