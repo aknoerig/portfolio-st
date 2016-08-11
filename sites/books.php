@@ -1,402 +1,402 @@
 <div id="content">
 
-<?php
+  <?php
 
-   		if(!isset($_GET['cat'])) {
+  if(!isset($_GET['cat'])) {
 
-			$_GET['cat'] = "all";
+    $_GET['cat'] = "all";
 
-		}
+  }
 
 
 
-	if ($detect->isMobile() && !$detect->isTablet()) {
-?>
+  if ($detect->isMobile() && !$detect->isTablet()) {
+    ?>
 
 
 
-	<div id="welcome" class="handheld <?php echo $_set_intro; ?>"><img src="/img/loader.gif"><br /><br /><img src="/img/welcome.png"></div>
+    <div id="welcome" class="handheld <?php echo $_set_intro; ?>"><img src="/img/loader.gif"><br /><br /><img src="/img/welcome.png"></div>
 
 
 
-<?php
-	} else {
+    <?php
+  } else {
 
-	?>
+    ?>
 
 
-<?php
+    <?php
 
-   		if(!isset($_GET['cat'])) {
+    if(!isset($_GET['cat'])) {
 
-			$_GET['cat'] = "all";
+      $_GET['cat'] = "all";
 
-		}
+    }
 
 
-	$sql_rand = "SELECT
+    $sql_rand = "SELECT
 
-					content_img,
-					intro
+    content_img,
+    intro
 
-						FROM
+    FROM
 
-							img
+    img
 
-					WHERE intro = 'yes'
+    WHERE intro = 'yes'
 
-				ORDER BY RAND()
-				LIMIT 3 ";
+    ORDER BY RAND()
+    LIMIT 3 ";
 
-		$result_rand = mysql_query($sql_rand) OR die("<pre>".$sql_rand."</pre>".mysql_error());
-		while($row_rand = mysql_fetch_assoc($result_rand)) {
+    $result_rand = mysql_query($sql_rand) OR die("<pre>".$sql_rand."</pre>".mysql_error());
+    while($row_rand = mysql_fetch_assoc($result_rand)) {
 
-			echo "<div id=\"intro\" class=\"introCol".$_set_intro."\" style=\"background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-webkit-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-moz-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-o-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-ms-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');\"></div>";
+      echo "<div id=\"intro\" class=\"introCol".$_set_intro."\" style=\"background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-webkit-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-moz-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-o-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');-ms-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');\"></div>";
 
-		}
+    }
 
-?>
+    ?>
 
-	<div id="welcome" class="<?php echo $_set_intro; ?>"><img src="/img/welcome.png"></div>
+    <div id="welcome" class="<?php echo $_set_intro; ?>"><img src="/img/welcome.png"></div>
 
 
-<?php } ?>
+    <?php } ?>
 
 
 
 
-	<a href="/books/">
-		<!--<div id="sign"<?php echo "$_set_hider"; ?>></div>-->
-		<div id="mark-books"<?php echo "$_set_hider"; ?>><img src="/img/sabrina_theissen.svg" /></div>
-	</a>
+    <a href="/books/">
+      <!--<div id="sign"<?php echo "$_set_hider"; ?>></div>-->
+      <div id="mark-books"<?php echo "$_set_hider"; ?>><img src="/img/sabrina_theissen.svg" /></div>
+    </a>
 
-<div id="overview"<?php echo "$_set_overview"; ?>>
+    <div id="overview"<?php echo "$_set_overview"; ?>>
 
-	<?php
+      <?php
 
 
-if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
+      if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
 
-		$sql_items = "SELECT
+        $sql_items = "SELECT
 
-                            ID,
-                            recordListingID,
-                            ID_cat,
-                            ID_2ndcat,
-                            ID_client,
-                            name,
-                            hair,
-                            makeup,
-                            styling,
-                            setdesign
+        ID,
+        recordListingID,
+        ID_cat,
+        ID_2ndcat,
+        ID_client,
+        name,
+        hair,
+        makeup,
+        styling,
+        setdesign
 
-                    FROM
-                            project
+        FROM
+        project
 
-                    ORDER BY recordListingID DESC
+        ORDER BY recordListingID DESC
 
-           			";
+        ";
 
-	}
-			else		{
+      }
+      else		{
 
-			$sql_cat_state = "SELECT ID, category from cat WHERE category = '".$_GET['cat']."' ";
-			$result_cat_state = mysql_query($sql_cat_state) OR die("<pre>".$sql_cat_state."</pre>".mysql_error());
-			$row_cat_state = mysql_fetch_assoc($result_cat_state);
+        $sql_cat_state = "SELECT ID, category from cat WHERE category = '".$_GET['cat']."' ";
+        $result_cat_state = mysql_query($sql_cat_state) OR die("<pre>".$sql_cat_state."</pre>".mysql_error());
+        $row_cat_state = mysql_fetch_assoc($result_cat_state);
 
-			$sql_items = "SELECT
+        $sql_items = "SELECT
 
-                            ID,
-                            recordListingID,
-                            ID_cat,
-                            ID_2ndcat,
-                            ID_client,
-                            name,
-                            hair,
-                            makeup,
-                            styling,
-                            setdesign
+        ID,
+        recordListingID,
+        ID_cat,
+        ID_2ndcat,
+        ID_client,
+        name,
+        hair,
+        makeup,
+        styling,
+        setdesign
 
-                    FROM
-                            project
+        FROM
+        project
 
-                    WHERE  ID_cat ='".$row_cat_state['ID']."'
+        WHERE  ID_cat ='".$row_cat_state['ID']."'
 
-                    ORDER BY recordListingID DESC
+        ORDER BY recordListingID DESC
 
-           			";
-	}
+        ";
+      }
 
-    $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error());
-	$row_items = mysql_fetch_assoc($result_items);
+      $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error());
+      $row_items = mysql_fetch_assoc($result_items);
 
 
 
-	if(!isset($_GET['book'])) {
+      if(!isset($_GET['book'])) {
 
-			$_GET['book'] = "".$row_items['ID']."";
+        $_GET['book'] = "".$row_items['ID']."";
 
-			$sql_img = "SELECT
+        $sql_img = "SELECT
 
-                            ID,
-                            ID_p,
-                            content_img,
-                            date
-                    FROM
-                            img
+        ID,
+        ID_p,
+        content_img,
+        date
+        FROM
+        img
 
-                    WHERE	id_p = '".$_GET['book']."'
+        WHERE	id_p = '".$_GET['book']."'
 
-                    ORDER BY ID ASC
+        ORDER BY ID ASC
 
-           			";
+        ";
 
-    		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-			$row_img = mysql_fetch_assoc($result_img);
+        $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+        $row_img = mysql_fetch_assoc($result_img);
 
-			$sql_client = "SELECT
+        $sql_client = "SELECT
 
-                            ID,
-                            name
-                    FROM
-                            clients
+        ID,
+        name
+        FROM
+        clients
 
-                    WHERE ID = '".$row_items['ID_client']."'
+        WHERE ID = '".$row_items['ID_client']."'
 
-           			";
+        ";
 
-    		$result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error());
-			$row_client = mysql_fetch_assoc($result_client);
+        $result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error());
+        $row_client = mysql_fetch_assoc($result_client);
 
-				if(isset($_GET['cat']) AND $_GET['cat'] != "") {
+        if(isset($_GET['cat']) AND $_GET['cat'] != "") {
 
-				$pushCat ="".$_GET['cat']."";
+          $pushCat ="".$_GET['cat']."";
 
-				}	else 	{
+        }	else 	{
 
-				$pushCat ="";
+          $pushCat ="";
 
-				}
+        }
 
 
-			echo "<div id=\"opener\"><a href=\"/books/".$pushCat."/".$_GET['book']."/\"><img class=\"o_img\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /></a><div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_items['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
-			echo "";
+        echo "<div id=\"opener\"><a href=\"/books/".$pushCat."/".$_GET['book']."/\"><img class=\"o_img\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /></a><div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_items['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
+        echo "";
 
-			}
-					else		{
+      }
+      else		{
 
-			echo "<div id=\"opener\">\n";
+        echo "<div id=\"opener\">\n";
 
-		if ($detect->isMobile() && !$detect->isTablet()) {
-			echo "<div style=\"height:50px;\"></div>\n";
-		}
+        if ($detect->isMobile() && !$detect->isTablet()) {
+          echo "<div style=\"height:50px;\"></div>\n";
+        }
 
 
-					$sql_img = "SELECT
+        $sql_img = "SELECT
 
-                            ID,
-                            ID_p,
-                            content_img,
-                            date
-                    FROM
-                            img
+        ID,
+        ID_p,
+        content_img,
+        date
+        FROM
+        img
 
-                    WHERE	ID_p = '".$_GET['book']."'
+        WHERE	ID_p = '".$_GET['book']."'
 
-                    ORDER BY ID ASC
+        ORDER BY ID ASC
 
-           			";
+        ";
 
-    		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-			while($row_img = mysql_fetch_assoc($result_img)) {
+        $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+        while($row_img = mysql_fetch_assoc($result_img)) {
 
-			echo "<img class=\"less-margin\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
+          echo "<img class=\"less-margin\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
 
-			}
+        }
 
-	$sql_pushRank = "SELECT
+        $sql_pushRank = "SELECT
 
-                            ID,
-                            recordListingID
-                    FROM
-                            project
+        ID,
+        recordListingID
+        FROM
+        project
 
-                    WHERE	ID = '".$_GET['book']."'
+        WHERE	ID = '".$_GET['book']."'
 
-           			";
+        ";
 
-    		$result_pushRank = mysql_query($sql_pushRank) OR die("<pre>".$sql_pushRank."</pre>".mysql_error());
-			$row_pushRank = mysql_fetch_assoc($result_pushRank);
+        $result_pushRank = mysql_query($sql_pushRank) OR die("<pre>".$sql_pushRank."</pre>".mysql_error());
+        $row_pushRank = mysql_fetch_assoc($result_pushRank);
 
-	$sql_client_state = "SELECT ID, ID_client, hair, makeup, styling, setdesign from project WHERE ID = '".$_GET['book']."' ";
-									    		$result_client_state = mysql_query($sql_client_state) OR die("<pre>".$sql_client_state."</pre>".mysql_error());
-												$row_client_state = mysql_fetch_assoc($result_client_state);
+        $sql_client_state = "SELECT ID, ID_client, hair, makeup, styling, setdesign from project WHERE ID = '".$_GET['book']."' ";
+        $result_client_state = mysql_query($sql_client_state) OR die("<pre>".$sql_client_state."</pre>".mysql_error());
+        $row_client_state = mysql_fetch_assoc($result_client_state);
 
-	$sql_client = "SELECT
+        $sql_client = "SELECT
 
-                            ID,
-                            name
-                    FROM
-                            clients
+        ID,
+        name
+        FROM
+        clients
 
-                    WHERE ID = '".$row_client_state['ID_client']."'
+        WHERE ID = '".$row_client_state['ID_client']."'
 
-           			";
+        ";
 
-    		$result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error());
-			$row_client = mysql_fetch_assoc($result_client);
+        $result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error());
+        $row_client = mysql_fetch_assoc($result_client);
 
-if($row_pushRank['recordListingID'] == "") {
-            echo "<meta http-equiv=\"refresh\" content=\"0; URL=/books/\">\n";
-}
+        if($row_pushRank['recordListingID'] == "") {
+          echo "<meta http-equiv=\"refresh\" content=\"0; URL=/books/\">\n";
+        }
 
-		if($row_client_state['hair'] != $row_client_state['makeup'] AND $row_client_state['setdesign'] != ""){
+        if($row_client_state['hair'] != $row_client_state['makeup'] AND $row_client_state['setdesign'] != ""){
 
-			echo "<div id=\"credits-four\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &nbsp;".htmlentities($row_client_state['hair'], ENT_QUOTES)."</p><p>MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p><p>SET DESIGN&nbsp;".htmlentities($row_client_state['setdesign'], ENT_QUOTES)."</p></div>\n";
+          echo "<div id=\"credits-four\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &nbsp;".htmlentities($row_client_state['hair'], ENT_QUOTES)."</p><p>MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p><p>SET DESIGN&nbsp;".htmlentities($row_client_state['setdesign'], ENT_QUOTES)."</p></div>\n";
 
-		}  elseif($row_client_state['hair'] != $row_client_state['makeup'] AND $row_client_state['setdesign'] == ""){
+        }  elseif($row_client_state['hair'] != $row_client_state['makeup'] AND $row_client_state['setdesign'] == ""){
 
-			echo "<div id=\"credits-three\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &nbsp;".htmlentities($row_client_state['hair'], ENT_QUOTES)."</p><p>MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p></div>\n";
+          echo "<div id=\"credits-three\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &nbsp;".htmlentities($row_client_state['hair'], ENT_QUOTES)."</p><p>MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p></div>\n";
 
-		}  elseif($row_client_state['hair'] == $row_client_state['makeup'] AND $row_client_state['setdesign'] != ""){
+        }  elseif($row_client_state['hair'] == $row_client_state['makeup'] AND $row_client_state['setdesign'] != ""){
 
-			echo "<div id=\"credits-three\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &amp; MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p><p>SET DESIGN&nbsp;".htmlentities($row_client_state['setdesign'], ENT_QUOTES)."</p></div>\n";
+          echo "<div id=\"credits-three\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &amp; MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p><p>SET DESIGN&nbsp;".htmlentities($row_client_state['setdesign'], ENT_QUOTES)."</p></div>\n";
 
-		}  elseif($row_client_state['hair'] == $row_client_state['makeup'] AND $row_client_state['setdesign'] == ""){
+        }  elseif($row_client_state['hair'] == $row_client_state['makeup'] AND $row_client_state['setdesign'] == ""){
 
-			echo "<div id=\"credits-two\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &amp; MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p></div>\n";
+          echo "<div id=\"credits-two\"><p>STYLING &nbsp;".htmlentities($row_client_state['styling'], ENT_QUOTES)."</p><p>HAIR &amp; MAKE-UP &nbsp;".htmlentities($row_client_state['makeup'], ENT_QUOTES)."</p></div>\n";
 
-		}
+        }
 
-			if ($detect->isMobile() && !$detect->isTablet()) {
-					echo "<div class=\"creditsBreak\"><p class=\"showHide\">Show Credits</p></div>\n";
-				}
+        if ($detect->isMobile() && !$detect->isTablet()) {
+          echo "<div class=\"creditsBreak\"><p class=\"showHide\">Show Credits</p></div>\n";
+        }
 
 
 
-			echo "<div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_pushRank['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
+        echo "<div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_pushRank['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
 
-}
+      }
 
-	?>
+      ?>
 
-	<div id="list">
+      <div id="list">
 
-	<?php
+        <?php
 
-if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
+        if(isset($_GET['cat']) AND $_GET['cat'] == "all") {
 
-	$sql_items_list = "SELECT
+          $sql_items_list = "SELECT
 
-                            ID,
-                            recordListingID,
-                            ID_cat,
-                            ID_client,
-                            name,
-                            hair,
-                            makeup,
-                            styling,
-                            setdesign
+          ID,
+          recordListingID,
+          ID_cat,
+          ID_client,
+          name,
+          hair,
+          makeup,
+          styling,
+          setdesign
 
-                    FROM
-                            project
+          FROM
+          project
 
-                    WHERE ID != '".$_GET['book']."'
+          WHERE ID != '".$_GET['book']."'
 
-                    ORDER BY recordListingID DESC
+          ORDER BY recordListingID DESC
 
-           			";
-	}		else		{
+          ";
+        }		else		{
 
-	$sql_items_list = "SELECT
+          $sql_items_list = "SELECT
 
-                            ID,
-                            recordListingID,
-                            ID_cat,
-                            ID_client,
-                            name,
-                            hair,
-                            makeup,
-                            styling,
-                            setdesign
+          ID,
+          recordListingID,
+          ID_cat,
+          ID_client,
+          name,
+          hair,
+          makeup,
+          styling,
+          setdesign
 
-                    FROM
-                            project
+          FROM
+          project
 
-                    WHERE ID != '".$_GET['book']."' AND (ID_cat ='".$row_cat_state['ID']."' OR ID_2ndcat ='".$row_cat_state['ID']."')
+          WHERE ID != '".$_GET['book']."' AND (ID_cat ='".$row_cat_state['ID']."' OR ID_2ndcat ='".$row_cat_state['ID']."')
 
-                    ORDER BY recordListingID DESC
+          ORDER BY recordListingID DESC
 
-           			";
-	}
+          ";
+        }
 
-    $result_items_list = mysql_query($sql_items_list) OR die("<pre>".$sql_items_list."</pre>".mysql_error());
-	while($row_items_list = mysql_fetch_assoc($result_items_list)) {
+        $result_items_list = mysql_query($sql_items_list) OR die("<pre>".$sql_items_list."</pre>".mysql_error());
+        while($row_items_list = mysql_fetch_assoc($result_items_list)) {
 
 
-	$sql_client_list = "SELECT
+          $sql_client_list = "SELECT
 
-             		ID,
-                           name
-                    FROM
-                           clients
+          ID,
+          name
+          FROM
+          clients
 
-                    WHERE ID = '".$row_items_list['ID_client']."'
+          WHERE ID = '".$row_items_list['ID_client']."'
 
-           			";
+          ";
 
-    $result_client_list = mysql_query($sql_client_list) OR die("<pre>".$sql_client_list."</pre>".mysql_error());
-	$row_client_list = mysql_fetch_assoc($result_client_list);
+          $result_client_list = mysql_query($sql_client_list) OR die("<pre>".$sql_client_list."</pre>".mysql_error());
+          $row_client_list = mysql_fetch_assoc($result_client_list);
 
 
-	$sql_img = "SELECT
+          $sql_img = "SELECT
 
-                            ID,
-                            ID_p,
-                            content_img,
-                            date
-                    FROM
-                            img
+          ID,
+          ID_p,
+          content_img,
+          date
+          FROM
+          img
 
-                    WHERE	id_p = '".$row_items_list['ID']."'
+          WHERE	id_p = '".$row_items_list['ID']."'
 
-                    ORDER BY ID ASC
+          ORDER BY ID ASC
 
-           			";
+          ";
 
-    		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-			$row_img = mysql_fetch_assoc($result_img);
+          $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+          $row_img = mysql_fetch_assoc($result_img);
 
 
-			if(isset($_GET['cat']) AND $_GET['cat'] != "") {
+          if(isset($_GET['cat']) AND $_GET['cat'] != "") {
 
-				$pushCat ="".$_GET['cat']."";
+            $pushCat ="".$_GET['cat']."";
 
-				}	else 	{
+          }	else 	{
 
-				$pushCat ="";
+            $pushCat ="";
 
-				}
+          }
 
-			echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\" title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\"><img src=\"/cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" />";
+          echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\" title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\"><img src=\"/cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" />";
 
-				if ($detect->isMobile() && !$detect->isTablet()) {
+          if ($detect->isMobile() && !$detect->isTablet()) {
 
-					echo "<img src=\"/img/No/no_".htmlentities($row_items_list['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" />";
+            echo "<img src=\"/img/No/no_".htmlentities($row_items_list['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" />";
 
-				}	else {
+          }	else {
 
-					echo "<h2><span class=\"right-5\">N&deg;</span>".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h2>";
+            echo "<h2><span class=\"right-5\">N&deg;</span>".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h2>";
 
 
-				}
+          }
 
-			echo "<h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3></a></div>\n";
+          echo "<h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3></a></div>\n";
 
-		}
+        }
 
-	?>
+        ?>
 
-	</div>
+      </div>
 
-</div>
+    </div>
