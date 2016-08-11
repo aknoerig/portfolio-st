@@ -1309,7 +1309,8 @@ color: #000 !important;
 }
 
 #content #overview #opener #client h3, #content #overview #project h3 {
-	font-family: "DidotT";
+  color: #000;
+  font-family: "DidotT";
 	font-size: 19px;
 	text-transform: none;
 	letter-spacing: 0.1em;
