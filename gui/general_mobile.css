@@ -1159,6 +1159,7 @@ color: #000 !important;
 }
 
 #opener .creditsBreak {
+  display:none !important;
 	position: relative;
 	width: 100%;
 	text-align: center;
@@ -1243,7 +1244,7 @@ color: #000 !important;
 
 #content #overview #opener .less-margin {
 	margin: 0 0 0 0;
-	float: left;
+	/*float: left;*/
 	}
 
 .one:first-child {
@@ -1262,7 +1263,7 @@ color: #000 !important;
 	position: relative;
 	width: 90%;
 	left: 5%;
-	margin: -13px 0 15px 0;
+	margin: 25px 0;
 	text-align: center;
 	padding-bottom: 50px;
 	}

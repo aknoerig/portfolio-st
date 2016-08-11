@@ -968,6 +968,7 @@ color: #000 !important;
 	}
 
 #opener #credits-four {
+	display: none !important;
 	position: relative;
 	width: 1000px;
 	margin: -15px 0 5px 122px;
@@ -975,6 +976,7 @@ color: #000 !important;
 	}
 
 #opener #credits-three {
+	display: none !important;
 	position: relative;
 	width: 1000px;
 	margin: -15px 0 5px 202px;
@@ -982,6 +984,7 @@ color: #000 !important;
 	}
 
 #opener #credits-two {
+	display: none !important;
 	position: relative;
 	width: 800px;
 	margin: -3px 0 18px 242px;
