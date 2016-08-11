@@ -405,7 +405,17 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		</head>
 
-		<body>
+		<body
+			<?php
+				if (isset($_GET['s']) AND $_GET['s'] == "books") {
+					echo "class=\"books\"";
+				} elseif (isset($_GET['s']) AND $_GET['s'] == "cuts") {
+					echo "class=\"cuts\"";
+				} elseif(isset($_GET['s']) AND $_GET['s'] == "lightroom") {
+					echo "class=\"lightroom\"";
+				}
+		 ?>
+		>
 
 			<div id="turn-device"></div>
 
@@ -489,7 +499,7 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 							<a href="tel:+494042326810">+49 40-42 32 68 10</a><br/>
 							<u><a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a></u><br/>
 							<br/>
-							Hall&Lundgren<br/>
+							Hall&amp;Lundgren<br/>
 							<a href="tel:+46707556619">+46 707-556 619</a><br/>
 							<u><a href="http://hallundgren.com/" target="_blank">www.hallundgren.com</a></u>
 							<!--
@@ -529,30 +539,19 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 						<p class="text">
 
 						<?php
-
 							$sql_clients = "
-
-							SELECT
-
-							ID,
-							name,
-							public
-
-							FROM	clients
-
-							WHERE	public = 'public'
-
-							ORDER BY name ASC
-
+								SELECT
+								ID,
+								name,
+								public
+								FROM	clients
+								WHERE	public = 'public'
+								ORDER BY name ASC
 							";
-
 							$result_clients = mysql_query($sql_clients) OR die("<pre>".$sql_clients."</pre>".mysql_error());
 							while($row_clients = mysql_fetch_assoc($result_clients)) {
-
 								echo "".htmlentities($row_clients['name'], ENT_QUOTES)."<br />\n";
-
 							}
-
 						?>
 					</p>
 
