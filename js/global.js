@@ -221,7 +221,7 @@ $(".switch-back").click(
 
 $('#content #overview #project').hover(
 		function(){
-			$(this).children("a").animate({'opacity' : '.3'},200);
+			$(this).children("a").animate({'opacity' : '0'},200);
 			$(this).children("h2").css({'visibility' : 'visible'});
 			$(this).children("h3").css({'visibility' : 'visible'});
 		},

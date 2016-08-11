@@ -378,7 +378,7 @@
 
           }
 
-          echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\" title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\"><img src=\"/cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" />";
+          echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\" title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\"><img src=\"/cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" /></a>";
 
           if ($detect->isMobile() && !$detect->isTablet()) {
 
@@ -391,7 +391,7 @@
 
           }
 
-          echo "<h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3></a></div>\n";
+          echo "<h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3></div>\n";
 
         }
 
