@@ -29,6 +29,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 if ($detect->isMobile() && !$detect->isTablet()) {
 
+	/* ----------- MOBILE ------------ */
+
 
 	if(isset($_GET['s']) AND $_GET['s'] == "books" AND !isset($_GET['book'])) {
 
@@ -136,6 +138,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 
 }	else 	{
+
+	/* ----------- DESKTOP ------------ */
 
 
 	if(isset($_GET['s']) AND $_GET['s'] == "books" AND !isset($_GET['book'])) {
@@ -305,13 +309,97 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 									<script type="text/javascript">
 
-									<?php
-									if(!isset($_GET['s']) OR isset($_GET['s']) AND $_GET['s'] == "books") {
-										?>
+									<?php if(!isset($_GET['s']) OR isset($_GET['s']) AND $_GET['s'] == "books") { ?>
 
-										var $window=$(window);$(window).scroll(function(){var e=$("#mark-books");var t=$("#list");var n=e.offset().top;var r=t.offset().top;var i=n+e.height();var s=r+t.height();if(i>=r&&n<s){function o(){var e=$window.width();if(e<1300){$("#mark-books").css({visibility:"hidden"})}else{$("#mark-books").css({visibility:"visible"})}}o();$(window).resize(o)}else{$("#mark-books").css({visibility:"visible"})}})
+										var $window=$(window);
+										$(window).scroll(
+											function(){
+												var e=$("#mark-books");
+												var t=$("#list");
+												var n=e.offset().top;
+												var r=t.offset().top;
+												var i=n+e.height();
+												var s=r+t.height();
+												if(i>=r&&n<s){
+													function o(){
+														var e=$window.width();
+														if(e<1300){
+															$("#mark-books").css({visibility:"hidden"})
+														} else {
+															$("#mark-books").css({visibility:"visible"})
+														}
+													}
+													o();
+													$(window).resize(o)
+												} else {
+													$("#mark-books").css({visibility:"visible"})
+												}
+											}
+										)
+
 										<?php } if(!isset($_GET['s']) OR isset($_GET['s']) AND $_GET['s'] == "books") {  } ?>
-										function register(){$.ajax({type:"POST",url:"/sites/mailinglist.php",data:"mail="+document.getElementById("mail").value,beforeSend:function(){$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')},success:function(e){$("#response").hide().fadeIn(500).html(e)}})}function unsub(){$.ajax({type:"POST",url:"/sites/leavelist.php",data:"mail="+document.getElementById("mail").value,beforeSend:function(){$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')},success:function(e){$("#response").hide().fadeIn(500).html(e)}})}function accessltrm(){$.ajax({type:"POST",url:"/sites/accessltrm.php",data:"access="+document.getElementById("access").value,beforeSend:function(){$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')},success:function(e){$("#response").hide().fadeIn(500).html(e)}})}function createKey(){var e=escape(document.getElementById("name").value);var t=document.getElementById("mail").value;var n=escape(document.getElementById("agency").value);$.ajax({type:"POST",url:"/sites/createKey.php",data:"name="+e+"&mail="+t+"&agency="+n,beforeSend:function(){$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')},delay:{time:5e3},success:function(e){$("#response").hide().fadeIn(500).html(e)}})}var ua=$.browser;if(ua.mozilla){$("head").append('<link rel="stylesheet" href="/gui/ff.css" media="screen" type="text/css" />')}
+
+										function register(){
+											$.ajax({
+												type:"POST",
+												url:"/sites/mailinglist.php",
+												data:"mail="+document.getElementById("mail").value,
+												beforeSend:function(){
+													$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')
+												},
+												success:function(e){
+													$("#response").hide().fadeIn(500).html(e)
+												}
+											})
+										}
+										function unsub(){
+											$.ajax({
+												type:"POST",
+												url:"/sites/leavelist.php",
+												data:"mail="+document.getElementById("mail").value,
+												beforeSend:function(){
+													$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')
+												},
+												success:function(e){
+													$("#response").hide().fadeIn(500).html(e)
+												}
+											})
+										}
+										function accessltrm(){
+											$.ajax({
+												type:"POST",
+												url:"/sites/accessltrm.php",
+												data:"access="+document.getElementById("access").value,
+												beforeSend:function(){
+													$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')
+												},
+												success:function(e){
+													$("#response").hide().fadeIn(500).html(e)
+												}
+											})
+										}
+										function createKey(){
+											var e=escape(document.getElementById("name").value);
+											var t=document.getElementById("mail").value;
+											var n=escape(document.getElementById("agency").value);
+											$.ajax({
+												type:"POST",
+												url:"/sites/createKey.php",
+												data:"name="+e+"&mail="+t+"&agency="+n,
+												beforeSend:function(){
+													$("#response").html('<p class="reg_notes">Checking<br /><br /><img src="/img/loader.gif" /></p>')
+												},
+												delay:{time:5e3},
+												success:function(e){
+													$("#response").hide().fadeIn(500).html(e)
+												}
+											})
+										}
+
+										var ua=$.browser;
+										if(ua.mozilla){
+											$("head").append('<link rel="stylesheet" href="/gui/ff.css" media="screen" type="text/css" />')
+										}
 
 										</script>
 
