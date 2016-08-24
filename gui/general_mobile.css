@@ -188,7 +188,7 @@ input:-moz-placeholder { color:#666; }
 	-o-appearance: none;
 	background: none;
 	outline: none;
-	font-family: "Courier New";
+	font-family: "Sofia", sans-serif;
 	font-size: 15px;
 	letter-spacing: 0.1em;
 	text-align: center;
@@ -226,7 +226,7 @@ input:-moz-placeholder { color:#666; }
 	outline: none;
 	text-align: center;
 	border: none;
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -262,7 +262,7 @@ input:-moz-placeholder { color:#666; }
 	outline: none;
 	text-align: center;
 	border: 2px solid #999;
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -301,7 +301,7 @@ p.default a, #list-items p.reg_notes a {
 }
 
 #list-items p.reg_notes {
-	font-family: "DidotT";
+	font-family: "Sofia", sans-serif;
 }
 
 p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes a:hover {
@@ -345,7 +345,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 #info h3 {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -362,7 +362,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 #info h4 {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -447,7 +447,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 #naviContainer ul li a, #naviContainer ul li p {
-	font-family:  Arial;
+	font-family:  "Sofia", sans-serif;
 	/*font-size: 12px;*/
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
@@ -477,7 +477,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 
 #topBarMobile #topBarLogo {
 	position: absolute;
-	top: 17px;
+	top: 19px;
 	left: 16%;
 	width: 60%;
 	height: 30px;
@@ -485,7 +485,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 #topBarMobile #topBarLogo img {
-	width: 205px;
+	width: 230px;
 }
 
 #topBarMobile #flipCall {
@@ -551,7 +551,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 #about .caption {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	font-size: 13px;
 	line-height: 1.2em;
 	padding: 0;
@@ -562,7 +562,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 #about .text {
-	font-family: Times;
+	font-family: "Sofia Light", sans-serif;
 	font-size: 16px;
 	line-height: 1.7em;
 	letter-spacing: 0.15em;
@@ -603,7 +603,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 
 #books a, #cuts a {
 	position: relative;
-	font-family: Arial;
+	font-family: "Sofia", sans-serif;
 	font-size: 15px;
 	line-height: 1.3em;
 	padding: 15px 0;
@@ -631,7 +631,7 @@ p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes 
 }
 
 #subNavLtr ul li p, .crump {
-	font-family: "Times New Roman";
+	font-family: "Sofia", sans-serif;
 	font-size: 15px;
 	line-height: 15px;
 	color: #fff;
@@ -790,7 +790,7 @@ visibility: visible;
 }
 
 #content a #mark-books p, #content a #mark-onstate p, #content a #mark-tears p {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(0.8);
 	-ms-transform: scaleX(0.8);
 	-webkit-transform: scaleX(0.8);
@@ -868,7 +868,7 @@ z-index: 1000;
 }
 
 #counter p, #topper a, #ltr_note_container p, #topper_ltr a p  {
-	font-family: Times;
+	font-family: "Sofia", sans-serif;
 	font-size: 17px;
 	line-height: 1.5em;
 	letter-spacing: 1px;
@@ -930,7 +930,7 @@ cursor: pointer;
 	}
 
 #content #sign h1, #content #sign-onstate h1 {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleY(1.20);
 	-ms-transform: scaleY(1.20);
 	-webkit-transform: scaleY(1.2);
@@ -978,7 +978,7 @@ cursor: pointer;
 }
 
 .bb_credits {
-	font-family: arial;
+	font-family: "Sofia", sans-serif;
 	line-height: 15px;
 	font-size: 8px;
 	color: #333;
@@ -1066,7 +1066,7 @@ color: #000 !important;
 	top: -13px;
 	right: -1px;
 	padding: 28px 18px;
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	font-size: 13px;
 	text-transform: uppercase;
 	letter-spacing: 0.25em;
@@ -1167,7 +1167,7 @@ color: #000 !important;
 }
 
 .creditsBreak .showHide {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	font-size: 10px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1181,7 +1181,7 @@ color: #000 !important;
 }
 
 #opener #credits-four p {
-	font-family: Times;
+	font-family: "Sofia", sans-serif;
 	font-size: 14px;
 	letter-spacing: 2px;
 	position: relative;
@@ -1196,7 +1196,7 @@ color: #000 !important;
 }
 
 #opener #credits-three p {
-	font-family: Times;
+	font-family: "Sofia", sans-serif;
 	font-size: 14px;
 	letter-spacing: 2px;
 	position: relative;
@@ -1211,7 +1211,7 @@ color: #000 !important;
 }
 
 #opener #credits-two p {
-	font-family: Times;
+	font-family: "Sofia", sans-serif;
 	font-size: 14px;
 	letter-spacing: 2px;
 	position: relative;
@@ -1269,7 +1269,7 @@ color: #000 !important;
 	}
 
 #content #overview #opener #client h1, #content #welcome h1, #pages h2 {
-	font-family: 'DidotT' !important;
+	font-family: "Sofia", sans-serif !important;
 	transform: scaleX(0.9) !important;
 	-ms-transform: scaleX(0.9) !important;
 	-webkit-transform: scaleX(0.9) !important;
@@ -1310,7 +1310,7 @@ color: #000 !important;
 
 #content #overview #opener #client h3, #content #overview #project h3 {
   color: #000;
-  font-family: "DidotT";
+  font-family: "Sofia", sans-serif;
 	font-size: 19px;
 	text-transform: none;
 	letter-spacing: 0.1em;
@@ -1321,7 +1321,7 @@ color: #000 !important;
 }
 
 #content #overview #opener h2 {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	font-size: 18px;
 	text-transform: uppercase;
 	letter-spacing: 0.15em;
@@ -1332,7 +1332,7 @@ color: #000 !important;
 }
 
 #content #overview #project h2 {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	font-size: 19px;
 	line-height: 1.2em;
 	transform: scaleX(1.15);
@@ -1349,14 +1349,14 @@ color: #000 !important;
 }
 
 #content #overview #opener h2 .h {
-	font-family: Times;
+	font-family: "Sofia", sans-serif;
 	font-size: 15px;
 	letter-spacing: 0.15em;
 	display: none;
 }
 
 #content #overview #project h2 .h {
-	font-family: Times;
+	font-family: "Sofia", sans-serif;
 	font-size: 13px;
 	letter-spacing: 2px;
 	display: none;
@@ -1446,7 +1446,7 @@ color: #000 !important;
 }
 
 #tear h2 {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -1465,7 +1465,7 @@ color: #000 !important;
 #tear p, #tear p a {
 	position: relative;
 	margin: 0 auto;
-	font-family: Times;
+	font-family: "Sofia", sans-serif;
 	font-size: 15px;
 	line-height: 1.35em;
 	width: auto;
@@ -1484,7 +1484,7 @@ color: #000 !important;
 #tear h3 {
 	position: relative;
 	margin: 15px auto 20px;
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -1493,7 +1493,7 @@ color: #000 !important;
 	font-weight: 400;
 	color: #000;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 14px;
 	line-height: 1.2em;
 	letter-spacing: 0.2em;
 	text-align: center;
@@ -1507,7 +1507,7 @@ color: #000 !important;
 }
 
 .mejs-container .mejs-controls .mejs-time span {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -1518,7 +1518,7 @@ color: #000 !important;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-float-current {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	transform: scaleX(1.1);
 	-ms-transform: scaleX(1.1);
 	-webkit-transform: scaleX(1.1);
@@ -1542,7 +1542,7 @@ display: none;
 }
 
 #loadCuts a {
-	font-family: 'Theissen-Nova', sans-serif;
+	font-family: "Sofia", sans-serif;
 	font-size: 10px;
 	color: #fff;
 	text-transform: uppercase;
@@ -1554,21 +1554,6 @@ display: none;
 	display: inline-block;
 	background-color: #333;
 }
-
-font-family: 'Theissen-Nova', sans-serif;
-font-size: 10px;
-color:
-#fff;
-text-transform: uppercase;
-letter-spacing: 0.25em;
-font-weight: 400;
-margin: -5px 0 25px 0;
-padding: 6px 7px 6px 8px;
-border: 1px solid
-#333;
-display: inline-block;
-background-color:
-#333;
 
 /*
 ::-webkit-scrollbar-thumb:horizontal { height: 9px; background-color:#181818; }

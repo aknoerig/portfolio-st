@@ -271,11 +271,11 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 	<meta name="robots" content="index, follow">
 
 	<?php	if ($detect->isTablet()) { ?>
-		<meta name="viewport" content="width=device-width; initial-scale=0.9; maximum-scale=0.9; user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no" />
 	<?php }  ?>
 
 	<?php	if ($detect->isMobile() && !$detect->isTablet()) { ?>
-			<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=no" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<?php }  ?>
 
 	<link rel="icon" href="/img/sabrina_theissen_fav_0c.ico" type="image/x-icon" />
