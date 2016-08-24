@@ -17,7 +17,7 @@ $("#intro:nth-child(3)").addClass("inner").animate({'opacity' : '0'});
 $("#subNavLtr #all").addClass("active_ltr");
 $("#tear p a").attr("target","_blank");
 
-
+/*
 $(function() {
             var $nav = $('#naviContainer ul');
 
@@ -41,6 +41,7 @@ $(function() {
 
             setNavScale();
         });
+*/
 
 $('#ltr_btn_container').on('click', 'input', function() {
 	var selection = [];

@@ -308,7 +308,7 @@ input:-moz-placeholder { color:#666; }
 #info p.default, #session p.default, #info p.reg_notes, #list-items p.reg_notes {
 	font-family: 'Sofia Light', sans-serif;
 	font-size: 17px;
-	line-height: 1.5em;
+	line-height: 1.8em;
 	text-align: center;
 	letter-spacing: 1px;
 	width: 720px;
@@ -1158,17 +1158,19 @@ color: #000 !important;
 
 #content #overview #project h2 {
 	font-family: 'Sofia', sans-serif;
-	font-size: 19px;
+	font-size: 17px;
 	line-height: 1.2em;
+  /*
 	transform: scaleX(1.15);
 	-ms-transform: scaleX(1.15);
 	-webkit-transform: scaleX(1.15);
 	-o-transform: scaleX(1.15);
 	-moz-transform: scaleX(1.15);
 	text-transform: uppercase;
+  */
 	letter-spacing: 0.25em;
 	text-align: center;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	margin: -162px 0 20px 0;
 	visibility: hidden;
 	color: #bb0706;
@@ -1181,7 +1183,7 @@ color: #000 !important;
 	text-transform: none;
 	letter-spacing: 0.2em;
 	text-align: center;
-	font-weight: 400;
+	/*font-weight: 400;*/
 	visibility: hidden;
 	color: #bb0706;
 }
@@ -1362,7 +1364,7 @@ color: #000 !important;
 	font-weight: 400;
 	color: #000;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 14px;
 	line-height: 1.2em;
 	letter-spacing: 0.2em;
 	text-align: center;
