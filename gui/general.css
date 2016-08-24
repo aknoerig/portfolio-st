@@ -1237,42 +1237,41 @@ color: #000 !important;
 
 @media screen and (max-width: 1450px) {
 
-#content #overview #project {
-	width: 320px;
-	height: 213px;
-	margin-right: 7px;
-}
+  #content #overview #project {
+  	width: 320px;
+  	height: 213px;
+  	margin-right: 7px;
+  }
 
-#content #overview #project img {
-	width: 320px !important;
-}
+  #content #overview #project img {
+  	width: 320px !important;
+  }
 
-#overview #list {
-	width: 1060px;
-	margin-left: 95px;
-}
+  #overview #list {
+  	width: 1250px;
+  	margin-left: 95px;
+  }
 
-#overview #list-items {
-	width: 1060px;
-	margin-left: 85px;
-}
+  #overview #list-items {
+  	width: 1250px;
+  }
 
-#content #overview #opener img {
-	width: 880px;
-	margin: 105px 0 15px 175px;
-}
+  #content #overview #opener img {
+  	width: 880px;
+  	margin: 105px 0 15px 175px;
+  }
 
-.less-margin:first-child {
-	margin: 105px 0 15px 175px !important;
-}
+  .less-margin:first-child {
+  	margin: 105px 0 15px 175px !important;
+  }
 
-#content #overview #project h2 {
-	margin: -140px 0 0 0;
-}
+  #content #overview #project h2 {
+  	margin: -140px 0 0 0;
+  }
 
-#content #overview #project h3 {
-	margin: 15px 0 0 0;
-}
+  #content #overview #project h3 {
+  	margin: 15px 0 0 0;
+  }
 
 }
 
