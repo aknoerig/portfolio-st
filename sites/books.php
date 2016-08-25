@@ -179,7 +179,7 @@
         }
 
 
-        echo "<div id=\"opener\"><a href=\"/books/".$pushCat."/".$_GET['book']."/\"><img class=\"o_img\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /></a><div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_items['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
+        echo "<div id=\"opener\"><a href=\"/books/".$pushCat."/".$_GET['book']."/\"><img class=\"o_img\" src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /></a><div id=\"client\"><h4>N&deg;".htmlentities($row_items['recordListingID'], ENT_QUOTES)."</h4><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
         echo "";
 
       }
@@ -274,7 +274,7 @@
 
 
 
-        echo "<div id=\"client\"><img src=\"/img/No/no_".htmlentities($row_pushRank['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" /><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
+        echo "<div id=\"client\"><h4>N&deg;".htmlentities($row_pushRank['recordListingID'], ENT_QUOTES)."</h4><br /><h3>".htmlentities($row_client['name'], ENT_QUOTES)."</h3></div></div>\n";
 
       }
 
@@ -382,11 +382,11 @@
 
           if ($detect->isMobile() && !$detect->isTablet()) {
 
-            echo "<img src=\"/img/No/no_".htmlentities($row_items_list['recordListingID'], ENT_QUOTES).".svg\" class=\"no\" />";
+            echo "<h4>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h4><br/>";
 
           }	else {
 
-            echo "<h2><span class=\"right-5\">N&deg;</span>".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h2>";
+            echo "<h2>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h2>";
 
 
           }

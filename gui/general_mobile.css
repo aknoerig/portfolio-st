@@ -1320,6 +1320,17 @@ color: #000 !important;
 	display: inline;
 }
 
+#content #overview #opener #client h4, #content #overview #project h4 {
+  color: #000;
+  font-family: "Sofia", sans-serif;
+	font-size: 17px;
+	text-transform: none;
+	letter-spacing: 0.2em;
+	font-weight: 400;
+	padding-bottom: 6px;
+	display: inline;
+}
+
 #content #overview #opener h2 {
 	font-family: "Sofia", sans-serif;
 	font-size: 18px;

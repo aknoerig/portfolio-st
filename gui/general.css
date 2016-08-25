@@ -1145,6 +1145,15 @@ color: #000 !important;
 	display: inline;
 }
 
+#content #overview #opener #client h4 {
+  font-family: 'Sofia', sans-serif;
+	font-size: 17px;
+	text-transform: none;
+	letter-spacing: 0.2em;
+	font-weight: 400;
+	display: inline;
+}
+
 #content #overview #opener h2 {
 	font-family: 'Sofia', sans-serif;
 	font-size: 18px;
