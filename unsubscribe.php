@@ -81,16 +81,16 @@
 		?>
 		</p>
 
-		<h3>Represent</h3>
+		<h3>Represented by</h3>
 
-      AK/Kruse<br/>
+      AK/KRUSE<br/>
       <a href="tel:+494042326810">+49 40-42 32 68 10</a><br/>
       <a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a><br/>
       <br/>
-      Hall&Lundgren<br/>
+      HALL&amp;LUNDGREN<br/>
       <a href="tel:+46707556619">+46 707-556 619</a><br/>
       <a href="http://hallundgren.com/" target="_blank">www.hallundgren.com</a>
-      
+
     <!--
   		<p class="default">
   		<?php

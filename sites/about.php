@@ -81,18 +81,18 @@ $result_clients = mysql_query($sql_clients) OR die("<pre>".$sql_clients."</pre>"
     echo "<a href=\"mailto:".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;\">".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;</a>\n";
     ?>
     <br />
-    <a href="https://www.instagram.com/sabrinatheissen/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> sabrinatheissen</a>
+    <a href="https://www.instagram.com/sabrinatheissen/" target="_blank">Instagram</a>
   </p>
 </div>
 
 <div id="r">
   <h3>Represented by</h3>
   <p class="default">
-    AK/Kruse<br/>
+    AK/KRUSE<br/>
     <a href="tel:+494042326810">+49 40-42 32 68 10</a><br/>
     <a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a><br/>
     <br/>
-    Hall&Lundgren<br/>
+    HALL&amp;LUNDGREN<br/>
     <a href="tel:+46707556619">+46 707-556 619</a><br/>
     <a href="http://hallundgren.com/" target="_blank">www.hallundgren.com</a>
     <!--
