@@ -958,9 +958,10 @@ cursor: pointer;
 
 #content #overview #opener {
 	position: relative;
-	width: 70%;
+  /* width: 70%; */
 	margin: 0 auto;
-	background: none !important;
+  padding: 0 10% 50px 10%;
+	background: #fff !important;
 	z-index: 100;
   text-align: center;
 	}
@@ -1045,7 +1046,7 @@ cursor: pointer;
 }
 
 .less-margin:first-child {
-	margin: 105px 0 15px 115px !important;
+	margin-top: 105px !important;
 	}
 
 .less-margin {
@@ -1229,10 +1230,6 @@ cursor: pointer;
 
   #content #overview #opener img {
   	margin: 105px auto 15px auto;
-  }
-
-  .less-margin:first-child {
-  	margin: 105px 0 15px 175px !important;
   }
 
   #content #overview #project h2 {
