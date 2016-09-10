@@ -883,11 +883,30 @@ cursor: pointer;
   color: #000 !important;
 }
 
+#overview {
+  clear: both;
+  margin: 0 10%;
+  display: block;
+}
+
 #overview #list {
+}
+
+.grid {
 	width: 90%;
-	margin: 0 auto;
+  margin: 120px auto;
+  padding: 0;
   text-align: center;
 }
+
+.grid-item {
+  margin: 40px;
+}
+/*
+.gutter-sizer {
+  width: 5%;
+}
+*/
 
 #overview #list-items {
 	text-align: center;
@@ -1114,35 +1133,9 @@ cursor: pointer;
 	color: #000 !important;
 }
 
-#content #overview #opener #client h3 {
-	font-family: 'Sofia', sans-serif;
-	font-size: 19px;
-	text-transform: none;
-	letter-spacing: 0.1em;
-	font-weight: 400;
-	border-bottom: 1px solid #000;
-	padding-bottom: 6px;
-	display: inline;
-}
-
-#content #overview #opener #client h4 {
-  font-family: 'Sofia', sans-serif;
-	font-size: 17px;
-	text-transform: none;
-	letter-spacing: 0.2em;
-	font-weight: 400;
-	display: inline;
-}
-
-#content #overview #opener h2 {
-	font-family: 'Sofia', sans-serif;
-	font-size: 18px;
-	text-transform: uppercase;
-	letter-spacing: 0.15em;
-	text-align: center;
-	font-weight: 400;
-	visibility: hidden;
-	color: #fff;
+#content #overview #project {
+	background: #e4c5b3;
+	cursor: pointer;
 }
 
 #content #overview #project h2 {
@@ -1177,6 +1170,13 @@ cursor: pointer;
 	color: #bb0706;
 }
 
+#content #overview #project h2 .h {
+	font-family: 'Sofia', sans-serif;
+	font-size: 13px;
+	letter-spacing: 2px;
+	display: none;
+}
+
 #content #overview #opener h2 .h {
 	font-family: 'Sofia', sans-serif;
 	font-size: 15px;
@@ -1184,11 +1184,26 @@ cursor: pointer;
 	display: none;
 }
 
-#content #overview #project h2 .h {
+#content #overview #opener #client h3 {
 	font-family: 'Sofia', sans-serif;
-	font-size: 13px;
-	letter-spacing: 2px;
-	display: none;
+	font-size: 19px;
+	text-transform: none;
+	letter-spacing: 0.1em;
+	font-weight: 400;
+	border-bottom: 1px solid #000;
+	padding-bottom: 6px;
+	display: inline;
+}
+
+#content #overview #opener h2 {
+	font-family: 'Sofia', sans-serif;
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+	text-align: center;
+	font-weight: 400;
+	visibility: hidden;
+	color: #fff;
 }
 
 #content #overview #opener h2 .h {
@@ -1206,26 +1221,21 @@ cursor: pointer;
 	padding-bottom: 6px;
 }
 
-#content #overview #project {
-	width: 380px;
-	height: 253px;
-	margin: 0 15px 30px 15px;
-	background: #e4c5b3;
-	cursor: pointer;
+#content #overview #opener #client h4 {
+  font-family: 'Sofia', sans-serif;
+	font-size: 17px;
+	text-transform: none;
+	letter-spacing: 0.2em;
+	font-weight: 400;
+	display: inline;
 }
-
-
 
 @media screen and (max-width: 1450px) {
 
   #content #overview #project {
-  	width: 320px;
-  	height: 213px;
-  	margin-right: 7px;
   }
 
   #content #overview #project img {
-  	width: 320px !important;
   }
 
   #content #overview #opener img {
@@ -1240,17 +1250,6 @@ cursor: pointer;
   	margin: 15px 0 0 0;
   }
 
-}
-
-
-#content #overview .item, #content #overview .book-item {
-	display: inline-block;
-	vertical-align: middle;
-}
-
-#content #overview #project img {
-	width: 380px;
-	text-align: center;
 }
 
 #tear {

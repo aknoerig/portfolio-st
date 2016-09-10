@@ -240,7 +240,7 @@
 
       ?>
 
-      <div id="list">
+      <div id="list" class="grid">
 
         <?php
 
@@ -325,7 +325,7 @@
 
           }
 
-          echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\"
+          echo "<div id=\"project\" class=\"grid-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\"
                 title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\">
                 <img src=\"/cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\"
                 alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)
@@ -337,12 +337,14 @@
             echo "<h4>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h4><br/>";
 
           }	else {
-
+/*
             echo "<h2>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h2>";
-
+*/
           }
 
-          echo "<h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3></div>\n";
+          echo "<h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3>";
+
+          echo "</div>\n";
 
         }
 

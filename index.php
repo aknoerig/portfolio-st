@@ -290,6 +290,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 	<link rel="stylesheet" href="/gui/player.css" type="text/css" media="screen" />
 
 	<script type="text/javascript" src="/js/jquerylib.js"></script>
+	<script type="text/javascript" src="/js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
 	<?php if(!isset($_GET['cat']))	{ ?>
 		<script type="text/javascript" src="/js/post.load.js"></script>
 	<?php } ?>
@@ -559,7 +561,6 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 			</div>
 
 		<?php  }  ?>
-
 
 		<script type="text/javascript">
 			$('video').mediaelementplayer().bind('ended',function () { $(this).parents('.mejs-inner').find('.mejs-poster').show(); });
