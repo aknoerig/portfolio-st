@@ -1,17 +1,19 @@
-<?php 
+<?php
 	session_start();
-    
-	error_reporting(E_ALL); 
-    include("config.php"); 
-    include("mysql.php"); 
+
+	ini_set('display_errors',true);
+	
+	error_reporting(E_ALL);
+    include("config.php");
+    include("mysql.php");
     include("functions.php");
     include("image.inc.php");
-		
-?> 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+?>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
      "http://www.w3.org/TR/html4/strict.dtd"><html>
-<head> 
+<head>
 
 <title>Sabrina Theissen &ndash; CMS</title>
 
@@ -20,17 +22,17 @@
 
 <?php
 if(isset($_GET['s']) AND $_GET['s'] == "books" OR isset($_GET['s']) AND $_GET['s'] == "lightbox" OR isset($_GET['s']) AND $_GET['s'] == "tears" OR !isset($_GET['s']))
-	
+
 				{
 
 echo "<script src=\"gui/jquery-1.3.2.min.js\"></script>\n";
-				
+
 				}	else	{
-				
+
 echo "<script src=\"gui/jquerylib.js\"></script>\n";
-				
+
 				}
-				
+
 ?>
 <script src="gui/jquery-custom.js"></script>
 <script src="gui/globals.js"></script>
@@ -38,36 +40,36 @@ echo "<script src=\"gui/jquerylib.js\"></script>\n";
 
  <script type="text/javascript">
 
-$(document).ready(function() { 
-        $("#listing").sortable({ 
-            update : function () { 
-                var order = $(this).sortable('serialize') + '&action=updateRecordsListings'; 
+$(document).ready(function() {
+        $("#listing").sortable({
+            update : function () {
+                var order = $(this).sortable('serialize') + '&action=updateRecordsListings';
 			$.post("sort_items.php", order)
-            } 
-        }); 
-    }); 
+            }
+        });
+    });
 
-$(document).ready(function() { 
-        $("#lb_listing").sortable({ 
-            update : function () { 
-                var order = $(this).sortable('serialize') + '&action=updateRecordsListingsLb'; 
+$(document).ready(function() {
+        $("#lb_listing").sortable({
+            update : function () {
+                var order = $(this).sortable('serialize') + '&action=updateRecordsListingsLb';
 			$.post("sort_lb.php", order)
-            } 
-        }); 
-    }); 
+            }
+        });
+    });
 
-$(document).ready(function() { 
-        $("#tear_listing").sortable({ 
-            update : function () { 
-                var order = $(this).sortable('serialize') + '&action=updateRecordsListingsCuts'; 
+$(document).ready(function() {
+        $("#tear_listing").sortable({
+            update : function () {
+                var order = $(this).sortable('serialize') + '&action=updateRecordsListingsCuts';
 			$.post("sort_tears.php", order)
-            } 
-        }); 
-    }); 
-    
+            }
+        });
+    });
+
 </script>
 
-</head> 
+</head>
 <body onload="LinkerOn();">
 
 <div id="x-space">
@@ -75,7 +77,7 @@ $(document).ready(function() {
 <?php
 
 				if(isset($_GET['s']) AND $_GET['s'] == "general")
-	
+
 				{
 
 					$intro_a = "";
@@ -85,11 +87,11 @@ $(document).ready(function() {
 					$books_a = "";
 					$settings_a = "";
 					$mailing_a = "";
-				
+
 				}
-				
+
 				elseif(isset($_GET['s']) AND $_GET['s'] == "lightbox" OR isset($_GET['s']) AND $_GET['s'] == "drop_lightbox" OR isset($_GET['s']) AND $_GET['s'] == "lightbox_view")
-	
+
 				{
 
 					$intro_a = "";
@@ -99,11 +101,11 @@ $(document).ready(function() {
 					$books_a = "";
 					$settings_a = "";
 					$mailing_a = "";
-				
+
 				}
-				
+
 				elseif(isset($_GET['s']) AND $_GET['s'] == "books" OR isset($_GET['s']) AND $_GET['s'] == "books_delete" OR isset($_GET['s']) AND $_GET['s'] == "book_view" OR isset($_GET['s']) AND $_GET['s'] == "drop_img" OR isset($_GET['s']) AND $_GET['s'] == "drop_book" OR !isset($_GET['s']))
-	
+
 				{
 
 					$intro_a = "";
@@ -113,11 +115,11 @@ $(document).ready(function() {
 					$books_a = "manage_active";
 					$settings_a = "";
 					$mailing_a = "";
-				
+
 				}
-				
+
 				elseif(isset($_GET['s']) AND $_GET['s'] == "tears" OR isset($_GET['s']) AND $_GET['s'] == "drop_tear" OR isset($_GET['s']) AND $_GET['s'] == "tear_view" OR isset($_GET['s']) AND $_GET['s'] == "drop_tear_img" OR isset($_GET['s']) AND $_GET['s'] == "drop_video_content")
-	
+
 				{
 
 					$intro_a = "";
@@ -127,11 +129,11 @@ $(document).ready(function() {
 					$books_a = "";
 					$settings_a = "";
 					$mailing_a = "";
-				
+
 				}
-				
+
 elseif(isset($_GET['s']) AND $_GET['s'] == "settings" OR isset($_GET['s']) AND $_GET['s'] == "settings_delete" OR isset($_GET['s']) AND $_GET['s'] == "cat_delete")
-	
+
 				{
 
 					$intro_a = "";
@@ -141,11 +143,11 @@ elseif(isset($_GET['s']) AND $_GET['s'] == "settings" OR isset($_GET['s']) AND $
 					$books_a = "";
 					$settings_a = "manage_active";
 					$mailing_a = "";
-				
+
 				}
-				
+
 elseif(isset($_GET['s']) AND $_GET['s'] == "mailing" OR isset($_GET['s']) AND $_GET['s'] == "mailing_delete")
-	
+
 				{
 
 					$intro_a = "";
@@ -155,13 +157,13 @@ elseif(isset($_GET['s']) AND $_GET['s'] == "mailing" OR isset($_GET['s']) AND $_
 					$books_a = "";
 					$clients_a = "";
 					$mailing_a = "manage_active";
-				
+
 				}
 
 elseif(isset($_GET['s']) AND $_GET['s'] == "intro" OR isset($_GET['s']) AND $_GET['s'] == "drop_intro")
-	
+
 				{
-				
+
 					$intro_a = "manage_active";
 					$general_a = "";
 					$tears_a = "";
@@ -169,9 +171,9 @@ elseif(isset($_GET['s']) AND $_GET['s'] == "intro" OR isset($_GET['s']) AND $_GE
 					$books_a = "";
 					$clients_a = "";
 					$mailing_a = "";
-				
+
 				}
-				
+
 ?>
 
 <?php
@@ -179,54 +181,54 @@ elseif(isset($_GET['s']) AND $_GET['s'] == "intro" OR isset($_GET['s']) AND $_GE
 			if(!isset($_SESSION["user"]))
 			   {
 			   echo "<div style=\"margin:20px 25px;\">";
-			   echo "<h3 style=\"color:#f00;\">Session expired or not identified.<br />Log in first.</h3>\n"; 
-			   echo "<p>\n"."<em class=\"em\">redirecting&hellip;</em>\n"."</p>\n"; 
-			   echo "<meta http-equiv=\"refresh\" content=\"3; URL=../admin/\">\n"; 
+			   echo "<h3 style=\"color:#f00;\">Session expired or not identified.<br />Log in first.</h3>\n";
+			   echo "<p>\n"."<em class=\"em\">redirecting&hellip;</em>\n"."</p>\n";
+			   echo "<meta http-equiv=\"refresh\" content=\"3; URL=../admin/\">\n";
 			   exit;
-			   echo "</div>"; 
+			   echo "</div>";
 			   }
-			   
-?> 
+
+?>
 
 <?php
 
 			if(
-			   
+
 			   isset($_POST['Logout']) AND $_POST['Logout'] == "Logout"
-			   
-			  ) 
-			
+
+			  )
+
 				{
-						echo "<div id=\"logout-note\">\n"; 
-						echo "<em class=\"em\">logging out&hellip;</em>\n"; 
-            			echo "<meta http-equiv=\"refresh\" content=\"2; URL=../admin\">\n"; 
+						echo "<div id=\"logout-note\">\n";
+						echo "<em class=\"em\">logging out&hellip;</em>\n";
+            			echo "<meta http-equiv=\"refresh\" content=\"2; URL=../admin\">\n";
 			            echo "</div>\n";
-						
+
 						session_destroy();
-										
+
 				}
 
 
-			echo "<div id=\"logout\">\n"; 
-			echo "<form ". 
-                 " action=\"".curPageURL()."\" ". 
-                 " method=\"post\" ". 
+			echo "<div id=\"logout\">\n";
+			echo "<form ".
+                 " action=\"".curPageURL()."\" ".
+                 " method=\"post\" ".
                  " accept-charset=\"ISO-8859-1\">\n";
-				 
 
-            echo "<input type=\"submit\" name=\"Logout\" class=\"logout\" value=\"Logout\" /><br /><br />\n"; 
-            echo "</form></div>\n"; 
+
+            echo "<input type=\"submit\" name=\"Logout\" class=\"logout\" value=\"Logout\" /><br /><br />\n";
+            echo "</form></div>\n";
 
 ?>
- 
-<h5>Sabrina Theissen &ndash; CMS</h5> 
+
+<h5>Sabrina Theissen &ndash; CMS</h5>
 
 
-<?php 
-    $s = array(); 
+<?php
+    $s = array();
 
-    	$s['books'] = "sites/books.php";    
-    	$s['drop_book'] = "sites/drop_book.php";    
+    	$s['books'] = "sites/books.php";
+    	$s['drop_book'] = "sites/drop_book.php";
     	$s['book_view'] = "sites/book_view.php";
     	$s['drop_img'] = "sites/drop_img.php";
     	$s['books_delete'] = "sites/books_delete.php";
@@ -250,15 +252,15 @@ elseif(isset($_GET['s']) AND $_GET['s'] == "intro" OR isset($_GET['s']) AND $_GE
 
 
     if(isset($_GET['s']) AND isset($s[$_GET['s']])){
-    	include("left.php"); 
-        include $s[$_GET['s']]; 
-    } 
+    	include("left.php");
+        include $s[$_GET['s']];
+    }
     	else {
-    	
-    	    	include("left.php"); 
-        		include("sites/books.php"); 
+
+    	    	include("left.php");
+        		include("sites/books.php");
         }
-    
+
 ?>
 
 </div>
@@ -269,6 +271,5 @@ elseif(isset($_GET['s']) AND $_GET['s'] == "intro" OR isset($_GET['s']) AND $_GE
 $('video,audio').mediaelementplayer(/* Options */);
 </script>
 
-</body> 
+</body>
 </html>
-

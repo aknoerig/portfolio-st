@@ -342,7 +342,7 @@ while($row_items = mysql_fetch_assoc($result_items)) {
   $row_client = mysql_fetch_assoc($result_client);
 
 
-  thumb(''.htmlentities($row_img['content_img'], ENT_QUOTES).'', 'images/thumbs/'.htmlentities($row_img['content_img'], ENT_QUOTES).'');
+  project_thumbs(''.htmlentities($row_img['content_img'], ENT_QUOTES).'');
 
 
   echo "<div id=\"recordsArray_" . $row_items['ID'] . "\" class=\"item\"><img src=\"images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /><h2>".htmlentities($row_items['name'], ENT_QUOTES)."</h2><p class=\"view\"><a href=\"?s=book_view&id=".$row_items['ID']."\">[ view ]</a></p></div>\n";
