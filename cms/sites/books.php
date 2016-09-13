@@ -17,7 +17,8 @@ if(isset($_POST['project']) AND $_POST['project'] == "Upload") {
     hair = '".mysql_real_escape_string(trim($_POST['hair']))."',
     makeup = '".mysql_real_escape_string(trim($_POST['makeup']))."',
     styling = '".mysql_real_escape_string(trim($_POST['styling']))."',
-    setdesign = '".mysql_real_escape_string(trim($_POST['setdesign']))."'
+    setdesign = '".mysql_real_escape_string(trim($_POST['setdesign']))."',
+    thumb_size = '".mysql_real_escape_string(trim($_POST['thumb_size']))."'
 
   ";
   mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
@@ -121,12 +122,22 @@ if(isset($_POST['project']) AND $_POST['project'] == "Upload") {
   echo "<label class=\"top-15\" style=\"width:140px; display:inline-block; \" for=\"setdesign\">Set design</label>\n";
   echo "<input class=\"top-15\" style=\"width:240px; display:inline-block;\" id=\"setdesign\" name=\"setdesign\" type=\"text\" maxlength=\"255\" />\n";
 
+  echo "<label style=\"width:140px; display:inline-block;\" for=\"name\">Thumbnail size</label>\n";
+  echo "<select name=\"thumb_size\" id=\"thumb_size\" style=\"width:185px; margin-top: 12px; display:inline-block;\">\n";
+    echo "<option value=\"c\">Select a size</option>\n";
+    echo "<option value=\"c\">---------------------------</option>\n";
+    echo "<option value=\"a\">tiny</option>\n";
+    echo "<option value=\"b\">small</option>\n";
+    echo "<option value=\"c\">medium</option>\n";
+    echo "<option value=\"d\">large</option>\n";
+    echo "<option value=\"e\">huge</option>\n";
+  echo "</select><br />";
   echo "<br class=\"clear\" />\n";
 
   echo "<br />";
   echo "<label style=\"width:140px; display:block; padding-top:10px;\">Item views</label>\n";
   echo "<div style=\"width:450px; display: inline-block; margin-top:-19px;\">\n";
-  for($i=1; $i<=10; $i++){
+  for($i=1; $i<=12; $i++){
     echo "<label style=\"width:0px; display:block; float:left; padding-left:140px\" for=\"Foto[".$i."]\">".$i."</label>\n";
     echo "<input style=\"width:245px; display:block; float:left; margin-left:32px\" id=\"Foto[".$i."]\" name=\"Foto[".$i."]\" type=\"file\" />\n";
   }
@@ -263,12 +274,24 @@ else {
   echo "<label class=\"top-15\" style=\"width:140px; display:inline-block; \" for=\"setdesign\">Set design</label>\n";
   echo "<input class=\"top-15\" style=\"width:240px; display:inline-block;\" id=\"setdesign\" name=\"setdesign\" type=\"text\" maxlength=\"255\" />\n";
 
+  echo "<label style=\"width:140px; display:inline-block;\" for=\"name\">Thumbnail size</label>\n";
+  echo "<select name=\"thumb_size\" id=\"thumb_size\" style=\"width:185px; margin-top: 12px; display:inline-block;\">\n";
+    echo "<option value=\"c\">Select a size</option>\n";
+    echo "<option value=\"c\">---------------------------</option>\n";
+    echo "<option value=\"a\">tiny</option>\n";
+    echo "<option value=\"b\">small</option>\n";
+    echo "<option value=\"c\">medium</option>\n";
+    echo "<option value=\"d\">large</option>\n";
+    echo "<option value=\"e\">huge</option>\n";
+  echo "</select><br />";
+  echo "<br class=\"clear\" />\n";
+
   echo "<br class=\"clear\" />\n";
 
   echo "<br />";
   echo "<label style=\"width:140px; display:block; padding-top:10px;\">Item views</label>\n";
   echo "<div style=\"width:450px; display: inline-block; margin-top:-19px;\">\n";
-  for($i=1; $i<=10; $i++){
+  for($i=1; $i<=12; $i++){
     echo "<label style=\"width:0px; display:block; float:left; padding-left:140px\" for=\"Foto[".$i."]\">".$i."</label>\n";
     echo "<input style=\"width:245px; display:block; float:left; margin-left:32px\" id=\"Foto[".$i."]\" name=\"Foto[".$i."]\" type=\"file\" />\n";
   }
@@ -301,7 +324,8 @@ $sql_items = "SELECT
   hair,
   makeup,
   styling,
-  setdesign
+  setdesign,
+  thumb_size
 
   FROM project
 
@@ -342,7 +366,7 @@ while($row_items = mysql_fetch_assoc($result_items)) {
   $row_client = mysql_fetch_assoc($result_client);
 
 
-  project_thumbs(''.htmlentities($row_img['content_img'], ENT_QUOTES).'');
+  /*project_thumbs(''.htmlentities($row_img['content_img'], ENT_QUOTES).'');*/
 
 
   echo "<div id=\"recordsArray_" . $row_items['ID'] . "\" class=\"item\"><img src=\"images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /><h2>".htmlentities($row_items['name'], ENT_QUOTES)."</h2><p class=\"view\"><a href=\"?s=book_view&id=".$row_items['ID']."\">[ view ]</a></p></div>\n";
