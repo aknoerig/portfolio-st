@@ -18,15 +18,27 @@ $("#subNavLtr #all").addClass("active_ltr");
 $("#tear p a").attr("target","_blank");
 
 // init Masonry
-var $grid = $('.grid').masonry({
-  itemSelector: '.grid-item',
+var $openergrid = $('.openergrid').masonry({
+  itemSelector: '.openergrid-item',
+	columns: 2,
+	fitWidth: true,
+});
+// layout Isotope after each image loads
+$openergrid.imagesLoaded().progress( function() {
+  $openergrid.masonry();
+});
+
+var $listgrid = $('.listgrid').masonry({
+  itemSelector: '.listgrid-item',
 	columns: 10,
 	fitWidth: true,
 });
 // layout Isotope after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry();
+$listgrid.imagesLoaded().progress( function() {
+  $listgrid.masonry();
 });
+
+
 
 /*
 $(function() {

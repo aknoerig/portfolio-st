@@ -130,7 +130,7 @@
 
       } else {
 
-        echo "<div id=\"opener\">\n";
+        echo "<div id=\"opener\">";
 
         if ($detect->isMobile() && !$detect->isTablet()) {
           echo "<div style=\"height:50px;\"></div>\n";
@@ -149,12 +149,31 @@
 
         $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 
+        echo " <div class=\"openergrid\">\n";
+
+        $alternating = false;
+
         while($row_img = mysql_fetch_assoc($result_img)) {
-          echo "<img class=\"less-margin\"
-                    src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\"
-                    alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES).
-                        "&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
+
+          echo "    <div class=\"openergrid-item";
+          $isPortrait = isPortrait($row_img['content_img']);
+          if ($isPortrait && $alternating) {
+            echo " openergrid-item-pt1";
+            $alternating = !$alternating;
+          } elseif ($isPortrait) {
+            echo " openergrid-item-pt2";
+            $alternating = !$alternating;
+          } elseif (!$isPortrait) {
+            echo " openergrid-item-la";
+          }
+          echo "\">";
+          echo "      <img
+                        src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\"
+                        alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES).
+                          "&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
+          echo "    </div>";
         }
+        echo "  </div>";
 
         $sql_pushRank = "SELECT
           ID,
@@ -240,7 +259,7 @@
 
       ?>
 
-      <div id="list" class="grid">
+      <div id="list" class="listgrid">
 
         <?php
 
@@ -325,7 +344,7 @@
 
           }
 
-          echo "<div id=\"project\" class=\"grid-item\">";
+          echo "<div id=\"project\" class=\"listgrid-item\">";
           echo "  <a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\"
                      title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\">";
 

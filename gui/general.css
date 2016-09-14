@@ -892,21 +892,16 @@ cursor: pointer;
 #overview #list {
 }
 
-.grid {
+.listgrid {
 	width: 90%;
   margin: 70px auto;
   padding: 0;
   text-align: center;
 }
 
-.grid-item {
+.listgrid-item {
   margin: 40px;
 }
-/*
-.gutter-sizer {
-  width: 5%;
-}
-*/
 
 #overview #list-items {
 	text-align: center;
@@ -976,30 +971,38 @@ cursor: pointer;
 }
 
 #content #overview #opener {
-	position: relative;
-  /* width: 70%; */
-	margin: 0 auto;
-  padding: 0 10% 50px 10%;
 	background: #fff !important;
 	z-index: 100;
   text-align: center;
-	}
+  padding: 90px 0 70px 0;
+}
 
-#opener #credits-four {
-	display: none !important;
-	position: relative;
-	width: 1000px;
-	margin: -15px 0 5px 122px;
-	display: block;
-	}
+.openergrid {
+	width: 90%;
+  margin: 0 auto;
+  /*padding: 40px 10% 40px 10%;*/
+  text-align: center;
+}
 
-#opener #credits-three {
-	display: none !important;
-	position: relative;
-	width: 1000px;
-	margin: -15px 0 5px 202px;
-	display: block;
-	}
+.openergrid-item {
+  margin: 20px;
+}
+
+.openergrid-item img {
+  width: 100%;
+}
+
+.openergrid-item-pt1 img{
+  width: 80%;
+}
+
+.openergrid-item-pt2 {
+
+}
+
+.openergrid-item-la {
+  wdth: 60%;
+}
 
 #opener #credits-two {
 	display: none !important;
@@ -1007,7 +1010,22 @@ cursor: pointer;
 	width: 800px;
 	margin: -3px 0 18px 242px;
 	display: block;
-	}
+}
+
+#opener #credits-three {
+  display: none !important;
+  position: relative;
+  margin: -15px 0 5px 202px;
+  display: block;
+}
+
+#opener #credits-four {
+	display: none !important;
+	position: relative;
+	margin: -15px 0 5px 122px;
+	display: block;
+}
+
 
 .credits:nth-child(2) {
 	display: block !important;
@@ -1058,19 +1076,8 @@ cursor: pointer;
 	height: 2px;
 	margin: 25px 0 0 0;
 	border-top: 1px solid #333;
-	}
-
-#content #overview #opener img {
-	width: 90%;
 }
 
-.less-margin:first-child {
-	margin-top: 105px !important;
-	}
-
-.less-margin {
-	margin-top: 10px !important;
-	}
 
 .one:first-child {
 	margin: 90px 0 15px 105px !important;
@@ -1085,6 +1092,7 @@ cursor: pointer;
 }
 
 #content #overview #opener #client {
+  margin-top: 30px;
 	text-align: center;
 }
 
@@ -1234,26 +1242,6 @@ cursor: pointer;
 	letter-spacing: 0.2em;
 	font-weight: 400;
 	display: inline;
-}
-
-@media screen and (max-width: 1450px) {
-
-  #content #overview #project {
-  }
-
-  #content #overview #project img {
-  }
-
-  #content #overview #opener img {
-  	margin: 105px auto 15px auto;
-  }
-
-  #content #overview #project h2 {
-  }
-
-  #content #overview #project h3 {
-  }
-
 }
 
 #tear {

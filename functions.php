@@ -25,6 +25,16 @@ function getThumb($project_id) {
   return "/cms/images/thumbs/".$pathparts['filename']."_".$size.".".$pathparts['extension'];
 }
 
+/* returns whether image is portrait format */
+function isPortrait($filename) {
+  $img_file = "cms/images/".$filename;
+  if (is_file($img_file) AND file_exists($img_file)) {
+    list($img_w, $img_h) = getImageSize($img_file);
+    return $img_h > $img_w;
+  }
+  return false;
+}
+
 
 
 if (is_array ($_GET)) {
