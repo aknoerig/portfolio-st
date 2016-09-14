@@ -20,10 +20,8 @@ $("#tear p a").attr("target","_blank");
 // init Masonry
 var $grid = $('.grid').masonry({
   itemSelector: '.grid-item',
-  /*percentPosition: true,*/
 	columns: 10,
 	fitWidth: true,
-	/*columnWidth: '.grid-sizer'*/
 });
 // layout Isotope after each image loads
 $grid.imagesLoaded().progress( function() {
@@ -234,7 +232,7 @@ $(".switch-back").click(
 		}
 );
 
-
+/*
 $('#content #overview #project').hover(
 		function(){
 			$(this).children("a").animate({'opacity' : '0'},200);
@@ -247,13 +245,14 @@ $('#content #overview #project').hover(
 			$(this).children("h3").css({'visibility' : 'hidden'});
 		}
 );
+*/
 
 $("#welcome").delay(1000).animate({'opacity' : '1'},300).delay(1000).animate({'opacity' : '0'}, 500).delay(100).animate({'top' : '-2000px'}, 500);
 $(".inner").delay(800).animate({'opacity' : '1'},300).delay(1500).animate({'marginTop' : '-2000px'}, 1500);
 $(".middle").delay(800).animate({'opacity' : '1'},300).delay(1500).animate({'marginTop' : '-2000px'}, 1500);
 $(".outer").delay(800).animate({'opacity' : '1'},300).delay(1500).animate({'marginTop' : '-2000px'}, 1500);
 $(".hider").delay(3700).animate({'opacity' : '0'},0).delay(1000).show(0).animate({'opacity' : '1'},500);
-$(".hiderOverview").delay(3000).animate({'marginTop' : '1200px', 'opacity' : '0'},0).delay(300).show(0).animate({'marginTop' : '5px','opacity' : '1'},500);
+$(".hiderOverview").delay(3000).animate({'marginTop' : '1200px', 'opacity' : '0'},0).delay(300).show(0).animate({'marginTop' : '0','opacity' : '1'},500);
 
 
 /*
