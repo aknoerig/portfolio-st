@@ -18,16 +18,6 @@ $("#subNavLtr #all").addClass("active_ltr");
 $("#tear p a").attr("target","_blank");
 
 // init Masonry
-var $openergrid = $('.openergrid').masonry({
-  itemSelector: '.openergrid-item',
-	columns: 2,
-	fitWidth: true,
-});
-// layout Isotope after each image loads
-$openergrid.imagesLoaded().progress( function() {
-  $openergrid.masonry();
-});
-
 var $listgrid = $('.listgrid').masonry({
   itemSelector: '.listgrid-item',
 	columns: 10,

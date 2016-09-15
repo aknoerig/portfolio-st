@@ -974,34 +974,50 @@ cursor: pointer;
 	background: #fff !important;
 	z-index: 100;
   text-align: center;
-  padding: 90px 0 70px 0;
+  padding: 70px 0;
 }
 
 .openergrid {
-	width: 90%;
+	width: 80%;
   margin: 0 auto;
-  /*padding: 40px 10% 40px 10%;*/
   text-align: center;
 }
 
+.openergrid-row {
+  width: 100%;
+  float: left;
+  clear: both;
+  padding: 50px 0;
+}
+
 .openergrid-item {
-  margin: 20px;
+  display: block;
+  float: left;
+  margin: 0;
 }
 
 .openergrid-item img {
   width: 100%;
 }
 
+.openergrid-item-pt1 {
+  width: 48.5%;
+  margin: 6.3% auto;
+}
 .openergrid-item-pt1 img{
   width: 80%;
 }
 
 .openergrid-item-pt2 {
-
+  width: 48.5%;
+}
+.openergrid-item-pt2 img{
 }
 
 .openergrid-item-la {
-  wdth: 60%;
+}
+.openergrid-item-la img {
+  width: 80%;
 }
 
 #opener #credits-two {
@@ -1092,6 +1108,7 @@ cursor: pointer;
 }
 
 #content #overview #opener #client {
+  clear: both;
   margin-top: 30px;
 	text-align: center;
 }

@@ -149,31 +149,41 @@
 
         $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 
-        echo " <div class=\"openergrid\">\n";
+        echo "<div class=\"openergrid\">\n";
 
-        $alternating = false;
+        $count = 0;
 
-        while($row_img = mysql_fetch_assoc($result_img)) {
+        while ($row_img = mysql_fetch_assoc($result_img)) {
 
-          echo "    <div class=\"openergrid-item";
           $isPortrait = isPortrait($row_img['content_img']);
-          if ($isPortrait && $alternating) {
-            echo " openergrid-item-pt1";
-            $alternating = !$alternating;
-          } elseif ($isPortrait) {
-            echo " openergrid-item-pt2";
-            $alternating = !$alternating;
-          } elseif (!$isPortrait) {
-            echo " openergrid-item-la";
+          $isNewRow = !$isPortrait || $count % 2 == 0;
+          $isSmall = round($count / 2) % 2 == 1;
+
+          if ($isNewRow) {
+            echo "  <div class=\"openergrid-row\">\n";
           }
-          echo "\">";
+
+          if ($isPortrait && $isSmall) {
+            echo "    <div class=\"openergrid-item openergrid-item-pt1\">";
+            $count++;
+          } elseif ($isPortrait) {
+            echo "    <div class=\"openergrid-item openergrid-item-pt2\">";
+            $count++;
+          } elseif (!$isPortrait) {
+            echo "    <div class=\"openergrid-item openergrid-item-la\">";
+          }
           echo "      <img
                         src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\"
                         alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES).
                           "&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
           echo "    </div>";
+
+          if (!$isPortrait || !$isNewRow) {
+            echo "  </div>";
+          }
         }
-        echo "  </div>";
+
+        echo "</div>";
 
         $sql_pushRank = "SELECT
           ID,
