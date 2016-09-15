@@ -20,7 +20,7 @@
 			if($settings.scroll == true) $initmessage = '<br><br><br><br><br><br><br><br><br><img src="../img/loader.gif" />';
 			else $initmessage = 'Click for more content';
 
-			$this.append('<div class="content"></div><div class="loading-bar" style="margin-top:125px">'+$initmessage+'</div>');
+			$this.append('<div class="content"></div><div class="loading-bar">'+$initmessage+'</div>');
 
 			function getData() {
 

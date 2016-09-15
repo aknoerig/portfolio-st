@@ -286,7 +286,7 @@ input:-moz-placeholder { color:#666; }
 	background: rgb(10,10,10);
 }
 
-#info p.default, #session p.default, #info p.reg_notes, #list-items p.reg_notes {
+#info p.default, #session p.default, #info p.reg_notes, #tears p.reg_notes {
 	font-family: Times;
 	font-size: 17px;
 	line-height: 1.5em;
@@ -296,15 +296,15 @@ input:-moz-placeholder { color:#666; }
 	margin: 0 auto;
 }
 
-p.default a, #list-items p.reg_notes a {
+p.default a, #tears p.reg_notes a {
 	color: #000;
 }
 
-#list-items p.reg_notes {
+#tears p.reg_notes {
 	font-family: "Sofia", sans-serif;
 }
 
-p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes a:hover {
+p.default a:hover, .reg_notes span, .create span:hover, #tears p.reg_notes a:hover {
 	padding-bottom: 2px;
 	border-bottom: 1px solid #000;
 	cursor: pointer;
@@ -1027,7 +1027,7 @@ cursor: pointer;
 color: #000 !important;
 	}
 
-#overview #list, #overview #list-items {
+#overview #list, #overview #tears {
 	position: relative;
 	width: 90%;
 	display: inline-block;
@@ -1036,7 +1036,7 @@ color: #000 !important;
 	background-color: #f5f5f5;
 }
 
-#overview #list-items {
+#overview #tears {
 	text-align: center;
 	width: 92%;
 	left: 3.5%;

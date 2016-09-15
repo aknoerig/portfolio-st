@@ -156,10 +156,10 @@
         while ($row_img = mysql_fetch_assoc($result_img)) {
 
           $isPortrait = isPortrait($row_img['content_img']);
-          $isNewRow = !$isPortrait || $count % 2 == 0;
+          $isNewRow = $count % 2 == 0;
           $isSmall = round($count / 2) % 2 == 1;
 
-          if ($isNewRow) {
+          if (!$isPortrait || $isNewRow) {
             echo "  <div class=\"openergrid-row\">\n";
           }
 

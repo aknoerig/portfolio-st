@@ -32,11 +32,11 @@
 		vertical-align: middle !important;
 	}
 
-	#content #overview, #overview #list, #overview #list-items {
+	#content #overview, #overview #list, #overview #tears {
 		width: 100%;
 	}
 
-	#list-items {
+	#tears {
 		margin-top: 2% !important;
 	}
 

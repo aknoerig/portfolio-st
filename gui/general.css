@@ -305,7 +305,7 @@ input:-moz-placeholder { color:#666; }
 	background: rgb(10,10,10);
 }
 
-#info p.default, #session p.default, #info p.reg_notes, #list-items p.reg_notes {
+#info p.default, #session p.default, #info p.reg_notes, #tears p.reg_notes {
 	font-family: 'Sofia Light', sans-serif;
 	font-size: 17px;
 	line-height: 1.8em;
@@ -315,15 +315,15 @@ input:-moz-placeholder { color:#666; }
 	margin: 0 auto;
 }
 
-p.default a, #list-items p.reg_notes a {
+p.default a, #tears p.reg_notes a {
 	color: #000;
 }
 
-#list-items p.reg_notes {
+#tears p.reg_notes {
 	font-family: 'Sofia', sans-serif;
 }
 
-p.default a:hover, .reg_notes span, .create span:hover, #list-items p.reg_notes a:hover {
+p.default a:hover, .reg_notes span, .create span:hover, #tears p.reg_notes a:hover {
 	padding-bottom: 2px;
 	border-bottom: 1px solid #000;
 	cursor: pointer;
@@ -903,10 +903,6 @@ cursor: pointer;
   margin: 40px;
 }
 
-#overview #list-items {
-	text-align: center;
-}
-
 #content #overview #ltb {
 	margin-top: 100px;
 	margin-left: 70px
@@ -1261,9 +1257,31 @@ cursor: pointer;
 	display: inline;
 }
 
+
+#overview #tears {
+  width: 80%;
+  margin: 0 auto;
+	text-align: center;
+}
+
+#tears .content {
+  display:                 flex;
+  display:                 -webkit-flex; /* Safari 8 */
+  flex-wrap:               wrap;
+  -webkit-flex-wrap:       wrap;         /* Safari 8 */
+  justify-content:         center;
+  -webkit-justify-content: center;       /* Safari 8 */
+  align-items: center;
+}
+
+.loading-bar {
+  clear: both;
+  margin-top:125px
+}
+
 #tear {
-	margin: 110px 65px -50px 65px;
-	}
+	margin: 110px 40px -50px 40px;
+}
 
 #imgContainer {
 	overflow: hidden;
