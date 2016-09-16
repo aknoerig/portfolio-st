@@ -20,8 +20,7 @@ $("#tear p a").attr("target","_blank");
 // init Masonry
 var $listgrid = $('.listgrid').masonry({
   itemSelector: '.listgrid-item',
-	columns: 10,
-	fitWidth: true,
+	fitWidth: false,
   columnWidth: '.listgrid-sizer',
   percentPosition: true
 });

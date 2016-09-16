@@ -1161,6 +1161,10 @@ cursor: pointer;
   margin: 40px;
 }
 
+#content #overview #project img {
+  width: 100%;
+}
+
 #content #overview #project .caption {
   position: absolute;
   top: 0;
@@ -1262,7 +1266,7 @@ cursor: pointer;
 
 
 #overview #tears {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 	text-align: center;
 }
@@ -1283,7 +1287,7 @@ cursor: pointer;
 }
 
 #tear {
-	margin: 110px 40px -50px 40px;
+	margin: 110px 2% -50px 2%;
 }
 
 #imgContainer {
