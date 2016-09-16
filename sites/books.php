@@ -270,6 +270,7 @@
       ?>
 
       <div id="list" class="listgrid">
+        <div class="listgrid-sizer"/>
 
         <?php
 

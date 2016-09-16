@@ -889,20 +889,6 @@ cursor: pointer;
   display: block;
 }
 
-#overview #list {
-}
-
-.listgrid {
-	width: 90%;
-  margin: 70px auto;
-  padding: 0;
-  text-align: center;
-}
-
-.listgrid-item {
-  margin: 40px;
-}
-
 #content #overview #ltb {
 	margin-top: 100px;
 	margin-left: 70px
@@ -1154,9 +1140,26 @@ cursor: pointer;
 	color: #000 !important;
 }
 
+#overview #list {
+}
+
+.listgrid {
+	width: 90%;
+  margin: 70px 5%;
+  padding: 0;
+  text-align: center;
+}
+
 #content #overview #project {
 }
 
+.listgrid-sizer {
+  width: 10%;
+}
+
+.listgrid-item {
+  margin: 40px;
+}
 
 #content #overview #project .caption {
   position: absolute;

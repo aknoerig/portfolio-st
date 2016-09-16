@@ -22,6 +22,8 @@ var $listgrid = $('.listgrid').masonry({
   itemSelector: '.listgrid-item',
 	columns: 10,
 	fitWidth: true,
+  columnWidth: '.listgrid-sizer',
+  percentPosition: true
 });
 // layout Isotope after each image loads
 $listgrid.imagesLoaded().progress( function() {
@@ -401,8 +403,6 @@ $(".books_timeout a").hover(
 
 */
 
-var setHeight = $('.list').height();
-$('.list').css({'height':setHeight});
 
 /*
 
@@ -429,6 +429,34 @@ var $dp = $(window).scroll(function() {
              });
        }
 });
+*/
+
+/*
+		var $window=$(window);
+		$(window).scroll(
+			function(){
+				var e=$("#mark-books");
+				var t=$("#list");
+				var n=e.offset().top;
+				var r=t.offset().top;
+				var i=n+e.height();
+				var s=r+t.height();
+				if(i>=r&&n<s){
+					function o(){
+						var e=$window.width();
+						if(e<1300){
+							$("#mark-books").css({visibility:"hidden"})
+						} else {
+							$("#mark-books").css({visibility:"visible"})
+						}
+					}
+					o();
+					$(window).resize(o)
+				} else {
+					$("#mark-books").css({visibility:"visible"})
+				}
+			}
+		)
 */
 
 var $topper = $(window).scroll(function() {
