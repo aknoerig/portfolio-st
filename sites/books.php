@@ -130,7 +130,7 @@
 
       } else {
 
-        echo "<div id=\"opener\">\n";
+        echo "<div id=\"opener\">";
 
         if ($detect->isMobile() && !$detect->isTablet()) {
           echo "<div style=\"height:50px;\"></div>\n";
@@ -149,12 +149,41 @@
 
         $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
 
-        while($row_img = mysql_fetch_assoc($result_img)) {
-          echo "<img class=\"less-margin\"
-                    src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\"
-                    alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES).
-                        "&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
+        echo "<div class=\"openergrid\">\n";
+
+        $count = 0;
+
+        while ($row_img = mysql_fetch_assoc($result_img)) {
+
+          $isPortrait = isPortrait($row_img['content_img']);
+          $isNewRow = $count % 2 == 0;
+          $isSmall = round($count / 2) % 2 == 1;
+
+          if (!$isPortrait || $isNewRow) {
+            echo "  <div class=\"openergrid-row\">\n";
+          }
+
+          if ($isPortrait && $isSmall) {
+            echo "    <div class=\"openergrid-item openergrid-item-pt1\">";
+            $count++;
+          } elseif ($isPortrait) {
+            echo "    <div class=\"openergrid-item openergrid-item-pt2\">";
+            $count++;
+          } elseif (!$isPortrait) {
+            echo "    <div class=\"openergrid-item openergrid-item-la\">";
+          }
+          echo "      <img
+                        src=\"/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\"
+                        alt=\"Sabrina Theissen | N&deg;".htmlentities($row_title_item['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_title_item['name'], ENT_QUOTES).
+                          "&lsaquo; for ".htmlentities($row_title_client['name'], ENT_QUOTES)."\" />\n";
+          echo "    </div>";
+
+          if (!$isPortrait || !$isNewRow) {
+            echo "  </div>";
+          }
         }
+
+        echo "</div>";
 
         $sql_pushRank = "SELECT
           ID,
@@ -240,7 +269,8 @@
 
       ?>
 
-      <div id="list">
+      <div id="list" class="listgrid">
+        <div class="listgrid-sizer"/>
 
         <?php
 
@@ -325,24 +355,25 @@
 
           }
 
-          echo "<div id=\"project\" class=\"book-item\"><a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\"
-                title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\">
-                <img src=\"/cms/images/thumbs/".htmlentities($row_img['content_img'], ENT_QUOTES)."\"
-                alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)
-                    ."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" />
-                </a>";
+          echo "<div id=\"project\" class=\"listgrid-item\">";
+          echo "  <a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\"
+                     title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\">";
 
+          echo "    <img src=\"".getThumb($row_items_list['ID'])."\"
+                         alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)
+                              ."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" />";
+
+          echo "    <div class=\"caption\">";
           if ($detect->isMobile() && !$detect->isTablet()) {
-
-            echo "<h4>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h4><br/>";
-
+            echo "      <h4>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h4><br/>";
           }	else {
-
-            echo "<h2>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h2>";
-
+            echo "      <h2>N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)."</h2>";
           }
+          echo "      <h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3>";
+          echo "    </div>";
 
-          echo "<h3>".htmlentities($row_client_list['name'], ENT_QUOTES)."</h3></div>\n";
+          echo"  </a>";
+          echo "</div>\n";
 
         }
 

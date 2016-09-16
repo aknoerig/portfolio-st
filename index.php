@@ -290,6 +290,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 	<link rel="stylesheet" href="/gui/player.css" type="text/css" media="screen" />
 
 	<script type="text/javascript" src="/js/jquerylib.js"></script>
+	<script type="text/javascript" src="/js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
 	<?php if(!isset($_GET['cat']))	{ ?>
 		<script type="text/javascript" src="/js/post.load.js"></script>
 	<?php } ?>
@@ -302,41 +304,9 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 	<script type="text/javascript" src="/js/player.js"></script>
 
-	<?php	if ($detect->isTablet()) { ?>
-		<link rel="stylesheet" href="/gui/tablet.css" media="screen" type="text/css" />
-	<?php }  ?>
-
 	<script type="text/javascript">
 
-	<?php if(!isset($_GET['s']) OR isset($_GET['s']) AND $_GET['s'] == "books") { ?>
-
-		var $window=$(window);
-		$(window).scroll(
-			function(){
-				var e=$("#mark-books");
-				var t=$("#list");
-				var n=e.offset().top;
-				var r=t.offset().top;
-				var i=n+e.height();
-				var s=r+t.height();
-				if(i>=r&&n<s){
-					function o(){
-						var e=$window.width();
-						if(e<1300){
-							$("#mark-books").css({visibility:"hidden"})
-						} else {
-							$("#mark-books").css({visibility:"visible"})
-						}
-					}
-					o();
-					$(window).resize(o)
-				} else {
-					$("#mark-books").css({visibility:"visible"})
-				}
-			}
-		)
-
-	<?php } if(!isset($_GET['s']) OR isset($_GET['s']) AND $_GET['s'] == "books") {  } ?>
+	<?php if(!isset($_GET['s']) OR isset($_GET['s']) AND $_GET['s'] == "books") {  } ?>
 
 		function register(){
 			$.ajax({
@@ -559,7 +529,6 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 			</div>
 
 		<?php  }  ?>
-
 
 		<script type="text/javascript">
 			$('video').mediaelementplayer().bind('ended',function () { $(this).parents('.mejs-inner').find('.mejs-poster').show(); });
