@@ -490,10 +490,10 @@ p.default a:hover, .reg_notes span, .create span:hover, #tears p.reg_notes a:hov
 
 #topBarMobile #flipCall {
 	position: absolute;
-	top: 6px;
+	top: 8px;
 	right: 6px;
 	width: 55px;
-	height: 45px;
+	height: 39px;
 }
 
 #topBarMobile #flipCall img {
@@ -965,9 +965,11 @@ cursor: pointer;
 	left: 0;
 	margin: 0 !important;
 	background-color: #f5f5f5;
+  padding-bottom: 100px;
 }
 
 #content #overview #footer, #info #footer {
+  display: none;
 	position: relative;
 	width: 220px;
 	/*height: 45px;*/
@@ -1030,6 +1032,7 @@ color: #000 !important;
 #overview #list, #overview #tears {
 	position: relative;
 	width: 90%;
+  padding-top: 50px;
 	display: inline-block;
 	left: 4.5%;
 	clear: both;
@@ -1239,7 +1242,7 @@ color: #000 !important;
 #content #overview #opener img {
 	position: relative;
 	width: 100%;
-	margin: 50px 0 10px;
+	margin: 0 0 50px 0;
 }
 
 #content #overview #opener .less-margin {
@@ -1424,8 +1427,8 @@ color: #000 !important;
 }
 
 #tear {
-	margin: 90px 0 -70px 0;
-	}
+	margin: 15px auto -20px auto;
+}
 
 #imgContainer {
 	overflow: hidden;
@@ -1543,11 +1546,6 @@ display: none;
 }
 
 #loadCuts {
-	position: relative;
-	left: 50%;
-	margin-left: -100px;
-	margin-bottom: -100px;
-	width: 200px;
 	text-align: center;
 	z-index: 100;
 }

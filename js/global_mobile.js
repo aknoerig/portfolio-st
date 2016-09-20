@@ -41,7 +41,7 @@ $(function() {
 
             setNavScale();
         });
-*/        
+*/
 $('#ltr_btn_container').on('click', 'input', function() {
 	var selection = [];
     $('#ltb #container').filter(function() {
@@ -113,11 +113,11 @@ var $cutsArray = $('#tear p');
         if ($this.height() <= 25) {
             $this.css({'text-align' : 'center'});
             return true;
-        	}	else {
-			$this.css({'text-align' : 'justify'});
-            return true;
-			}
-      });
+      	}	else {
+					$this.css({'text-align' : 'justify'});
+          return true;
+				}
+    });
 });
 
 $("#flipCall").toggle(function(){

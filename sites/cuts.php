@@ -418,7 +418,7 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               if(isset($_GET['cat']) AND $_GET['cat'] != 0)	{
 
-                echo "<br /><br /><br /><br /><div id=\"loadCuts\"><a href=\"/cuts/0/1\">Show all Posts</a><br /><br /></div>";
+                echo "<br /><div id=\"loadCuts\"><a href=\"/cuts/0/1\">Show all Posts</a><br /><br /></div>";
 
               }	else 	{
 
