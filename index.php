@@ -268,7 +268,14 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 	<meta name="copyright" content="<? echo date("Y"); ?>, Sabrina Theissen" />
 	<meta name="author" content="Sabrina Theissen" />
 	<meta name="generator" content="Buero Buero / Stefan Wunderwald" />
-	<meta name="robots" content="index, follow">
+	<meta name="robots" content="index, follow" />
+
+	<!-- Chrome, Firefox OS, Opera and Vivaldi -->
+	<meta name="theme-color" content="#f5f5f5" />
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#f5f5f5" />
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5" />
 
 	<?php	if ($detect->isTablet()) { ?>
 		<meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no" />
