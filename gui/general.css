@@ -1368,14 +1368,3 @@ cursor: pointer;
 .caller {
 display: none;
 }
-
-::-webkit-scrollbar-thumb:horizontal { height: 9px; background-color:#181818; }
-::-webkit-scrollbar-thumb:vertical { width: 9px; background-color:#181818;
--webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.16);
--moz-box-shadow: 1px 1px 4px rgba(0,0,0,0.16);
-box-shadow: 1px 1px 4px rgba(0,0,0,0.16);}
-
-::-webkit-scrollbar { width: 9px; height: 9px; background: #dbdbdb;
--webkit-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.13);
--moz-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.13);
-box-shadow: inset 1px 1px 4px rgba(0,0,0,0.13);}
