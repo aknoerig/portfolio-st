@@ -1,6 +1,6 @@
 ## Portfolio website of photographer st
 
-Original code and design by buero-buero.org
+Original (hair-tearing) code and (great) design by buero-buero.org
 
 Dependencies:
 
