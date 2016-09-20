@@ -1,7 +1,7 @@
 <?php
 
 /* returns thumnail for a given project/book */
-function getThumb($project_id) {
+function getThumb($project_id, $default_size = false) {
   $sql_preview_img = "SELECT
     ID,
     content_img
@@ -14,13 +14,17 @@ function getThumb($project_id) {
   $preview_img = mysql_fetch_assoc($result_preview_img);
   $pathparts = pathinfo($preview_img['content_img']);
 
-  $sql_size = "SELECT
-    thumb_size
-    FROM project
-    WHERE ID = '".$project_id."'
-  ";
-  $result_size = mysql_query($sql_size) OR die("<pre>".$sql_size."</pre>".mysql_error());
-  $size = mysql_fetch_assoc($result_size)['thumb_size'];
+  if ($default_size) {
+    $size = 'c';
+  } else {
+    $sql_size = "SELECT
+      thumb_size
+      FROM project
+      WHERE ID = '".$project_id."'
+    ";
+    $result_size = mysql_query($sql_size) OR die("<pre>".$sql_size."</pre>".mysql_error());
+    $size = mysql_fetch_assoc($result_size)['thumb_size'];
+  }
 
   return "/cms/images/thumbs/".$pathparts['filename']."_".$size.".".$pathparts['extension'];
 }
