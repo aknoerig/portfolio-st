@@ -1255,7 +1255,7 @@ cursor: pointer;
 }
 
 #tear {
-	margin: 110px 2% -50px 2%;
+	margin: 110px auto -50px auto;
 }
 
 #imgContainer {

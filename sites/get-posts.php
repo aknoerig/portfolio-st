@@ -96,7 +96,7 @@ while($row_items = mysql_fetch_assoc($result_items)) {
 
 				$sizing = GetImageSize("../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
-				echo "<div id=\"tear\" class=\"item margin\" style=\"width:".$sizing[0]."px;\">\n";
+				echo "<div id=\"tear\" style=\"width:".$sizing[0]."px;\">\n";
 
 				echo "<video width=\"".$sizing[0]."\" height=\"".$sizing[1]."\" poster=\"../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" controls=\"controls\" preload=\"none\">\n";
 
@@ -166,7 +166,7 @@ while($row_items = mysql_fetch_assoc($result_items)) {
 
 				$sizing = GetImageSize("../cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
-				echo "<div id=\"tear\" class=\"item margin\" style=\"width:".$sizing[0]."px;\">\n";
+				echo "<div id=\"tear\" style=\"width:".$sizing[0]."px;\">\n";
 				echo "<div id=\"imgContainer\" class=\"scrollContainer_".htmlentities($row_items['ID'], ENT_QUOTES)."\" style=\"width:".$sizing[0]."px; height:".$sizing[1]."px;\">\n";
 				echo "<div id=\"carousel\" style=\"width:".$sizing[0]."px;\">\n";
 
