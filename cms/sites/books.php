@@ -152,7 +152,7 @@ if(isset($_POST['project']) AND $_POST['project'] == "Upload") {
 
 
 
-  for($i=1; $i<=10; $i++){
+  for($i=1; $i<=12; $i++){
 
     $myFILE['name'] = $_FILES['Foto']['name'][$i];
     $myFILE['type'] = $_FILES['Foto']['type'][$i];
@@ -164,16 +164,22 @@ if(isset($_POST['project']) AND $_POST['project'] == "Upload") {
 
     if (move_uploaded_file($myFILE['tmp_name'], PIC_FOLDER."Sabrina_Theissen_".$Name)) {
 
+      $content_img = mysql_real_escape_string(trim("Sabrina_Theissen_".$Name));
+
       $sql_img = "INSERT INTO
         img
 
         SET
         id_p = '".$row_get_id['ID']."',
-        content_img = '".mysql_real_escape_string(trim("Sabrina_Theissen_".$Name))."',
+        content_img = '".$content_img."',
         date = NOW()
       ";
 
       mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+
+      if ($i == 1) {
+        project_thumbs($content_img);
+      }
 
     }
 
@@ -301,7 +307,14 @@ else {
   echo "</div><br />\n";
 
   echo "<input type=\"submit\" name=\"project\" class=\"button\" value=\"Upload\" /><br /><br /><br />\n";
-  echo "</form></div>\n";
+  echo "</form>";
+
+
+  echo"<form action=\"generate-thumbnails.php\" method=\"post\" name=\"thumbnails\">\n";
+  echo"  <input type=\"submit\" name=\"thumbnails\" value=\"Regenerate all thumbnails\" />\n";
+  echo"</form>\n";
+
+  echo "</div>\n";
 }
 
 
@@ -364,9 +377,6 @@ while($row_items = mysql_fetch_assoc($result_items)) {
 
   $result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error());
   $row_client = mysql_fetch_assoc($result_client);
-
-
-  /*project_thumbs(''.htmlentities($row_img['content_img'], ENT_QUOTES).'');*/
 
 
   echo "<div id=\"recordsArray_" . $row_items['ID'] . "\" class=\"item\"><img src=\"images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /><h2>".htmlentities($row_items['name'], ENT_QUOTES)."</h2><p class=\"view\"><a href=\"?s=book_view&id=".$row_items['ID']."\">[ view ]</a></p></div>\n";

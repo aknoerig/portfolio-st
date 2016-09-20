@@ -28,7 +28,13 @@ function project_thumbs($filename) {
   $src_folder = "images/";
   $dest_folder = "images/thumbs/";
   $pathparts = pathinfo($filename);
-  $sizes = array("a" => 240, "b" => 380, "c" => 500, "d" => 620, "e" => 720); // used as height for portrait, as width for landscape formats
+  $sizes = array(
+    "a" => 240,
+    "b" => 380,
+    "c" => 500,
+    "d" => 620,
+    "e" => 720);
+    // used as height for portrait, as width for landscape formats
 
   foreach ($sizes as $size_name => $size) {
     thumb($src_folder.$filename, $dest_folder.$pathparts['filename']."_".$size_name.".".$pathparts['extension'], $size);
