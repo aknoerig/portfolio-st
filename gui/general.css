@@ -53,7 +53,7 @@ input, select { vertical-align:middle; }
 select, input, textarea, button { font:99% sans-serif; }
 textarea { overflow: auto; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
-h1,h2,h3,h4,h5,h6 { font-weight: bold; }
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
 html { overflow-y: scroll; }
 input[type="radio"] { vertical-align: text-bottom; }
 input[type="checkbox"] { vertical-align: bottom; }
@@ -447,7 +447,6 @@ p.default a:hover, .reg_notes span, .create span:hover, #tears p.reg_notes a:hov
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
 	color: #000;
-	font-weight: bold;
 	cursor: pointer;
 	display: inline-block;
 	}
@@ -1136,12 +1135,31 @@ cursor: pointer;
   width: 100%;
 }
 
+/* darken effect
+
+#content #overview #project img {
+  -webkit-filter: grayscale(0%) brightness(100%);
+  -webkit-transition: .3s ease-in-out;
+  -moz-filter: grayscale(0%) brightness(100%);
+  -moz-transition: .3s ease-in-out;
+  -o-filter: grayscale(0%) brightness(100%);
+  -o-transition: .3s ease-in-out;
+  filter: grayscale(0%) brightness(100%);
+}
+
+#content #overview #project img:hover {
+  -webkit-filter: grayscale(100%) brightness(30%);
+  -moz-filter: grayscale(100%) brightness(30%);
+  -o-filter: grayscale(100%) brightness(30%);
+  filter: grayscale(100%) brightness(30%);
+}
+*/
+
 #content #overview #project .caption {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background: #e4c5b3;
   display:                 flex;
   display:                 -webkit-flex; /* Safari 8 */
   flex-direction:          column;
@@ -1149,9 +1167,11 @@ cursor: pointer;
   justify-content:         center;
   -webkit-justify-content: center;       /* Safari 8 */
   align-items: center;
-  opacity: 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+
+  background: #e4c5b3;
+  opacity: 0;
 }
 
 #content #overview #project .caption:hover {
