@@ -158,6 +158,7 @@ body.cuts {
 
 #info-content {
   width: 85%;
+  max-width: 1400px;
   margin: 150px auto 50px auto;
 }
 
@@ -605,7 +606,7 @@ display: none;
 
 #content a #mark-books, #content a #mark-onstate, #content a #mark-tears {
 position: fixed;
-left: 4%;
+left: 3%;
 top: 205px;
 min-width: 29px;
 max-width: 31px;
@@ -924,7 +925,7 @@ cursor: pointer;
 	background: #fff !important;
 	z-index: 100;
   text-align: center;
-  padding: 70px 0;
+  padding: 70px 0 90px 0;
 }
 
 .openergrid {
@@ -935,14 +936,17 @@ cursor: pointer;
 
 .openergrid-row {
   width: 100%;
-  float: left;
-  clear: both;
-  padding: 50px 0;
+  max-width: 1200px;
+  padding: 70px 0;
+  margin: 0 auto;
+  display:                 flex;
+  display:                 -webkit-flex; /* Safari 8 */
+  justify-content:         center;
+  -webkit-justify-content: center;       /* Safari 8 */
+  align-items: center;
 }
 
 .openergrid-item {
-  display: block;
-  float: left;
   margin: 0;
 }
 
@@ -1058,8 +1062,6 @@ cursor: pointer;
 }
 
 #content #overview #opener #client {
-  clear: both;
-  margin-top: 30px;
 	text-align: center;
 }
 
@@ -1113,7 +1115,8 @@ cursor: pointer;
 
 .listgrid {
 	width: 90%;
-  margin: 70px 5%;
+  max-width: 1600px;
+  margin: 70px auto;
   padding: 0;
   text-align: center;
 }
@@ -1139,9 +1142,12 @@ cursor: pointer;
   width: 100%;
   height: 100%;
   background: #e4c5b3;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  display:                 flex;
+  display:                 -webkit-flex; /* Safari 8 */
+  flex-direction:          column;
+  -webkit-flex-direction:  column;         /* Safari 8 */
+  justify-content:         center;
+  -webkit-justify-content: center;       /* Safari 8 */
   align-items: center;
   opacity: 0;
   -webkit-transition: all 0.3s ease-in-out;
@@ -1235,6 +1241,7 @@ cursor: pointer;
 
 #overview #tears {
   width: 90%;
+  max-width: 1600px;
   margin: 0 auto;
 	text-align: center;
 }
@@ -1256,6 +1263,7 @@ cursor: pointer;
 
 #tear {
 	margin: 110px auto -50px auto;
+  padding: 0 2%;
 }
 
 #imgContainer {
