@@ -122,7 +122,7 @@ $(function() {
 });
 
 
-$("#ltb #container .add").live('click', function() {
+$(document).on('click', "#ltb #container .add", function() {
     	$(this).hide();
     	$(this).addClass("count");
 			$(this).parent("#container").children("img").animate({'opacity' : '1','width' : '160px'},300);
@@ -142,7 +142,7 @@ $("#ltb #container .add").live('click', function() {
 
 /*
 
-$("#ltb #container .clear").live('click', function() {
+$(document).on('click', "#ltb #container .clear", function() {
     $(this).parent("#container").children(".clicked").fadeToggle(50);
     $(this).parent("#container").children(".add").fadeToggle(1);
     $(this).fadeToggle(1);
@@ -211,7 +211,7 @@ $(".light-switch").click(
 		}
 );
 
-$('a[href=#top]').click(
+$("a[href='#top']").click(
 		function(){
       $('html, body').animate({scrollTop:0}, 500);
       return false;

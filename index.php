@@ -296,7 +296,7 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 	<link rel="stylesheet" href="/gui/fonts.css" media="screen" type="text/css" />
 	<link rel="stylesheet" href="/gui/player.css" type="text/css" media="screen" />
 
-	<script type="text/javascript" src="/js/jquerylib.js"></script>
+	<script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
 	<script type="text/javascript" src="/js/masonry.pkgd.min.js"></script>
 	<script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
 	<?php if(!isset($_GET['cat']))	{ ?>
@@ -370,11 +370,6 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 					$("#response").hide().fadeIn(500).html(e)
 				}
 			})
-		}
-
-		var ua=$.browser;
-		if(ua.mozilla){
-			$("head").append('<link rel="stylesheet" href="/gui/ff.css" media="screen" type="text/css" />')
 		}
 
 		</script>
