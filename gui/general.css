@@ -96,7 +96,7 @@ html, body {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #f5f5f5;
 }
 
 body.books {
@@ -104,7 +104,7 @@ body.books {
 }
 
 body.cuts {
-  background-color: #e0e0e0;/* #e8e8e8; */
+  background-color: #dddddd;
 }
 
 .hidden { display: none; visibility: hidden; }
