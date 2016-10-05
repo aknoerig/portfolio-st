@@ -265,7 +265,7 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 	<meta name="description" content="<?php echo $description; ?>" />
 	<meta name="keywords" content="Sabrina Theissen, Photographs, Photography, Photographer, Achtung, Bon, Feld, Hugo Boss, I love you magazine, Interview magazine, Sleek, VOGUE, Under Current, L'Officiel Hommes" />
-	<meta name="copyright" content="<? echo date("Y"); ?>, Sabrina Theissen" />
+	<meta name="copyright" content="<?php echo date('Y'); ?>, Sabrina Theissen" />
 	<meta name="author" content="Sabrina Theissen" />
 	<meta name="generator" content="Buero Buero / Stefan Wunderwald" />
 	<meta name="robots" content="index, follow" />
