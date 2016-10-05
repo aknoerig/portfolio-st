@@ -11,3 +11,4 @@ mysql.php
 
 # system files
 .DS_Store
+._*
