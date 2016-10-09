@@ -190,13 +190,15 @@ while($row_items = mysql_fetch_assoc($result_items)) {
 
 				$sql_img_count = "SELECT
 
-                        ID,
+                        ANY_VALUE(ID),
                         ID_t,
                         COUNT(content_img)
                 FROM
                         img
 
-                WHERE	id_t = '".$row_items['ID']."' AND ID != '".$row_img_single['ID']."'
+                WHERE	ID_t = '".$row_items['ID']."' AND ID != '".$row_img_single['ID']."'
+
+                GROUP BY ID_t
 
        			";
 
