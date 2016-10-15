@@ -248,11 +248,6 @@ input:-moz-placeholder { color:#666; }
 	text-align: center;
 	border: none;
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -284,11 +279,6 @@ input:-moz-placeholder { color:#666; }
 	text-align: center;
 	border: 2px solid #999;
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -362,11 +352,6 @@ p.default a:hover, .reg_notes span, .create span:hover, #tears p.reg_notes a:hov
 
 #info h3 {
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -621,11 +606,6 @@ visibility: visible;
 
 #content a #mark-books p, #content a #mark-onstate p, #content a #mark-tears p {
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(0.8);
-	-ms-transform: scaleX(0.8);
-	-webkit-transform: scaleX(0.8);
-	-o-transform: scaleX(0.8);
-	-moz-transform: scaleX(0.8);
 	font-weight: 400;
 	color: #333;
 	text-transform: uppercase;
@@ -769,11 +749,6 @@ cursor: pointer;
 
 #content #sign h1, #content #sign-onstate h1 {
 	font-family: 'Sofia', sans-serif;
-	transform: scaleY(1.20);
-	-ms-transform: scaleY(1.20);
-	-webkit-transform: scaleY(1.2);
-	-o-transform: scaleY(1.20);
-	-moz-transform: scaleY(1.20);
 	font-weight: 400;
 	color: #333;
 	text-transform: uppercase;
@@ -886,11 +861,6 @@ cursor: pointer;
 	text-transform: uppercase;
 	letter-spacing: 0.25em;
 	font-weight: 400;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	color: #fff;
 	background-color: rgb(26,27,32);
 	z-index: 1000;
@@ -1071,11 +1041,6 @@ cursor: pointer;
 
 #content #overview #opener #client h1, #content #welcome h1, #pages h2 {
 	font-family: 'Sofia Light', sans-serif !important;
-	transform: scaleX(0.9) !important;
-	-ms-transform: scaleX(0.9) !important;
-	-webkit-transform: scaleX(0.9) !important;
-	-o-transform: scaleX(0.9) !important;
-	-moz-transform: scaleX(0.9) !important;
 	font-size: 27px;
 	text-transform: uppercase;
 	letter-spacing: 0.25em !important;
@@ -1087,11 +1052,6 @@ cursor: pointer;
 }
 
 #welcome h1 {
-	transform: scaleX(1.1) !important;
-	-ms-transform: scaleX(1.1) !important;
-	-webkit-transform: scaleX(1.1) !important;
-	-o-transform: scaleX(1.1) !important;
-	-moz-transform: scaleX(1.1) !important;
 	letter-spacing: 0.2em !important;
 	font-size: 21px !important;
 }
@@ -1317,11 +1277,6 @@ cursor: pointer;
 
 #tear h2 {
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	color: #000;
 	text-transform: uppercase;
@@ -1351,11 +1306,6 @@ cursor: pointer;
 	position: relative;
 	margin: 15px auto 20px;
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	font-weight: 400;
 	color: #000;
 	text-transform: uppercase;
@@ -1374,22 +1324,12 @@ cursor: pointer;
 
 .mejs-container .mejs-controls .mejs-time span {
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	font-size: 11px !important;
 	letter-spacing: 0.1em;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-float-current {
 	font-family: 'Sofia', sans-serif;
-	transform: scaleX(1.1);
-	-ms-transform: scaleX(1.1);
-	-webkit-transform: scaleX(1.1);
-	-o-transform: scaleX(1.1);
-	-moz-transform: scaleX(1.1);
 	letter-spacing: 0.1em;
 }
 
