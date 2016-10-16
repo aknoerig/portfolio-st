@@ -509,6 +509,7 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 							echo "<a href=\"mailto:".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;\"><u>".htmlentities($row_info['mail'], ENT_QUOTES)."&#064;&#115;&#097;&#098;&#114;&#105;&#110;&#097;&#116;&#104;&#101;&#105;&#115;&#115;&#101;&#110;&#046;&#099;&#111;&#109;</u></a>\n";
 							?>
 							<br/>
+							<br/>
 							<a href="https://www.instagram.com/sabrinatheissen/" target="_blank">Instagram</a>
 						</p>
 
