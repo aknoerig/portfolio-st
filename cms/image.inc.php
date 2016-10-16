@@ -30,10 +30,10 @@ function project_thumbs($filename) {
   $pathparts = pathinfo($filename);
   $sizes = array(
     "a" => 240,
-    "b" => 380,
-    "c" => 500,
-    "d" => 620,
-    "e" => 720);
+    "b" => 320,
+    "c" => 400,
+    "d" => 480,
+    "e" => 560);
     // used as height for portrait, as width for landscape formats
 
   foreach ($sizes as $size_name => $size) {

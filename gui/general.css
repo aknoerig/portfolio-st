@@ -1098,13 +1098,13 @@ cursor: pointer;
 }
 
 .listgrid-item.thumb-spacing-a {
-  margin: 20px;
+  margin: 10px;
 }
 .listgrid-item.thumb-spacing-b {
   margin: 40px;
 }
 .listgrid-item.thumb-spacing-c {
-  margin: 60px;
+  margin: 80px;
 }
 
 #content #overview #project img {
