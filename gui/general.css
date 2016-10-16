@@ -590,7 +590,7 @@ display: none;
 
 #content a #mark-books, #content a #mark-onstate, #content a #mark-tears {
 position: fixed;
-left: 3%;
+right: 3%;
 top: 205px;
 min-width: 29px;
 max-width: 31px;
