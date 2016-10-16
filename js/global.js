@@ -145,18 +145,20 @@ $(function() {
 				var page = this.hash.substr(1);
 				$.get("/sites/"+page+".php", function(getContent) {
 						$("#info").html(getContent);
-						$("#info").show().delay(100).animate({'opacity' : '1.0'},300);
- 						$("#overview").css({'position' : 'fixed'});
+						$("#info").show().delay(100).animate(
+              {'opacity' : '1.0'},
+              300,
+              function() {
+                $("#overview").css({'position' : 'fixed'});
+              }
+            );
 				});
-
-				 		$("li a").removeClass("active");
-				 		$(this).addClass("active");
-
+		 		$("li a").removeClass("active");
+		 		$(this).addClass("active");
 		});
-
-				if (location.hash) {
-					$("a[href="+location.hash+"]").click();
-				}
+		if (location.hash) {
+			$("a[href="+location.hash+"]").click();
+		}
 });
 
 
