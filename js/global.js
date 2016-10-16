@@ -55,17 +55,18 @@ PackeryMode.prototype.needsResizeLayout = function() {
 */
 
 // init Isotope
-var $listgrid = $('.listgrid').imagesLoaded(function() {
-  $listgrid.isotope({
-    itemSelector: '.listgrid-item',
-    layoutMode: 'packery',
-    percentPosition: true,
-    packery: {
-      columnWidth: 1 //'.listgrid-sizer'
-    }
+if ( $.isFunction( $.fn.isotope ) ) {
+  var $listgrid = $('.listgrid').imagesLoaded(function() {
+    $listgrid.isotope({
+      itemSelector: '.listgrid-item',
+      layoutMode: 'packery',
+      percentPosition: true,
+      packery: {
+        columnWidth: 1 //'.listgrid-sizer'
+      }
+    });
   });
-});
-
+}
 
 
 /*
