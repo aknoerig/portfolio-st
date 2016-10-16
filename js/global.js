@@ -17,16 +17,54 @@ $("#intro:nth-child(3)").addClass("inner").animate({'opacity' : '0'});
 $("#subNavLtr #all").addClass("active_ltr");
 $("#tear p a").attr("target","_blank");
 
-// init Masonry
-var $listgrid = $('.listgrid').masonry({
+// overwrite Packery methods
+var PackeryMode = Isotope.LayoutMode.modes.packery;
+var __resetLayout = PackeryMode.prototype._resetLayout;
+PackeryMode.prototype._resetLayout = function() {
+  __resetLayout.call( this );
+  // reset packer
+  var parentSize = getSize( this.element.parentNode );
+  var colW = this.columnWidth + this.gutter;
+  this.fitWidth = Math.floor( ( parentSize.innerWidth + this.gutter ) / colW ) * colW;
+  this.packer.width = this.fitWidth;
+  this.packer.height = Number.POSITIVE_INFINITY;
+  this.packer.reset();
+};
+
+PackeryMode.prototype._getContainerSize = function() {
+  // remove empty space from fit width
+  var emptyWidth = 0;
+  for ( var i=0, len = this.packer.spaces.length; i < len; i++ ) {
+    var space = this.packer.spaces[i];
+    if ( space.y === 0 && space.height === Number.POSITIVE_INFINITY ) {
+      emptyWidth += space.width;
+    }
+  }
+
+  return {
+    width: this.fitWidth - this.gutter,
+    height: this.maxY - this.gutter
+  };
+};
+
+// always resize
+PackeryMode.prototype.needsResizeLayout = function() {
+  return true;
+};
+
+// init Isotope
+var $listgrid = $('.listgrid').isotope({
   itemSelector: '.listgrid-item',
-	fitWidth: false,
-  columnWidth: '.listgrid-sizer',
-  percentPosition: true
+  layoutMode: 'packery',
+  percentPosition: true,
+  packery: {
+    columnWidth: '.listgrid-sizer'
+    //gutter: 10
+  }
 });
 // layout Isotope after each image loads
 $listgrid.imagesLoaded().progress( function() {
-  $listgrid.masonry();
+  $listgrid.isotope('layout');
 });
 
 

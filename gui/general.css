@@ -1075,20 +1075,26 @@ cursor: pointer;
 .listgrid {
 	width: 90%;
   max-width: 1600px;
-  margin: 70px auto;
-  padding: 0;
+  margin: 90px auto;
+  padding: 0 70px;
   text-align: center;
+}
+/* clearfix */
+.listgrid:after {
+  content: ' ';
+  display: block;
+  clear: both;
 }
 
 #content #overview #project {
 }
 
 .listgrid-sizer {
-  width: 10%;
+  width: 5%;
 }
 
 .listgrid-item {
-  margin: 40px;
+  margin: 30px;
 }
 
 #content #overview #project img {

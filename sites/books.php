@@ -388,3 +388,7 @@
   </div>
 
 </div>
+
+<script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="/js/packery-mode.pkgd.min.js"></script>
+<script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>

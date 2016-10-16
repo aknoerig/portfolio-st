@@ -297,8 +297,6 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 	<link rel="stylesheet" href="/gui/player.css" type="text/css" media="screen" />
 
 	<script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
-	<script type="text/javascript" src="/js/masonry.pkgd.min.js"></script>
-	<script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
 	<?php if(!isset($_GET['cat']))	{ ?>
 		<script type="text/javascript" src="/js/post.load.js"></script>
 	<?php } ?>
