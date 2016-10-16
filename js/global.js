@@ -17,6 +17,7 @@ $("#intro:nth-child(3)").addClass("inner").animate({'opacity' : '0'});
 $("#subNavLtr #all").addClass("active_ltr");
 $("#tear p a").attr("target","_blank");
 
+/*
 // overwrite Packery methods
 var PackeryMode = Isotope.LayoutMode.modes.packery;
 var __resetLayout = PackeryMode.prototype._resetLayout;
@@ -51,20 +52,18 @@ PackeryMode.prototype._getContainerSize = function() {
 PackeryMode.prototype.needsResizeLayout = function() {
   return true;
 };
+*/
 
 // init Isotope
-var $listgrid = $('.listgrid').isotope({
-  itemSelector: '.listgrid-item',
-  layoutMode: 'packery',
-  percentPosition: true,
-  packery: {
-    columnWidth: '.listgrid-sizer'
-    //gutter: 10
-  }
-});
-// layout Isotope after each image loads
-$listgrid.imagesLoaded().progress( function() {
-  $listgrid.isotope('layout');
+var $listgrid = $('.listgrid').imagesLoaded(function() {
+  $listgrid.isotope({
+    itemSelector: '.listgrid-item',
+    layoutMode: 'packery',
+    percentPosition: true,
+    packery: {
+      columnWidth: 1 //'.listgrid-sizer'
+    }
+  });
 });
 
 
