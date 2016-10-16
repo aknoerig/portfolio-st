@@ -286,7 +286,9 @@
           hair,
           makeup,
           styling,
-          setdesign
+          setdesign,
+          thumb_size,
+          thumb_spacing
 
           FROM project
           ORDER BY recordListingID DESC
@@ -305,7 +307,9 @@
           hair,
           makeup,
           styling,
-          setdesign
+          setdesign,
+          thumb_size,
+          thumb_spacing
 
           FROM project
           WHERE ID_cat ='".$row_cat_state['ID']."'
@@ -355,7 +359,8 @@
 
         }
 
-        echo "<div id=\"project\" class=\"listgrid-item\">";
+        echo "<div id=\"project\" class=\"listgrid-item thumb-spacing-".$row_items_list['thumb_spacing']."\">";
+
         echo "  <a href=\"/books/".$pushCat."/".$row_items_list['ID']."/\"
                    title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\">";
 
@@ -377,6 +382,7 @@
         echo "    </div>";
 
         echo"  </a>";
+
         echo "</div>\n";
 
       }

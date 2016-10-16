@@ -18,7 +18,8 @@ if(isset($_POST['project']) AND $_POST['project'] == "Upload") {
     makeup = '".mysql_real_escape_string(trim($_POST['makeup']))."',
     styling = '".mysql_real_escape_string(trim($_POST['styling']))."',
     setdesign = '".mysql_real_escape_string(trim($_POST['setdesign']))."',
-    thumb_size = '".mysql_real_escape_string(trim($_POST['thumb_size']))."'
+    thumb_size = '".mysql_real_escape_string(trim($_POST['thumb_size']))."',
+    thumb_spacing = '".mysql_real_escape_string(trim($_POST['thumb_spacing']))."'
 
   ";
   mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
@@ -132,6 +133,16 @@ if(isset($_POST['project']) AND $_POST['project'] == "Upload") {
     echo "<option value=\"d\">large</option>\n";
     echo "<option value=\"e\">huge</option>\n";
   echo "</select><br />";
+
+  echo "<label style=\"width:140px; display:inline-block;\" for=\"name\">Thumbnail spacing</label>\n";
+  echo "<select name=\"thumb_soacing\" id=\"thumb_spacing\" style=\"width:185px; margin-top: 12px; display:inline-block;\">\n";
+    echo "<option value=\"b\">Select a border size</option>\n";
+    echo "<option value=\"b\">---------------------------</option>\n";
+    echo "<option value=\"a\">small</option>\n";
+    echo "<option value=\"b\">medium</option>\n";
+    echo "<option value=\"c\">large</option>\n";
+  echo "</select><br />";
+
   echo "<br class=\"clear\" />\n";
 
   echo "<br />";
@@ -290,7 +301,15 @@ else {
     echo "<option value=\"d\">large</option>\n";
     echo "<option value=\"e\">huge</option>\n";
   echo "</select><br />";
-  echo "<br class=\"clear\" />\n";
+
+  echo "<label style=\"width:140px; display:inline-block;\" for=\"name\">Thumbnail spacing</label>\n";
+  echo "<select name=\"thumb_spacing\" id=\"thumb_spacing\" style=\"width:185px; margin-top: 12px; display:inline-block;\">\n";
+    echo "<option value=\"b\">Select a border size</option>\n";
+    echo "<option value=\"b\">---------------------------</option>\n";
+    echo "<option value=\"a\">small</option>\n";
+    echo "<option value=\"b\">medium</option>\n";
+    echo "<option value=\"c\">large</option>\n";
+  echo "</select><br />";
 
   echo "<br class=\"clear\" />\n";
 
@@ -338,7 +357,8 @@ $sql_items = "SELECT
   makeup,
   styling,
   setdesign,
-  thumb_size
+  thumb_size,
+  thumb_spacing
 
   FROM project
 

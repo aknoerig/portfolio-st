@@ -6,7 +6,7 @@ echo "<div id=\"info\">\n";
 
 echo "<h2>Update project</h2>\n";
 
-$sql_get_id = "SELECT ID, ID_cat, ID_2ndcat, ID_client, name, hair, makeup, styling, setdesign, thumb_size FROM project WHERE	ID = '".$_GET['id']."' ";
+$sql_get_id = "SELECT ID, ID_cat, ID_2ndcat, ID_client, name, hair, makeup, styling, setdesign, thumb_size, thumb_spacing FROM project WHERE	ID = '".$_GET['id']."' ";
 
 $result_get_id = mysql_query($sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysql_error());
 $row_get_id = mysql_fetch_assoc($result_get_id);
@@ -43,7 +43,8 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
   makeup = '".mysql_real_escape_string(trim($_POST['makeup']))."',
   styling = '".mysql_real_escape_string(trim($_POST['styling']))."',
   setdesign = '".mysql_real_escape_string(trim($_POST['setdesign']))."',
-  thumb_size = '".mysql_real_escape_string(trim($_POST['thumb_size']))."'
+  thumb_size = '".mysql_real_escape_string(trim($_POST['thumb_size']))."',
+  thumb_spacing = '".mysql_real_escape_string(trim($_POST['thumb_spacing']))."'
 
   WHERE	ID = '".$_GET['id']."'
 
@@ -166,6 +167,15 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
   echo "<option value=\"c\">medium</option>\n";
   echo "<option value=\"d\">large</option>\n";
   echo "<option value=\"e\">huge</option>\n";
+  echo "</select><br />";
+
+  echo "<label style=\"width:140px; display:inline-block;\" for=\"name\">Thumbnail spacing</label>\n";
+  echo "<select name=\"thumb_spacing\" id=\"thumb_spacing\" style=\"width:185px; margin-top: 12px; display:inline-block;\">\n";
+  echo "<option value=\"b\">Select a border size</option>\n";
+  echo "<option value=\"b\">---------------------------</option>\n";
+  echo "<option value=\"a\">small</option>\n";
+  echo "<option value=\"b\">medium</option>\n";
+  echo "<option value=\"c\">large</option>\n";
   echo "</select><br />";
 
   echo "<br class=\"clear\" />\n";
@@ -356,6 +366,21 @@ else {
   echo ">huge</option>\n";
   echo "</select><br />";
 
+  echo "<label style=\"width:140px; display:inline-block;\" for=\"name\">Thumbnail spacing</label>\n";
+  echo "<select name=\"thumb_spacing\" id=\"thumb_spacing\" style=\"width:185px; margin-top: 12px; display:inline-block;\">\n";
+  echo "<option value=\"b\">Select a border size</option>\n";
+  echo "<option value=\"b\">---------------------------</option>\n";
+  echo "<option value=\"a\"";
+  echo $row_get_id['thumb_spacing'] == 'a' ? "selected" : "";
+  echo ">small</option>\n";
+  echo "<option value=\"b\"";
+  echo $row_get_id['thumb_spacing'] == 'b' ? "selected" : "";
+  echo ">medium</option>\n";
+  echo "<option value=\"c\"";
+  echo $row_get_id['thumb_spacing'] == 'c' ? "selected" : "";
+  echo ">large</option>\n";
+  echo "</select><br />";
+
   echo "<br class=\"clear\" />\n";
 
   echo "<br />";
@@ -391,7 +416,8 @@ hair,
 makeup,
 styling,
 setdesign,
-thumb_size
+thumb_size,
+thumb_spacing
 FROM
 project
 
