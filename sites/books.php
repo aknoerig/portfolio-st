@@ -1,60 +1,56 @@
 <div id="content">
 
   <?php
-
   if( !isset($_GET['cat']) ) {
     $_GET['cat'] = "all";
   }
+  ?>
 
-  if ($detect->isMobile() && !$detect->isTablet()) {
-    ?>
+  <?php
+  if ($detect->isMobile() && !$detect->isTablet()) { ?>
     <div id="welcome" class="handheld <?php echo $_set_intro; ?>">
       <img src="/img/loader.gif">
       <br /><br />
       <img src="/img/welcome.png">
     </div>
-    <?php
+  <?php
   } else {
 
     if( !isset($_GET['cat']) ) {
       $_GET['cat'] = "all";
     }
 
-    $sql_rand = "SELECT
 
-      content_img,
-      intro
+    if ($_set_intro == "") {
 
-      FROM img
+        $sql_rand = "SELECT
+          content_img,
+          intro
+          FROM img
+          WHERE intro = 'yes'
+          ORDER BY RAND()
+          LIMIT 3
+        ";
 
-      WHERE intro = 'yes'
+        $result_rand = mysql_query($sql_rand) OR die("<pre>".$sql_rand."</pre>".mysql_error());
 
-      ORDER BY RAND()
-      LIMIT 3
-    ";
+        while($row_rand = mysql_fetch_assoc($result_rand)) {
+          echo "<div id=\"intro\" class=\"introCol".$_set_intro."\" style=\"
+                background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
+                -webkit-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
+                -moz-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
+                -o-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
+                -ms-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');\"></div>";
+        } ?>
 
-    $result_rand = mysql_query($sql_rand) OR die("<pre>".$sql_rand."</pre>".mysql_error());
+      <div id="welcome" class="<?php echo $_set_intro; ?>">
+        <img src="/img/welcome.png">
+      </div>
 
-    while($row_rand = mysql_fetch_assoc($result_rand)) {
-
-      echo "<div id=\"intro\" class=\"introCol".$_set_intro."\" style=\"
-            background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
-            -webkit-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
-            -moz-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
-            -o-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
-            -ms-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');\"></div>";
-
+<?php
     }
-    ?>
-
-    <div id="welcome" class="<?php echo $_set_intro; ?>">
-      <img src="/img/welcome.png">
-    </div>
-
-
-  <?php
   }
-  ?>
+?>
 
 
   <a href="/books/">
