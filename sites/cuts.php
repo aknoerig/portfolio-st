@@ -61,9 +61,7 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
       ORDER BY recordListingID ASC
 
-      LIMIT
-
-      ".($_GET['book']-1).",8
+      LIMIT 8
 
       ";
 
@@ -76,7 +74,7 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
       <?php
 
       if(isset($_GET['book']) AND $_GET['book'] > 1) {
-        echo "<br /><br /><br /><br /><br /><div id=\"loadCuts\"><a href=\"/cuts/0/".($_GET['book']-8)."\">newer posts</a><br /><br /></div>";
+        echo "<br /><br /><br /><br /><br /><div id=\"loadCuts\"><a href=\"/cuts/0/".($_GET['book']-8)."\">newer posts</a></div>";
       } else {
         "";
       }
@@ -418,7 +416,7 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               if(isset($_GET['cat']) AND $_GET['cat'] != 0)	{
 
-                echo "<br /><div id=\"loadCuts\"><a href=\"/cuts/0/1\">Show all Posts</a><br /><br /></div>";
+                echo "<br /><div id=\"loadCuts\"><a href=\"/cuts/0/1\">Show all Posts</a></div>";
 
               }	else 	{
 
@@ -440,7 +438,7 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
             if(isset($_GET['cat']) AND ($_GET['cat']) == 0 ) {
 
               if(isset($_GET['book']) AND ($_GET['book']+8) <= $num_items) {
-                echo "<div id=\"loadCuts\"><a href=\"/cuts/0/".($_GET['book']+8)."\">older posts</a><br /><br /></div>";
+                echo "<div id=\"loadCuts\"><a href=\"/cuts/0/".($_GET['book']+8)."\">older posts</a></div>";
               } else {
                 echo ""; }
               } else {
