@@ -294,7 +294,6 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 	<?php }  ?>
 
 	<link rel="stylesheet" href="/gui/fonts.css" media="screen" type="text/css" />
-	<link rel="stylesheet" href="/gui/player.css" type="text/css" media="screen" />
 
 	<script type="text/javascript" src="/js/jquery-3.1.0.min.js"></script>
 	<?php if(!isset($_GET['cat']))	{ ?>
@@ -307,7 +306,10 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 		<script type="text/javascript" src="/js/global.js"></script>
 	<?php }  ?>
 
-	<script type="text/javascript" src="/js/player.js"></script>
+	<?php if (isset($_GET['s']) AND $_GET['s'] == "cuts") { ?>
+		<link rel="stylesheet" href="/gui/player.css" type="text/css" media="screen" />
+		<script type="text/javascript" src="/js/player.js"></script>
+	<?php } ?>
 
 	<script type="text/javascript">
 
@@ -541,8 +543,11 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		<?php  }  ?>
 
-		<script type="text/javascript">
-			$('video').mediaelementplayer().bind('ended',function () { $(this).parents('.mejs-inner').find('.mejs-poster').show(); });
-		</script>
+		<?php if (isset($_GET['s']) AND $_GET['s'] == "cuts") { ?>
+			<script type="text/javascript">
+				$('video').mediaelementplayer().bind('ended',function () { $(this).parents('.mejs-inner').find('.mejs-poster').show(); });
+			</script>
+		<?php  }  ?>
+
 	</body>
 </html>
