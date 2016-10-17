@@ -189,7 +189,18 @@ while($row_items = mysql_fetch_assoc($result_items)) {
 				$row_img_single = mysql_fetch_assoc($result_img_single);
 
 				$sql_img_count = "SELECT
+                          ID,
+                          ID_t,
+                          COUNT(content_img)
+                  FROM
+                          img
 
+                  WHERE	ID_t = '".$row_items['ID']."' AND ID != '".$row_img_single['ID']."'
+                ";
+
+        // with MySQL >= 5.7 this needs to be specified like this:
+        /*
+        $sql_img_count = "SELECT
                         ANY_VALUE(ID),
                         ID_t,
                         COUNT(content_img)
@@ -201,7 +212,8 @@ while($row_items = mysql_fetch_assoc($result_items)) {
                 GROUP BY ID_t
 
        			";
-
+        */
+        
 				$result_img_count = mysql_query($sql_img_count) OR die("<pre>".$sql_img_count."</pre>".mysql_error());
 				$row_img_count = mysql_fetch_assoc($result_img_count);
 
