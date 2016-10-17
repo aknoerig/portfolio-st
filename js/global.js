@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-$("#naviContainer, #content").delay(300).animate({'opacity' : '1'},500);
+$("#naviContainer, #content").animate({'opacity' : '1'},100);
 $(".books_timeout").hide();
 $('.toggleSub').delay(1500).animate({'height' : '0', 'opacity' : '0'},600);
 $('.toggleContent').delay(1500).animate({'top' : '115px'},600);
