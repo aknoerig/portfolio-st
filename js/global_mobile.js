@@ -103,31 +103,29 @@ $("#ltb #container .clicked").click(function() {
 });
 
 $(function(){
-
-var $cutsArray = $('#tear p');
-
+		var $cutsArray = $('#tear p');
 	  $cutsArray.each(function(){
-
         var $this = $(this);
-
         if ($this.height() <= 25) {
             $this.css({'text-align' : 'center'});
             return true;
       	}	else {
-					$this.css({'text-align' : 'justify'});
-          return true;
+						$this.css({'text-align' : 'justify'});
+          	return true;
 				}
     });
 });
 
-$("#flipCall").toggle(function(){
+$("#flipCall").clicktoggle(
+		function(){
 			$("#topBarMobile").animate({'left' : '-80%'},300);
 			$("#flipMenuMobile").fadeIn(300);
 			$("#content").animate({'left' : '-80%'},300);
 			$("#content").css({'position' : 'fixed'});
 			$("#flipCall img:nth-child(1)").hide();
 			$("#flipCall img:nth-child(2)").show();
-		}, function(){
+		},
+		function(){
 			$("#flipMenuMobile").fadeOut(300);
 			$("#topBarMobile").animate({'left' : '0%'},300);
 			$("#content").animate({'left' : '0%'},300);
@@ -138,7 +136,7 @@ $("#flipCall").toggle(function(){
 		}
 );
 
-$(".showHide").toggle(function(){
+$(".showHide").clicktoggle(function(){
 			$("#credits-two").css({'display' : 'inline-block'}).animate({'height' : '82px'},300);
 			$("#credits-three").css({'display' : 'inline-block'}).animate({'height' : '112px'},300);
 			$("#credits-four").css({'display' : 'inline-block'}).animate({'height' : '142px'},300);
@@ -455,3 +453,18 @@ var $topper_ltr = $(window).scroll(function() {
 
 
 });
+
+
+$.fn.clicktoggle = function(a, b) {
+    return this.each(function() {
+        var clicked = false;
+        $(this).click(function() {
+            if (clicked) {
+                clicked = false;
+                return b.apply(this, arguments);
+            }
+            clicked = true;
+            return a.apply(this, arguments);
+        });
+    });
+};
