@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-$("#naviContainer", "#content").delay(300).animate({'opacity' : '1'},500);
+$("#naviContainer").delay(300).animate({'opacity' : '1'},500);
+$("#content").delay(300).animate({'opacity' : '1'},500);
 $(".books_timeout").hide();
 $('.toggleSub').delay(1500).animate({'height' : '0', 'opacity' : '0'},600);
 $('.toggleContent').delay(1500).animate({'top' : '115px'},600);
@@ -255,13 +256,17 @@ $(".switch-back").click(
 		}
 );
 
+/* intro animation */
 
 $("#welcome").delay(1000).animate({'opacity' : '1'},300).delay(1000).animate({'opacity' : '0'}, 500).delay(100).animate({'top' : '-2000px'}, 500);
 $(".inner").delay(800).animate({'opacity' : '1'},300).delay(1500).animate({'marginTop' : '-2000px'}, 1500);
 $(".middle").delay(800).animate({'opacity' : '1'},300).delay(1500).animate({'marginTop' : '-2000px'}, 1500);
-$(".outer").delay(800).animate({'opacity' : '1'},300).delay(1500).animate({'marginTop' : '-2000px'}, 1500);
-$(".hider").delay(3700).animate({'opacity' : '0'},0).delay(1000).show(0).animate({'opacity' : '1'},500);
-$(".hiderOverview").delay(3000).animate({'marginTop' : '1200px', 'opacity' : '0'},0).delay(300).show(0).animate({'marginTop' : '0','opacity' : '1'},500);
+$(".outer").delay(800).animate({'opacity' : '1'},300).delay(1500).animate({'marginTop' : '-2000px'}, 1500,
+  function () {
+    window.location.href = "/books";
+  });
+//$(".hider").delay(3700).animate({'opacity' : '0'},0).delay(1000).show(0).animate({'opacity' : '1'}, 500);
+//$(".hiderOverview").delay(3000).animate({'marginTop' : '1200px', 'opacity' : '0'},0).delay(300).show(0).animate({'marginTop' : '0','opacity' : '1'},500);
 
 
 $(".ltr_expand").click(
