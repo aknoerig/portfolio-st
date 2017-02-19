@@ -2,6 +2,7 @@
 
 ini_set('display_errors',true);
 ini_set("session.use_trans_sid", 0);
+session_save_path('sessions');
 session_start();
 
 
