@@ -85,11 +85,7 @@
 
       AK/KRUSE<br/>
       <a href="tel:+494042326810">+49 40-42 32 68 10</a><br/>
-      <a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a><br/>
-      <br/>
-      HALL&amp;LUNDGREN<br/>
-      <a href="tel:+46707556619">+46 707-556 619</a><br/>
-      <a href="http://hallundgren.com/" target="_blank">www.hallundgren.com</a>
+      <a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a>
 
     <!--
   		<p class="default">

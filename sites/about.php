@@ -86,11 +86,8 @@ $result_clients = mysql_query($sql_clients) OR die("<pre>".$sql_clients."</pre>"
       <p class="default">
         AK/KRUSE<br/>
         <a href="tel:+494042326810">+49 40-42 32 68 10</a><br/>
-        <a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a><br/>
-        <br/>
-        HALL&amp;LUNDGREN<br/>
-        <a href="tel:+46707556619">+46 707-556 619</a><br/>
-        <a href="http://hallundgren.com/" target="_blank">www.hallundgren.com</a>
+        <a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a>
+        
         <!--
         <?php
           echo "".htmlentities($row_info['agency'], ENT_QUOTES)."<br />\n";

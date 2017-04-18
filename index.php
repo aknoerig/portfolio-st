@@ -479,11 +479,7 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 						<p class="text">
 							AK/KRUSE<br/>
 							<a href="tel:+494042326810">+49 40-42 32 68 10</a><br/>
-							<u><a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a></u><br/>
-							<br/>
-							HALL&amp;LUNDGREN<br/>
-							<a href="tel:+46707556619">+46 707-556 619</a><br/>
-							<u><a href="http://hallundgren.com/" target="_blank">www.hallundgren.com</a></u>
+							<u><a href="http://www.akkruse.com" target="_blank">www.akkruse.com</a></u>
 							<!--
 							<?php
 							echo "".htmlentities($row_info['agency'], ENT_QUOTES)."<br />\n";
