@@ -312,6 +312,12 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 		<script type="text/javascript" src="/js/player.js"></script>
 	<?php } ?>
 
+	<?php if (isset($_GET['s']) AND $_GET['s'] == "books") { ?>
+		<script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/js/packery-mode.pkgd.min.js"></script>
+		<script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
+	<?php } ?>
+
 	<script type="text/javascript">
 
 	<?php if(!isset($_GET['s']) OR isset($_GET['s']) AND $_GET['s'] == "books") {  } ?>
