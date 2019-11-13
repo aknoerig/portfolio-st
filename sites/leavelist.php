@@ -25,12 +25,12 @@ if(empty($mail)) {
 						
 					WHERE 
 						
-						mail = '".mysql_real_escape_string(trim($_POST['mail']))."'
+						mail = '".mysqli_real_escape_string(trim($_POST['mail']))."'
 						
 			";
 			
-    		$result_check = mysql_query($sql_check) OR die("<pre>".$sql_check."</pre>".mysql_error()); 
-			$row_check = mysql_fetch_assoc($result_check);
+    		$result_check = mysqli_query($conn, $sql_check) OR die("<pre>".$sql_check."</pre>".mysqli_error($conn)); 
+			$row_check = mysqli_fetch_assoc($result_check);
 			
 			
 			if( $row_check['mail'] == "" ) {
@@ -46,7 +46,7 @@ if(empty($mail)) {
 					
 							mail = '".$row_check['mail']."'
 							
-					";		mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+					";		mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 					
 					echo "<p class=\"reg_notes\">You successfully unsubscribed from the mailing list. Hope you come back someday.</p>";
 					

@@ -8,8 +8,8 @@
 
 								";
 
-			$delete = mysql_query($loeschen) or die(mysql_error());
-			$row_delete = @mysql_fetch_assoc($delete);
+			$delete = mysqli_query($conn, $loeschen) or die(mysqli_error($conn));
+			$row_delete = @mysqli_fetch_assoc($delete);
 
 
 			echo "<meta http-equiv=\"refresh\" content=\"1; URL=?s=mailing\">\n";
@@ -67,12 +67,12 @@ if(isset($_POST['prev_letter']) AND $_POST['prev_letter'] == "Preview") {
 
 							letter
 					set
-							subject = '".mysql_real_escape_string(trim($_POST['subject']))."',
-							caption = '".mysql_real_escape_string(trim($_POST['caption']))."',
-							text = '".mysql_real_escape_string(trim($_POST['text']))."',
-							img = '".mysql_real_escape_string(trim("PIC_".$Name))."'
+							subject = '".mysqli_real_escape_string(trim($_POST['subject']))."',
+							caption = '".mysqli_real_escape_string(trim($_POST['caption']))."',
+							text = '".mysqli_real_escape_string(trim($_POST['text']))."',
+							img = '".mysqli_real_escape_string(trim("PIC_".$Name))."'
 
-					";		mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+					";		mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 
 
 					}
@@ -80,8 +80,8 @@ if(isset($_POST['prev_letter']) AND $_POST['prev_letter'] == "Preview") {
             }
 
  			$sql_letter = "SELECT ID, subject, caption, text, img FROM letter ORDER BY ID DESC";
-    		$result_letter = mysql_query($sql_letter) OR die("<pre>".$sql_letter."</pre>".mysql_error());
-			$row_letter = mysql_fetch_assoc($result_letter);
+    		$result_letter = mysqli_query($conn, $sql_letter) OR die("<pre>".$sql_letter."</pre>".mysqli_error($conn));
+			$row_letter = mysqli_fetch_assoc($result_letter);
 
         	echo "<div style=\"width:425px; height:2px; border-top:1px dashed #ccc;\"></div><br />\n";
 
@@ -110,11 +110,11 @@ echo "</div>\n";
 
                                 maillist
                         set
-                        		mail = '".mysql_real_escape_string(trim($_POST['mail']))."'
+                        		mail = '".mysqli_real_escape_string(trim($_POST['mail']))."'
 
                        	";
 
-                       mysql_query($sql_colour) OR die("<pre>".$sql_colour."</pre>".mysql_error());
+                       mysqli_query($conn, $sql_colour) OR die("<pre>".$sql_colour."</pre>".mysqli_error($conn));
 
 			}
 
@@ -146,9 +146,9 @@ echo "</div>\n";
 
 							";
 
-			$result_open = mysql_query($sql_open);
+			$result_open = mysqli_query($conn, $sql_open);
 
-			while($row_open = mysql_fetch_assoc($result_open))
+			while($row_open = mysqli_fetch_assoc($result_open))
 
 				{
 

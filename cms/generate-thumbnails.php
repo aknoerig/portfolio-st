@@ -17,9 +17,9 @@
     FROM project
   ";
 
-  $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error());
+  $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn));
 
-  while ($row_items = mysql_fetch_assoc($result_items)) {
+  while ($row_items = mysqli_fetch_assoc($result_items)) {
 
     $sql_img = "SELECT
       ID,
@@ -31,8 +31,8 @@
       ORDER BY ID ASC
     ";
 
-    $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-    $row_img = mysql_fetch_assoc($result_img);
+    $result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
+    $row_img = mysqli_fetch_assoc($result_img);
 
     project_thumbs(''.htmlentities($row_img['content_img'], ENT_QUOTES).'');
 

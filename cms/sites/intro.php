@@ -45,12 +45,12 @@
 				
                                 img 
                         SET 
-								content_img = '".mysql_real_escape_string(trim("PIC_".$Name))."',
+								content_img = '".mysqli_real_escape_string(trim("PIC_".$Name))."',
 							    date = NOW(),
 							    intro = 'yes'
                        ";
                        
-                mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+                mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
                 
 				
 			
@@ -109,8 +109,8 @@
                                                         
            			";  
            			
-    $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error()); 
-	while($row_items = mysql_fetch_assoc($result_items)) {	
+    $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn)); 
+	while($row_items = mysqli_fetch_assoc($result_items)) {	
 	
 				echo "<div class=\"lb_img\"><img src=\"images/".htmlentities($row_items['content_img'], ENT_QUOTES)."\" /><p class=\"view\"><a href=\"#\" onClick=\"setTimeout('window.location=\'?s=drop_intro&img=".htmlentities($row_items['content_img'], ENT_QUOTES)."\'',2500); return true;\">[ drop ]</a></p></div>\n";
 

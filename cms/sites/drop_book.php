@@ -15,8 +15,8 @@
 						
 								";
 			
-			$result_query = mysql_query($query) or die(mysql_error());
-			while($row_query = @mysql_fetch_assoc($result_query)){
+			$result_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+			while($row_query = @mysqli_fetch_assoc($result_query)){
 			
 			unlink(PIC_FOLDER.$row_query['content_img']);
 			
@@ -27,8 +27,8 @@
 							DELETE FROM img WHERE ID_p ='".$_GET['id']."'
 
 								";
-			$i_delete = mysql_query($delete_i) or die(mysql_error());
-			$i_row_delete = @mysql_fetch_assoc($i_delete);
+			$i_delete = mysqli_query($conn, $delete_i) or die(mysqli_error($conn));
+			$i_row_delete = @mysqli_fetch_assoc($i_delete);
 
 
 			$delete_p = "
@@ -36,8 +36,8 @@
 							DELETE FROM project WHERE ID ='".$_GET['id']."'
 
 								";
-			$p_delete = mysql_query($delete_p) or die(mysql_error());
-			$p_row_delete = @mysql_fetch_assoc($p_delete);
+			$p_delete = mysqli_query($conn, $delete_p) or die(mysqli_error($conn));
+			$p_row_delete = @mysqli_fetch_assoc($p_delete);
 
 			
 

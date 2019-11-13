@@ -67,8 +67,8 @@
                                                         
            			";  
            			
-    $result_ltr_img = mysql_query($sql_ltr_img) OR die("<pre>".$sql_ltr_img."</pre>".mysql_error()); 
-	while($row_ltr_img = mysql_fetch_assoc($result_ltr_img)) {	
+    $result_ltr_img = mysqli_query($conn, $sql_ltr_img) OR die("<pre>".$sql_ltr_img."</pre>".mysqli_error($conn)); 
+	while($row_ltr_img = mysqli_fetch_assoc($result_ltr_img)) {	
 	
 			echo "<div id=\"container\"><p class=\"add\">ADD</p><p class=\"clear\">DROP</p><div class=\"reset\"></div><div class=\"clicked\"></div><img src=\"cms/images/ltr_thumbs_sml/".htmlentities($row_ltr_img['content_img'], ENT_QUOTES)."\" /></div>\n";
 	

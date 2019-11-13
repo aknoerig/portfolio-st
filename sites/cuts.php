@@ -1,11 +1,10 @@
 <?php
 
 $sql_count = "SELECT
-COUNT(*)
-FROM
-tears
-";
-$num_items = mysql_result(mysql_query($sql_count), 0);
+                COUNT(*)
+              FROM
+                tears";
+$num_items = mysqli_num_rows(mysqli_query($conn, $sql_count));
 $tearDisplayId = 0;
 
 if ($detect->isMobile() && !$detect->isTablet()) { 	?>
@@ -82,8 +81,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
         echo "<div id=\"tears\">";
 
 
-        $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error());
-        while($row_items = mysql_fetch_assoc($result_items)) {
+        $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn));
+        while($row_items = mysqli_fetch_assoc($result_items)) {
 
           $tearDisplayId = $num_items - $row_items['recordListingID'] + 1;
 
@@ -109,8 +108,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
             ";
 
-            $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-            $row_img = mysql_fetch_assoc($result_img);
+            $result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
+            $row_img = mysqli_fetch_assoc($result_img);
 
             $sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
@@ -176,8 +175,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
             }
 
-            $result_img_array = mysql_query($sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysql_error());
-            while($row_img_array = mysql_fetch_assoc($result_img_array)) {
+            $result_img_array = mysqli_query($conn, $sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysqli_error($conn));
+            while($row_img_array = mysqli_fetch_assoc($result_img_array)) {
 
 
 
@@ -241,8 +240,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               ";
 
-              $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-              $row_img = mysql_fetch_assoc($result_img);
+              $result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
+              $row_img = mysqli_fetch_assoc($result_img);
 
               $sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
@@ -299,12 +298,12 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               ";
 
-              $result_img_single = mysql_query($sql_img_single) OR die("<pre>".$sql_img_single."</pre>".mysql_error());
-              $row_img_single = mysql_fetch_assoc($result_img_single);
+              $result_img_single = mysqli_query($conn, $sql_img_single) OR die("<pre>".$sql_img_single."</pre>".mysqli_error($conn));
+              $row_img_single = mysqli_fetch_assoc($result_img_single);
 
               $sql_img_count = "SELECT
 
-              ID,
+              ANY_VALUE(ID),
               ID_t,
               COUNT(content_img)
               FROM
@@ -312,11 +311,12 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               WHERE	id_t = '".$row_items['ID']."' AND ID != '".$row_img_single['ID']."'
 
+              GROUP BY ID_t
 
               ";
 
-              $result_img_count = mysql_query($sql_img_count) OR die("<pre>".$sql_img_count."</pre>".mysql_error());
-              $row_img_count = mysql_fetch_assoc($result_img_count);
+              $result_img_count = mysqli_query($conn, $sql_img_count) OR die("<pre>".$sql_img_count."</pre>".mysqli_error($conn));
+              $row_img_count = mysqli_fetch_assoc($result_img_count);
 
               $sql_img_array = "SELECT
 
@@ -333,8 +333,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               ";
 
-              $result_img_array = mysql_query($sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysql_error());
-              while($row_img_array = mysql_fetch_assoc($result_img_array)) {
+              $result_img_array = mysqli_query($conn, $sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysqli_error($conn));
+              while($row_img_array = mysqli_fetch_assoc($result_img_array)) {
 
                 echo "<div id=\"pages\" style=\"width:";
                 if($sizing[0] > 299) {
@@ -498,8 +498,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
         ";
 
 
-        $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error());
-        while($row_items = mysql_fetch_assoc($result_items)) {
+        $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn));
+        while($row_items = mysqli_fetch_assoc($result_items)) {
 
           $tearDisplayId = $num_items - $row_items['recordListingID'] + 1;
 
@@ -525,8 +525,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
             ";
 
-            $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-            $row_img = mysql_fetch_assoc($result_img);
+            $result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
+            $row_img = mysqli_fetch_assoc($result_img);
 
             $sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
@@ -553,8 +553,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
             ";
 
 
-            $result_img_array = mysql_query($sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysql_error());
-            while($row_img_array = mysql_fetch_assoc($result_img_array)) {
+            $result_img_array = mysqli_query($conn, $sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysqli_error($conn));
+            while($row_img_array = mysqli_fetch_assoc($result_img_array)) {
 
 
 
@@ -604,8 +604,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               ";
 
-              $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-              $row_img = mysql_fetch_assoc($result_img);
+              $result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
+              $row_img = mysqli_fetch_assoc($result_img);
 
               $sizing = GetImageSize("http://www.sabrinatheissen.com/cms/images/".htmlentities($row_img['content_img'], ENT_QUOTES)."");
 
@@ -635,12 +635,12 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               ";
 
-              $result_img_single = mysql_query($sql_img_single) OR die("<pre>".$sql_img_single."</pre>".mysql_error());
-              $row_img_single = mysql_fetch_assoc($result_img_single);
+              $result_img_single = mysqli_query($conn, $sql_img_single) OR die("<pre>".$sql_img_single."</pre>".mysqli_error($conn));
+              $row_img_single = mysqli_fetch_assoc($result_img_single);
 
               $sql_img_count = "SELECT
 
-              ID,
+              ANY_VALUE(ID),
               ID_t,
               COUNT(content_img)
               FROM
@@ -648,11 +648,12 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               WHERE	id_t = '".$row_items['ID']."' AND ID != '".$row_img_single['ID']."'
 
+              GROUP BY ID_t
 
               ";
 
-              $result_img_count = mysql_query($sql_img_count) OR die("<pre>".$sql_img_count."</pre>".mysql_error());
-              $row_img_count = mysql_fetch_assoc($result_img_count);
+              $result_img_count = mysqli_query($conn, $sql_img_count) OR die("<pre>".$sql_img_count."</pre>".mysqli_error($conn));
+              $row_img_count = mysqli_fetch_assoc($result_img_count);
 
 
               $sql_img_array = "SELECT
@@ -670,8 +671,8 @@ if ($detect->isMobile() && !$detect->isTablet()) { 	?>
 
               ";
 
-              $result_img_array = mysql_query($sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysql_error());
-              while($row_img_array = mysql_fetch_assoc($result_img_array)) {
+              $result_img_array = mysqli_query($conn, $sql_img_array) OR die("<pre>".$sql_img_array."</pre>".mysqli_error($conn));
+              while($row_img_array = mysqli_fetch_assoc($result_img_array)) {
 
                 echo "<div id=\"pages\" style=\"width:".$sizing[0]."px; height:".$sizing[1]."px;\"><h2 class=\"".htmlentities($row_items['pager'], ENT_QUOTES)."\" style=\"width:".$sizing[0]."px; bottom: ".(($sizing[1]/2)-35)."px;\">1/".($row_img_count['COUNT(content_img)']+1)."</h2></div>";
 

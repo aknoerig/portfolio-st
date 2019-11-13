@@ -30,8 +30,8 @@ if(empty($LTR_access)) {
 
 			";
 
-    			$result_check = mysql_query($sql_check) OR die("<pre>".$sql_check."</pre>".mysql_error());
-				$row_check = mysql_fetch_assoc($result_check);
+    			$result_check = mysqli_query($conn, $sql_check) OR die("<pre>".$sql_check."</pre>".mysqli_error($conn));
+				$row_check = mysqli_fetch_assoc($result_check);
 
 					if( $row_check != "" ) {
 

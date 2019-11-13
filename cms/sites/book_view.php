@@ -8,23 +8,23 @@ echo "<h2>Update project</h2>\n";
 
 $sql_get_id = "SELECT ID, ID_cat, ID_2ndcat, ID_client, name, hair, makeup, styling, setdesign, thumb_size, thumb_spacing FROM project WHERE	ID = '".$_GET['id']."' ";
 
-$result_get_id = mysql_query($sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysql_error());
-$row_get_id = mysql_fetch_assoc($result_get_id);
+$result_get_id = mysqli_query($conn, $sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysqli_error($conn));
+$row_get_id = mysqli_fetch_assoc($result_get_id);
 
 $sql_get_cat1 = "SELECT ID, category FROM cat WHERE ID = '".$row_get_id['ID_cat']."' ";
 
-$result_get_cat1 = mysql_query($sql_get_cat1) OR die("<pre>".$sql_get_cat1."</pre>".mysql_error());
-$row_get_cat1= mysql_fetch_assoc($result_get_cat1);
+$result_get_cat1 = mysqli_query($conn, $sql_get_cat1) OR die("<pre>".$sql_get_cat1."</pre>".mysqli_error($conn));
+$row_get_cat1= mysqli_fetch_assoc($result_get_cat1);
 
 $sql_get_cat2 = "SELECT ID, category FROM cat WHERE ID = '".$row_get_id['ID_2ndcat']."' ";
 
-$result_get_cat2 = mysql_query($sql_get_cat2) OR die("<pre>".$sql_get_cat2."</pre>".mysql_error());
-$row_get_cat2= mysql_fetch_assoc($result_get_cat2);
+$result_get_cat2 = mysqli_query($conn, $sql_get_cat2) OR die("<pre>".$sql_get_cat2."</pre>".mysqli_error($conn));
+$row_get_cat2= mysqli_fetch_assoc($result_get_cat2);
 
 $sql_get_cl = "SELECT ID, name FROM clients WHERE ID = '".$row_get_id['ID_client']."' ";
 
-$result_get_cl = mysql_query($sql_get_cl) OR die("<pre>".$sql_get_cl."</pre>".mysql_error());
-$row_get_cl= mysql_fetch_assoc($result_get_cl);
+$result_get_cl = mysqli_query($conn, $sql_get_cl) OR die("<pre>".$sql_get_cl."</pre>".mysqli_error($conn));
+$row_get_cl= mysqli_fetch_assoc($result_get_cl);
 
 
 if(isset($_POST['project']) AND $_POST['project'] == "Update") {
@@ -35,22 +35,22 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
 
   SET
 
-  ID_cat = '".mysql_real_escape_string(trim($_POST['ID_cat']))."',
-  ID_2ndcat = '".mysql_real_escape_string(trim($_POST['ID_2ndcat']))."',
-  ID_client = '".mysql_real_escape_string(trim($_POST['ID_client']))."',
-  name = '".mysql_real_escape_string(trim($_POST['name']))."',
-  hair = '".mysql_real_escape_string(trim($_POST['hair']))."',
-  makeup = '".mysql_real_escape_string(trim($_POST['makeup']))."',
-  styling = '".mysql_real_escape_string(trim($_POST['styling']))."',
-  setdesign = '".mysql_real_escape_string(trim($_POST['setdesign']))."',
-  thumb_size = '".mysql_real_escape_string(trim($_POST['thumb_size']))."',
-  thumb_spacing = '".mysql_real_escape_string(trim($_POST['thumb_spacing']))."'
+  ID_cat = '".mysqli_real_escape_string(trim($_POST['ID_cat']))."',
+  ID_2ndcat = '".mysqli_real_escape_string(trim($_POST['ID_2ndcat']))."',
+  ID_client = '".mysqli_real_escape_string(trim($_POST['ID_client']))."',
+  name = '".mysqli_real_escape_string(trim($_POST['name']))."',
+  hair = '".mysqli_real_escape_string(trim($_POST['hair']))."',
+  makeup = '".mysqli_real_escape_string(trim($_POST['makeup']))."',
+  styling = '".mysqli_real_escape_string(trim($_POST['styling']))."',
+  setdesign = '".mysqli_real_escape_string(trim($_POST['setdesign']))."',
+  thumb_size = '".mysqli_real_escape_string(trim($_POST['thumb_size']))."',
+  thumb_spacing = '".mysqli_real_escape_string(trim($_POST['thumb_spacing']))."'
 
   WHERE	ID = '".$_GET['id']."'
 
   ";
 
-  mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+  mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 
   echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n";
   echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n";
@@ -73,9 +73,9 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
 
   ";
 
-  $result_open = mysql_query($sql_open);
+  $result_open = mysqli_query($conn, $sql_open);
 
-  while($row_open = mysql_fetch_assoc($result_open))
+  while($row_open = mysqli_fetch_assoc($result_open))
 
   {
 
@@ -102,9 +102,9 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
 
   ";
 
-  $result_open = mysql_query($sql_open);
+  $result_open = mysqli_query($conn, $sql_open);
 
-  while($row_open = mysql_fetch_assoc($result_open))
+  while($row_open = mysqli_fetch_assoc($result_open))
 
   {
 
@@ -131,9 +131,9 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
 
   ";
 
-  $result_open = mysql_query($sql_open);
+  $result_open = mysqli_query($conn, $sql_open);
 
-  while($row_open = mysql_fetch_assoc($result_open))
+  while($row_open = mysqli_fetch_assoc($result_open))
 
   {
 
@@ -210,7 +210,7 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
 
     if (move_uploaded_file($myFILE['tmp_name'], PIC_FOLDER."Sabrina_Theissen_".$Name)) {
 
-      $content_img = mysql_real_escape_string(trim("Sabrina_Theissen_".$Name));
+      $content_img = mysqli_real_escape_string(trim("Sabrina_Theissen_".$Name));
 
       $sql_img = "INSERT INTO
         img
@@ -223,7 +223,7 @@ if(isset($_POST['project']) AND $_POST['project'] == "Update") {
 
       ";
 
-      mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+      mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
 
       if ($i == 1) {
         project_thumbs($content_img);
@@ -262,9 +262,9 @@ else {
 
   ";
 
-  $result_open = mysql_query($sql_open);
+  $result_open = mysqli_query($conn, $sql_open);
 
-  while($row_open = mysql_fetch_assoc($result_open))
+  while($row_open = mysqli_fetch_assoc($result_open))
 
   {
 
@@ -290,9 +290,9 @@ else {
 
   ";
 
-  $result_open = mysql_query($sql_open);
+  $result_open = mysqli_query($conn, $sql_open);
 
-  while($row_open = mysql_fetch_assoc($result_open))
+  while($row_open = mysqli_fetch_assoc($result_open))
 
   {
 
@@ -318,9 +318,9 @@ else {
 
   ";
 
-  $result_open = mysql_query($sql_open);
+  $result_open = mysqli_query($conn, $sql_open);
 
-  while($row_open = mysql_fetch_assoc($result_open))
+  while($row_open = mysqli_fetch_assoc($result_open))
 
   {
 
@@ -427,8 +427,8 @@ ORDER BY ID DESC
 
 ";
 
-$result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error());
-$row_items = mysql_fetch_assoc($result_items);
+$result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn));
+$row_items = mysqli_fetch_assoc($result_items);
 
 echo "<h2><a href=\"?s=books\" class=\"cookie_h\">Books</a><span class=\"cookie\">></span>".htmlentities($row_items['name'], ENT_QUOTES)."</h2>\n";
 echo "<div id=\"trasher\"><img src=\"gui/trasher.png\" onClick=\"setTimeout('window.location=\'?s=drop_book&id=".$_GET['id']."\'',2500); return true;\"  /></div>\n";
@@ -446,8 +446,8 @@ WHERE ID = '".$row_items['ID_client']."'
 
 ";
 
-$result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error());
-$row_client = mysql_fetch_assoc($result_client);
+$result_client = mysqli_query($conn, $sql_client) OR die("<pre>".$sql_client."</pre>".mysqli_error($conn));
+$row_client = mysqli_fetch_assoc($result_client);
 
 
 $sql_img = "SELECT
@@ -465,11 +465,11 @@ ORDER BY ID ASC
 
 ";
 
-$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+$result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
 
 echo "<div id=\"project_details\">\n";
 
-while($row_img = mysql_fetch_assoc($result_img)) {
+while($row_img = mysqli_fetch_assoc($result_img)) {
 
 
   echo "<img src=\"images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /><p class=\"view\"><a href=\"?s=drop_img&id=".$row_img['ID']."&from_book=".$row_items['ID']."\">[ drop ]</a></p>\n";

@@ -15,8 +15,8 @@
 						
 								";
 			
-			$result_query = mysql_query($query) or die(mysql_error());
-			while($row_query = @mysql_fetch_assoc($result_query)){
+			$result_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+			while($row_query = @mysqli_fetch_assoc($result_query)){
 			
 			unlink(PIC_FOLDER.$row_query['content_img']);
 			
@@ -27,8 +27,8 @@
 							DELETE FROM img WHERE ID_t ='".$_GET['id']."'
 
 								";
-			$i_delete = mysql_query($delete_i) or die(mysql_error());
-			$i_row_delete = @mysql_fetch_assoc($i_delete);
+			$i_delete = mysqli_query($conn, $delete_i) or die(mysqli_error($conn));
+			$i_row_delete = @mysqli_fetch_assoc($i_delete);
 			
 
 			echo "<meta http-equiv=\"refresh\" content=\"0; URL=?s=tear_view&id=".$_GET['id']."\">\n";

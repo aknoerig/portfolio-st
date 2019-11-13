@@ -8,23 +8,23 @@
 			
 			$sql_get_id = "SELECT ID, ID_cat, ID_2ndcat, ID_client, name, hair, makeup, styling FROM project WHERE	ID = '".$_GET['from_book']."' ";
 				
-    		$result_get_id = mysql_query($sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysql_error());
-			$row_get_id = mysql_fetch_assoc($result_get_id);
+    		$result_get_id = mysqli_query($conn, $sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysqli_error($conn));
+			$row_get_id = mysqli_fetch_assoc($result_get_id);
 
 			$sql_get_cat1 = "SELECT ID, category FROM cat WHERE ID = '".$row_get_id['ID_cat']."' ";
 				
-    		$result_get_cat1 = mysql_query($sql_get_cat1) OR die("<pre>".$sql_get_cat1."</pre>".mysql_error());
-			$row_get_cat1= mysql_fetch_assoc($result_get_cat1);
+    		$result_get_cat1 = mysqli_query($conn, $sql_get_cat1) OR die("<pre>".$sql_get_cat1."</pre>".mysqli_error($conn));
+			$row_get_cat1= mysqli_fetch_assoc($result_get_cat1);
 
 			$sql_get_cat2 = "SELECT ID, category FROM cat WHERE ID = '".$row_get_id['ID_2ndcat']."' ";
 				
-    		$result_get_cat2 = mysql_query($sql_get_cat2) OR die("<pre>".$sql_get_cat2."</pre>".mysql_error());
-			$row_get_cat2= mysql_fetch_assoc($result_get_cat2);
+    		$result_get_cat2 = mysqli_query($conn, $sql_get_cat2) OR die("<pre>".$sql_get_cat2."</pre>".mysqli_error($conn));
+			$row_get_cat2= mysqli_fetch_assoc($result_get_cat2);
 
 			$sql_get_cl = "SELECT ID, name FROM clients WHERE ID = '".$row_get_id['ID_client']."' ";
 				
-    		$result_get_cl = mysql_query($sql_get_cl) OR die("<pre>".$sql_get_cl."</pre>".mysql_error());
-			$row_get_cl= mysql_fetch_assoc($result_get_cl);
+    		$result_get_cl = mysqli_query($conn, $sql_get_cl) OR die("<pre>".$sql_get_cl."</pre>".mysqli_error($conn));
+			$row_get_cl= mysqli_fetch_assoc($result_get_cl);
 			
 			
  	if(isset($_POST['project']) AND $_POST['project'] == "Update") { 
@@ -34,19 +34,19 @@
 							project							
 					set	
 					
-							ID_cat = '".mysql_real_escape_string(trim($_POST['ID_cat']))."',
-							ID_2ndcat = '".mysql_real_escape_string(trim($_POST['ID_2ndcat']))."',
-							ID_client = '".mysql_real_escape_string(trim($_POST['ID_client']))."',							
-							name = '".mysql_real_escape_string(trim($_POST['name']))."',
-							hair = '".mysql_real_escape_string(trim($_POST['hair']))."',
-							makeup = '".mysql_real_escape_string(trim($_POST['makeup']))."',
-							styling = '".mysql_real_escape_string(trim($_POST['styling']))."'
+							ID_cat = '".mysqli_real_escape_string(trim($_POST['ID_cat']))."',
+							ID_2ndcat = '".mysqli_real_escape_string(trim($_POST['ID_2ndcat']))."',
+							ID_client = '".mysqli_real_escape_string(trim($_POST['ID_client']))."',							
+							name = '".mysqli_real_escape_string(trim($_POST['name']))."',
+							hair = '".mysqli_real_escape_string(trim($_POST['hair']))."',
+							makeup = '".mysqli_real_escape_string(trim($_POST['makeup']))."',
+							styling = '".mysqli_real_escape_string(trim($_POST['styling']))."'
 							
 					WHERE	ID = '".$_GET['from_book']."'
 													
 					";		
 					
-							mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+							mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 		
 			echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n"; 
@@ -69,9 +69,9 @@
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -98,9 +98,9 @@
 
 							"; 
             
-				$result_open = mysql_query($sql_open); 
+				$result_open = mysqli_query($conn, $sql_open); 
             
-				while($row_open = mysql_fetch_assoc($result_open)) 
+				while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 					{
 					
@@ -127,9 +127,9 @@
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -190,12 +190,12 @@
                                 img 
                         SET 
 								id_p = '".$row_get_id['ID']."',
-								content_img = '".mysql_real_escape_string(trim("PIC_".$Name))."',
+								content_img = '".mysqli_real_escape_string(trim("PIC_".$Name))."',
 							    date = NOW()
                        
                        ";
                        
-                mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+                mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
                 
 				
 			
@@ -232,9 +232,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -260,9 +260,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-				$result_open = mysql_query($sql_open); 
+				$result_open = mysqli_query($conn, $sql_open); 
             
-				while($row_open = mysql_fetch_assoc($result_open)) 
+				while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 					{
 					
@@ -288,9 +288,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -347,8 +347,8 @@ echo "<div style=\"width:450px\">\n";
 						
 								";
 			
-			$result_query = mysql_query($query) or die(mysql_error());
-			while($row_query = @mysql_fetch_assoc($result_query)){
+			$result_query = mysqli_query($conn, $query) or die(mysqli_error($conn));
+			while($row_query = @mysqli_fetch_assoc($result_query)){
 			
 			unlink(PIC_FOLDER.$row_query['content_img']);
 			
@@ -360,8 +360,8 @@ echo "<div style=\"width:450px\">\n";
 							DELETE FROM img WHERE ID ='".$_GET['id']."'
 
 								";
-			$i_delete = mysql_query($delete_i) or die(mysql_error());
-			$i_row_delete = @mysql_fetch_assoc($i_delete);
+			$i_delete = mysqli_query($conn, $delete_i) or die(mysqli_error($conn));
+			$i_row_delete = @mysqli_fetch_assoc($i_delete);
 			
 
 			echo "<meta http-equiv=\"refresh\" content=\"1; URL=?s=book_view&id=".$_GET['from_book']."\">\n";
@@ -389,8 +389,8 @@ echo "<div id=\"bio\">\n";
                                                         
            			";  
            			
-    $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error()); 
-	$row_items = mysql_fetch_assoc($result_items);
+    $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn)); 
+	$row_items = mysqli_fetch_assoc($result_items);
    	
    	echo "<h2><a href=\"?s=books\" class=\"cookie_h\">Books</a><span class=\"cookie\">></span>".htmlentities($row_items['name'], ENT_QUOTES)."</h2>\n";
 
@@ -407,8 +407,8 @@ echo "<div id=\"bio\">\n";
                                                         
            			";  
            			
-    		$result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error()); 
-			$row_client = mysql_fetch_assoc($result_client);
+    		$result_client = mysqli_query($conn, $sql_client) OR die("<pre>".$sql_client."</pre>".mysqli_error($conn)); 
+			$row_client = mysqli_fetch_assoc($result_client);
 			
 
 	$sql_img = "SELECT 
@@ -426,11 +426,11 @@ echo "<div id=\"bio\">\n";
                             
            			";  
            			
-    		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error()); 
+    		$result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn)); 
 			
 			echo "<div id=\"project_details\">\n";
 			
-			while($row_img = mysql_fetch_assoc($result_img)) {
+			while($row_img = mysqli_fetch_assoc($result_img)) {
 	
    		
    					echo "<img src=\"images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /><p class=\"view\"><a href=\"?s=book_view&id=".$row_items['ID']."\">[ drop ]</a></p>\n";

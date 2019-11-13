@@ -48,12 +48,12 @@ if(empty($mail) || empty($name) || empty($agency)) {
 						
 					WHERE 
 						
-						mail = '".mysql_real_escape_string(trim($_POST['mail']))."'
+						mail = '".mysqli_real_escape_string(trim($_POST['mail']))."'
 						
 			";
 			
-    		$result_check = mysql_query($sql_check) OR die("<pre>".$sql_check."</pre>".mysql_error()); 
-			$row_check = mysql_fetch_assoc($result_check);
+    		$result_check = mysqli_query($conn, $sql_check) OR die("<pre>".$sql_check."</pre>".mysqli_error($conn)); 
+			$row_check = mysqli_fetch_assoc($result_check);
 			
 			
 			if( $row_check['mail'] == "" ) {
@@ -63,13 +63,13 @@ if(empty($mail) || empty($name) || empty($agency)) {
 							accesses							
 					set	
 					
-							mail = '".mysql_real_escape_string(trim($_POST['mail']))."',
-							contact = '".mysql_real_escape_string(trim($_POST['name']))."',
-							agency = '".mysql_real_escape_string(trim($_POST['agency']))."',
+							mail = '".mysqli_real_escape_string(trim($_POST['mail']))."',
+							contact = '".mysqli_real_escape_string(trim($_POST['name']))."',
+							agency = '".mysqli_real_escape_string(trim($_POST['agency']))."',
 							code = '".$newcode."',
 							timestamp = NOW()	
 						
-					";		mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+					";		mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 					
 					echo "<script>\n";
 					echo "$(\".second\").animate({'opacity' : '0'},0).hide();\n";
@@ -90,7 +90,7 @@ if(empty($mail) || empty($name) || empty($agency)) {
  
 		$header .= "X-Mailer: PHP ". phpversion();
  
-		$sql_mail = "".mysql_real_escape_string(trim($_POST['mail']))."";
+		$sql_mail = "".mysqli_real_escape_string(trim($_POST['mail']))."";
 		 
 		mail ( 
 				$sql_mail,
@@ -106,16 +106,16 @@ if(empty($mail) || empty($name) || empty($agency)) {
 							accesses							
 					set	
 					
-							contact = '".mysql_real_escape_string(trim($_POST['name']))."',
-							agency = '".mysql_real_escape_string(trim($_POST['agency']))."',
+							contact = '".mysqli_real_escape_string(trim($_POST['name']))."',
+							agency = '".mysqli_real_escape_string(trim($_POST['agency']))."',
 							code = '".$newcode."',
 							timestamp = NOW()
 							
 					WHERE 
 					
-							mail = '".mysql_real_escape_string(trim($_POST['mail']))."'
+							mail = '".mysqli_real_escape_string(trim($_POST['mail']))."'
 						
-					";		mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+					";		mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 					
 					echo "<script>\n";
 					echo "$(\".second\").animate({'opacity' : '0'},0).hide();\n";

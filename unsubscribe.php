@@ -30,8 +30,8 @@
 
 		";
 
-    $result_info = mysql_query($sql_info) OR die("<pre>".$sql_info."</pre>".mysql_error());
-	$row_info = mysql_fetch_assoc($result_info);
+    $result_info = mysqli_query($conn, $sql_info) OR die("<pre>".$sql_info."</pre>".mysqli_error($conn));
+	$row_info = mysqli_fetch_assoc($result_info);
 
 	$sql_clients = "
 
@@ -49,7 +49,7 @@
 
 		";
 
-    		$result_clients = mysql_query($sql_clients) OR die("<pre>".$sql_clients."</pre>".mysql_error());
+    		$result_clients = mysqli_query($conn, $sql_clients) OR die("<pre>".$sql_clients."</pre>".mysqli_error($conn));
 
 		?>
 
@@ -61,7 +61,7 @@
 		<p class="default">
 			<?php
 
-			while($row_clients = mysql_fetch_assoc($result_clients)) {
+			while($row_clients = mysqli_fetch_assoc($result_clients)) {
 
 			echo "".htmlentities($row_clients['name'], ENT_QUOTES)."<br />\n";
 

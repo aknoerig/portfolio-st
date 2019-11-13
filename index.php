@@ -72,8 +72,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		";
 
-		$result_title_cut = mysql_query($sql_title_cut) OR die("<pre>".$sql_title_cut."</pre>".mysql_error());
-		$row_title_cut = mysql_fetch_assoc($result_title_cut);
+		$result_title_cut = mysqli_query($conn, $sql_title_cut) OR die("<pre>".$sql_title_cut."</pre>".mysqli_error($conn));
+		$row_title_cut = mysqli_fetch_assoc($result_title_cut);
 
 		$title = "SABRINA THEISSEN &nbsp;|&nbsp; &rsaquo;".htmlentities($row_title_cut['caption'], ENT_QUOTES)."&lsaquo;&nbsp; ".htmlentities($row_title_cut['date'], ENT_QUOTES)."";
 		$description = "".htmlentities($row_title_cut['text'], ENT_QUOTES)."";
@@ -100,8 +100,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		";
 
-		$result_title_item = mysql_query($sql_title_item) OR die("<pre>".$sql_title_item."</pre>".mysql_error());
-		$row_title_item = mysql_fetch_assoc($result_title_item);
+		$result_title_item = mysqli_query($conn, $sql_title_item) OR die("<pre>".$sql_title_item."</pre>".mysqli_error($conn));
+		$row_title_item = mysqli_fetch_assoc($result_title_item);
 
 		$sql_title_client = "SELECT
 
@@ -114,8 +114,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		";
 
-		$result_title_client = mysql_query($sql_title_client) OR die("<pre>".$sql_title_client."</pre>".mysql_error());
-		$row_title_client = mysql_fetch_assoc($result_title_client);
+		$result_title_client = mysqli_query($conn, $sql_title_client) OR die("<pre>".$sql_title_client."</pre>".mysqli_error($conn));
+		$row_title_client = mysqli_fetch_assoc($result_title_client);
 
 		if($row_title_item['hair'] != "") { $hair = "".htmlentities($row_title_item['hair'], ENT_QUOTES).""; } else { $hair = ""; }
 		if($row_title_item['makeup'] != "") { $makeup = "".htmlentities($row_title_item['makeup'], ENT_QUOTES).""; } else { $makeup = ""; }
@@ -182,8 +182,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		";
 
-		$result_title_cut = mysql_query($sql_title_cut) OR die("<pre>".$sql_title_cut."</pre>".mysql_error());
-		$row_title_cut = mysql_fetch_assoc($result_title_cut);
+		$result_title_cut = mysqli_query($conn, $sql_title_cut) OR die("<pre>".$sql_title_cut."</pre>".mysqli_error($conn));
+		$row_title_cut = mysqli_fetch_assoc($result_title_cut);
 
 		$title = "SABRINA THEISSEN &nbsp;|&nbsp; &rsaquo;".htmlentities($row_title_cut['caption'], ENT_QUOTES)."&lsaquo;&nbsp; ".htmlentities($row_title_cut['date'], ENT_QUOTES)."";
 		$description = "".htmlentities($row_title_cut['text'], ENT_QUOTES)."";
@@ -210,8 +210,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		";
 
-		$result_title_item = mysql_query($sql_title_item) OR die("<pre>".$sql_title_item."</pre>".mysql_error());
-		$row_title_item = mysql_fetch_assoc($result_title_item);
+		$result_title_item = mysqli_query($conn, $sql_title_item) OR die("<pre>".$sql_title_item."</pre>".mysqli_error($conn));
+		$row_title_item = mysqli_fetch_assoc($result_title_item);
 
 		$sql_title_client = "SELECT
 
@@ -224,8 +224,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 		";
 
-		$result_title_client = mysql_query($sql_title_client) OR die("<pre>".$sql_title_client."</pre>".mysql_error());
-		$row_title_client = mysql_fetch_assoc($result_title_client);
+		$result_title_client = mysqli_query($conn, $sql_title_client) OR die("<pre>".$sql_title_client."</pre>".mysqli_error($conn));
+		$row_title_client = mysqli_fetch_assoc($result_title_client);
 
 		if($row_title_item['hair'] != "") { $hair = "".htmlentities($row_title_item['hair'], ENT_QUOTES).""; } else { $hair = ""; }
 		if($row_title_item['makeup'] != "") { $makeup = "".htmlentities($row_title_item['makeup'], ENT_QUOTES).""; } else { $makeup = ""; }
@@ -466,8 +466,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 
 							";
 
-							$result_info = mysql_query($sql_info) OR die("<pre>".$sql_info."</pre>".mysql_error());
-							$row_info = mysql_fetch_assoc($result_info);
+							$result_info = mysqli_query($conn, $sql_info) OR die("<pre>".$sql_info."</pre>".mysqli_error($conn));
+							$row_info = mysqli_fetch_assoc($result_info);
 
 						?>
 
@@ -533,8 +533,8 @@ if ($detect->isMobile() && !$detect->isTablet()) {
 								WHERE	public = 'public'
 								ORDER BY name ASC
 							";
-							$result_clients = mysql_query($sql_clients) OR die("<pre>".$sql_clients."</pre>".mysql_error());
-							while($row_clients = mysql_fetch_assoc($result_clients)) {
+							$result_clients = mysqli_query($conn, $sql_clients) OR die("<pre>".$sql_clients."</pre>".mysqli_error($conn));
+							while($row_clients = mysqli_fetch_assoc($result_clients)) {
 								echo "".htmlentities($row_clients['name'], ENT_QUOTES)."<br />\n";
 							}
 						?>

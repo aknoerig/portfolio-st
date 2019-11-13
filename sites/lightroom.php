@@ -61,8 +61,8 @@
 
            			";
 
-    $result_ltr_img = mysql_query($sql_ltr_img) OR die("<pre>".$sql_ltr_img."</pre>".mysql_error());
-	while($row_ltr_img = mysql_fetch_assoc($result_ltr_img)) {
+    $result_ltr_img = mysqli_query($conn, $sql_ltr_img) OR die("<pre>".$sql_ltr_img."</pre>".mysqli_error($conn));
+	while($row_ltr_img = mysqli_fetch_assoc($result_ltr_img)) {
 
 		$sql_ltr_cat = "SELECT
 
@@ -78,8 +78,8 @@
 
            			";
 
-    		$result_ltr_cat = mysql_query($sql_ltr_cat) OR die("<pre>".$sql_ltr_cat."</pre>".mysql_error());
-			$row_ltr_cat = mysql_fetch_assoc($result_ltr_cat);
+    		$result_ltr_cat = mysqli_query($conn, $sql_ltr_cat) OR die("<pre>".$sql_ltr_cat."</pre>".mysqli_error($conn));
+			$row_ltr_cat = mysqli_fetch_assoc($result_ltr_cat);
 
 
 			echo "<div id=\"container\" class=\"cat".htmlentities($row_ltr_cat['ID_cat'], ENT_QUOTES)." cat".htmlentities($row_ltr_cat['ID_2ndcat'], ENT_QUOTES)."\"><p class=\"add\">ADD</p><p class=\"clear\">DROP</p><div class=\"reset\"></div><div class=\"clicked\"></div><img src=\"/cms/images/ltr_thumbs_sml/".htmlentities($row_ltr_img['content_img'], ENT_QUOTES)."\" /></div>\n";

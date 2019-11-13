@@ -25,8 +25,8 @@ $username = $_POST["admin_user"];
 $passwort = md5($_POST["admin_pass"]);
 
 $abfrage = "SELECT ID, user, pass FROM about WHERE ID = '1' ";
-$ergebnis = mysql_query($abfrage);
-$row = mysql_fetch_object($ergebnis);
+$ergebnis = mysqli_query($conn, $abfrage);
+$row = mysqli_fetch_object($ergebnis);
 
 if($row->pass == $passwort)
     {

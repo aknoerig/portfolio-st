@@ -2,7 +2,7 @@
 
     include("mysql.php"); 
 
-$action 				= mysql_real_escape_string($_POST['action']);
+$action 				= mysqli_real_escape_string($_POST['action']);
 $updateRecordsArray 	= $_POST['recordsArray'];
 
 if ($action == "updateRecordsListingsCuts"){
@@ -11,7 +11,7 @@ if ($action == "updateRecordsListingsCuts"){
 	foreach ($updateRecordsArray as $recordIDValue) {
 
 		$query = "UPDATE tears SET recordListingID = " . $listingCounter . " WHERE ID = " . $recordIDValue;
-		mysql_query($query) or die('Error, insert query failed');
+		mysqli_query($conn, $query) or die('Error, insert query failed');
 		$listingCounter = $listingCounter + 1;
 	}
 

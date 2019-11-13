@@ -8,23 +8,23 @@
 			
 			$sql_get_id = "SELECT ID, ID_a FROM img WHERE	ID = '".$_GET['id']."' ";
 				
-    		$result_get_id = mysql_query($sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysql_error());
-			$row_get_id = mysql_fetch_assoc($result_get_id);
+    		$result_get_id = mysqli_query($conn, $sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysqli_error($conn));
+			$row_get_id = mysqli_fetch_assoc($result_get_id);
 
 			$sql_get_cat_id = "SELECT ID, ID_cat, ID_2ndcat FROM lightbox WHERE ID = '".$_GET['from_arch']."' ";
 				
-    		$result_get_cat_id = mysql_query($sql_get_cat_id) OR die("<pre>".$sql_get_cat_id."</pre>".mysql_error());
-			$row_get_cat_id= mysql_fetch_assoc($result_get_cat_id);
+    		$result_get_cat_id = mysqli_query($conn, $sql_get_cat_id) OR die("<pre>".$sql_get_cat_id."</pre>".mysqli_error($conn));
+			$row_get_cat_id= mysqli_fetch_assoc($result_get_cat_id);
 
 			$sql_get_cat_name1 = "SELECT ID, category FROM box_cats WHERE ID = '".$row_get_cat_id['ID_cat']."' ";
 				
-    		$result_get_cat_name1 = mysql_query($sql_get_cat_name1) OR die("<pre>".$sql_get_cat_name1."</pre>".mysql_error());
-			$row_get_cat_name1= mysql_fetch_assoc($result_get_cat_name1);
+    		$result_get_cat_name1 = mysqli_query($conn, $sql_get_cat_name1) OR die("<pre>".$sql_get_cat_name1."</pre>".mysqli_error($conn));
+			$row_get_cat_name1= mysqli_fetch_assoc($result_get_cat_name1);
 
 			$sql_get_cat_name2 = "SELECT ID, category FROM box_cats WHERE ID = '".$row_get_cat_id['ID_2ndcat']."' ";
 				
-    		$result_get_cat_name2 = mysql_query($sql_get_cat_name2) OR die("<pre>".$sql_get_cat_name2."</pre>".mysql_error());
-			$row_get_cat_name2= mysql_fetch_assoc($result_get_cat_name2);
+    		$result_get_cat_name2 = mysqli_query($conn, $sql_get_cat_name2) OR die("<pre>".$sql_get_cat_name2."</pre>".mysqli_error($conn));
+			$row_get_cat_name2= mysqli_fetch_assoc($result_get_cat_name2);
 
 			
 			
@@ -35,14 +35,14 @@
 							lightbox							
 					set	
 					
-							ID_cat = '".mysql_real_escape_string(trim($_POST['ID_cat']))."',
-							ID_2ndcat = '".mysql_real_escape_string(trim($_POST['ID_2ndcat']))."'
+							ID_cat = '".mysqli_real_escape_string(trim($_POST['ID_cat']))."',
+							ID_2ndcat = '".mysqli_real_escape_string(trim($_POST['ID_2ndcat']))."'
 							
 					WHERE	ID = '".$_GET['id']."'
 													
 					";		
 					
-							mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+							mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 		
 			echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n"; 
@@ -65,9 +65,9 @@
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -94,9 +94,9 @@
 
 							"; 
             
-				$result_open = mysql_query($sql_open); 
+				$result_open = mysqli_query($conn, $sql_open); 
             
-				while($row_open = mysql_fetch_assoc($result_open)) 
+				while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 					{
 					
@@ -141,9 +141,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -169,9 +169,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-				$result_open = mysql_query($sql_open); 
+				$result_open = mysqli_query($conn, $sql_open); 
             
-				while($row_open = mysql_fetch_assoc($result_open)) 
+				while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 					{
 					
@@ -207,8 +207,8 @@ echo "<div id=\"bio\">\n";
                                                                                                                 
            			";  
            			
-    $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error()); 
-	while($row_items = mysql_fetch_assoc($result_items)) {	
+    $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn)); 
+	while($row_items = mysqli_fetch_assoc($result_items)) {	
 	
 				echo "<div id=\"lb_img_details\"><img src=\"images/".htmlentities($row_items['content_img'], ENT_QUOTES)."\" /><p class=\"view\"><a href=\"?s=lightbox_view&id=".$row_items['ID']."\">[ view ]</a></p></div>\n";
 

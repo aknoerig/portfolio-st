@@ -38,8 +38,8 @@
 
 		";
 
-    $result_info = mysql_query($sql_info) OR die("<pre>".$sql_info."</pre>".mysql_error());
-	$row_info = mysql_fetch_assoc($result_info);
+    $result_info = mysqli_query($conn, $sql_info) OR die("<pre>".$sql_info."</pre>".mysqli_error($conn));
+	$row_info = mysqli_fetch_assoc($result_info);
 
 		?>
 

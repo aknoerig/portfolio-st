@@ -1,7 +1,7 @@
 <?php
 
 /* returns thumnail for a given project/book */
-function getThumb($project_id, $default_size = false) {
+function getThumb($conn, $project_id, $default_size = false) {
   $sql_preview_img = "SELECT
     ID,
     content_img
@@ -10,8 +10,8 @@ function getThumb($project_id, $default_size = false) {
     ORDER BY ID ASC
     LIMIT 1
   ";
-  $result_preview_img = mysql_query($sql_preview_img) OR die("<pre>".$sql_preview_img."</pre>".mysql_error());
-  $preview_img = mysql_fetch_assoc($result_preview_img);
+  $result_preview_img = mysqli_query($conn, $sql_preview_img) OR die("<pre>".$sql_preview_img."</pre>".mysqli_error($conn));
+  $preview_img = mysqli_fetch_assoc($result_preview_img);
   $pathparts = pathinfo($preview_img['content_img']);
 
   if ($default_size) {
@@ -22,8 +22,8 @@ function getThumb($project_id, $default_size = false) {
       FROM project
       WHERE ID = '".$project_id."'
     ";
-    $result_size = mysql_query($sql_size) OR die("<pre>".$sql_size."</pre>".mysql_error());
-    $size = mysql_fetch_assoc($result_size)['thumb_size'];
+    $result_size = mysqli_query($conn, $sql_size) OR die("<pre>".$sql_size."</pre>".mysqli_error($conn));
+    $size = mysqli_fetch_assoc($result_size)['thumb_size'];
   }
 
   return "/cms/images/thumbs/".$pathparts['filename']."_".$size.".".$pathparts['extension'];

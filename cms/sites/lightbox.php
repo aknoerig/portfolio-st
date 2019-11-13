@@ -12,16 +12,16 @@
 							lightbox							
 					set	
 					
-							ID_cat = '".mysql_real_escape_string(trim($_POST['ID_cat']))."',
-							ID_2ndcat = '".mysql_real_escape_string(trim($_POST['ID_2ndcat']))."'
+							ID_cat = '".mysqli_real_escape_string(trim($_POST['ID_cat']))."',
+							ID_2ndcat = '".mysqli_real_escape_string(trim($_POST['ID_2ndcat']))."'
 																											
-					";		mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+					";		mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 		
 					
 			$sql_get_id = "SELECT ID FROM lightbox ORDER BY ID DESC";
 				
-    		$result_get_id = mysql_query($sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysql_error());
-			$row_get_id = mysql_fetch_assoc($result_get_id);
+    		$result_get_id = mysqli_query($conn, $sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysqli_error($conn));
+			$row_get_id = mysqli_fetch_assoc($result_get_id);
 
 			
 echo "<div style=\"width:450px\">\n"; 
@@ -42,9 +42,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -71,9 +71,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-				$result_open = mysql_query($sql_open); 
+				$result_open = mysqli_query($conn, $sql_open); 
             
-				while($row_open = mysql_fetch_assoc($result_open)) 
+				while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 					{
 					
@@ -117,12 +117,12 @@ echo "<div style=\"width:450px\">\n";
                                 img 
                         SET 
 								id_a = '".$row_get_id['ID']."',
-								content_img = '".mysql_real_escape_string(trim("Sabrina_Theissen_".$Name))."',
+								content_img = '".mysqli_real_escape_string(trim("Sabrina_Theissen_".$Name))."',
 							    date = NOW()
                        
                        ";
                        
-                mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+                mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
 
 			
 					} 
@@ -158,9 +158,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -186,9 +186,9 @@ echo "<div style=\"width:450px\">\n";
 
 							"; 
             
-				$result_open = mysql_query($sql_open); 
+				$result_open = mysqli_query($conn, $sql_open); 
             
-				while($row_open = mysql_fetch_assoc($result_open)) 
+				while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 					{
 					
@@ -240,8 +240,8 @@ echo "<div style=\"width:450px\">\n";
                                                         
            			";  
            			
-    		$result_accounts_on = mysql_query($sql_accounts_on) OR die("<pre>".$sql_accounts_on."</pre>".mysql_error()); 
-			while($row_accounts_on = mysql_fetch_assoc($result_accounts_on)) {	
+    		$result_accounts_on = mysqli_query($conn, $sql_accounts_on) OR die("<pre>".$sql_accounts_on."</pre>".mysqli_error($conn)); 
+			while($row_accounts_on = mysqli_fetch_assoc($result_accounts_on)) {	
 			
 
 			echo "<p class=\"left-shipping normal floater top-0 accounts\"><strong>".htmlentities($row_accounts_on['agency'], ENT_QUOTES)."</strong><br /> ".htmlentities($row_accounts_on['contact'], ENT_QUOTES)." (<a href=\"mailto:".htmlentities($row_accounts_on['mail'], ENT_QUOTES)."\">".htmlentities($row_accounts_on['mail'], ENT_QUOTES)."</a>)<span class=\"code\">".htmlentities($row_accounts_on['code'], ENT_QUOTES)." <img src=\"gui/on.gif\"></span>\n";
@@ -268,8 +268,8 @@ echo "<div style=\"display: inline-block; width:430px; height:8px; border-top:1p
                                                         
            			";  
            			
-    		$result_accounts_off = mysql_query($sql_accounts_off) OR die("<pre>".$sql_accounts_off."</pre>".mysql_error()); 
-			while($row_accounts_off = mysql_fetch_assoc($result_accounts_off)) {	
+    		$result_accounts_off = mysqli_query($conn, $sql_accounts_off) OR die("<pre>".$sql_accounts_off."</pre>".mysqli_error($conn)); 
+			while($row_accounts_off = mysqli_fetch_assoc($result_accounts_off)) {	
 			
 			echo "<p class=\"left-shipping normal floater top-0 accounts\"><strong>".htmlentities($row_accounts_off['agency'], ENT_QUOTES)."</strong><br /> ".htmlentities($row_accounts_off['contact'], ENT_QUOTES)." (<a href=\"mailto:".htmlentities($row_accounts_off['mail'], ENT_QUOTES)."\">".htmlentities($row_accounts_off['mail'], ENT_QUOTES)."</a>)<span class=\"code\">".htmlentities($row_accounts_off['code'], ENT_QUOTES)." <img src=\"gui/off.gif\"></span>\n";
 echo "<div style=\"display: inline-block; width:430px; height:8px; border-top:1px dashed #ccc;\"></div>\n"; 
@@ -304,8 +304,8 @@ echo "<div style=\"display: inline-block; width:430px; height:8px; border-top:1p
                                                         
            			";  
            			
-    $result_img_sizing = mysql_query($sql_img_sizing) OR die("<pre>".$sql_img_sizing."</pre>".mysql_error()); 
-	while($row_img_sizing = mysql_fetch_assoc($result_img_sizing)) {	
+    $result_img_sizing = mysqli_query($conn, $sql_img_sizing) OR die("<pre>".$sql_img_sizing."</pre>".mysqli_error($conn)); 
+	while($row_img_sizing = mysqli_fetch_assoc($result_img_sizing)) {	
 	
 	
 				ltr_thumb(''.htmlentities($row_img_sizing['content_img'], ENT_QUOTES).'', 'images/ltr_thumbs/'.htmlentities($row_img_sizing['content_img'], ENT_QUOTES).'', 0, 0, 1240, 1754);
@@ -330,8 +330,8 @@ echo "<div style=\"display: inline-block; width:430px; height:8px; border-top:1p
                                                         
            			";  
            			
-    $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error()); 
-	while($row_items = mysql_fetch_assoc($result_items)) {	
+    $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn)); 
+	while($row_items = mysqli_fetch_assoc($result_items)) {	
 							
 				echo "<div id=\"recordsArray_" . $row_items['ID'] . "\" class=\"lb_img\"><img src=\"images/ltr_thumbs_sml/".htmlentities($row_items['content_img'], ENT_QUOTES)."\" /><p class=\"view\"><a href=\"#\" onClick=\"setTimeout('window.location=\'?s=drop_lightbox&id=".htmlentities($row_items['ID'], ENT_QUOTES)."\'',2500); return true;\">[ drop ]</a></p></div>\n";
 

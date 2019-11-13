@@ -32,9 +32,9 @@
           LIMIT 3
         ";
 
-        $result_rand = mysql_query($sql_rand) OR die("<pre>".$sql_rand."</pre>".mysql_error());
+        $result_rand = mysqli_query($conn, $sql_rand) OR die("<pre>".$sql_rand."</pre>".mysqli_error($conn));
 
-        while($row_rand = mysql_fetch_assoc($result_rand)) {
+        while($row_rand = mysqli_fetch_assoc($result_rand)) {
           echo "<div id=\"intro\" class=\"introCol".$_set_intro."\" style=\"
                 background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
                 -webkit-background-image: url('/cms/images/".htmlentities($row_rand['content_img'], ENT_QUOTES)."');
@@ -86,8 +86,8 @@
     } else {
 
       $sql_cat_state = "SELECT ID, category from cat WHERE category = '".$_GET['cat']."' ";
-      $result_cat_state = mysql_query($sql_cat_state) OR die("<pre>".$sql_cat_state."</pre>".mysql_error());
-      $row_cat_state = mysql_fetch_assoc($result_cat_state);
+      $result_cat_state = mysqli_query($conn, $sql_cat_state) OR die("<pre>".$sql_cat_state."</pre>".mysqli_error($conn));
+      $row_cat_state = mysqli_fetch_assoc($result_cat_state);
 
       $sql_items = "SELECT
 
@@ -111,8 +111,8 @@
       ";
     }
 
-    $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error());
-    $row_items = mysql_fetch_assoc($result_items);
+    $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn));
+    $row_items = mysqli_fetch_assoc($result_items);
 
 
 
@@ -143,13 +143,13 @@
         ORDER BY ID ASC
       ";
 
-      $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+      $result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
 
       echo "<div class=\"openergrid\">\n";
 
       $count = 0;
 
-      while ($row_img = mysql_fetch_assoc($result_img)) {
+      while ($row_img = mysqli_fetch_assoc($result_img)) {
 
         $isPortrait = isPortrait($row_img['content_img']);
         $isNewRow = $count % 2 == 0;
@@ -189,8 +189,8 @@
         WHERE	ID = '".$_GET['book']."'
       ";
 
-      $result_pushRank = mysql_query($sql_pushRank) OR die("<pre>".$sql_pushRank."</pre>".mysql_error());
-      $row_pushRank = mysql_fetch_assoc($result_pushRank);
+      $result_pushRank = mysqli_query($conn, $sql_pushRank) OR die("<pre>".$sql_pushRank."</pre>".mysqli_error($conn));
+      $row_pushRank = mysqli_fetch_assoc($result_pushRank);
 
       $sql_client_state = "SELECT
         ID,
@@ -203,8 +203,8 @@
         FROM project
         WHERE ID = '".$_GET['book']."'
       ";
-      $result_client_state = mysql_query($sql_client_state) OR die("<pre>".$sql_client_state."</pre>".mysql_error());
-      $row_client_state = mysql_fetch_assoc($result_client_state);
+      $result_client_state = mysqli_query($conn, $sql_client_state) OR die("<pre>".$sql_client_state."</pre>".mysqli_error($conn));
+      $row_client_state = mysqli_fetch_assoc($result_client_state);
 
       $sql_client = "SELECT
         ID,
@@ -214,8 +214,8 @@
         WHERE ID = '".$row_client_state['ID_client']."'
       ";
 
-      $result_client = mysql_query($sql_client) OR die("<pre>".$sql_client."</pre>".mysql_error());
-      $row_client = mysql_fetch_assoc($result_client);
+      $result_client = mysqli_query($conn, $sql_client) OR die("<pre>".$sql_client."</pre>".mysqli_error($conn));
+      $row_client = mysqli_fetch_assoc($result_client);
 
       if($row_pushRank['recordListingID'] == "") {
         echo "<meta http-equiv=\"refresh\" content=\"0; URL=/books/\">\n";
@@ -314,9 +314,9 @@
       ";
     }
 
-    $result_items_list = mysql_query($sql_items_list) OR die("<pre>".$sql_items_list."</pre>".mysql_error());
+    $result_items_list = mysqli_query($conn, $sql_items_list) OR die("<pre>".$sql_items_list."</pre>".mysqli_error($conn));
 
-    while ( $row_items_list = mysql_fetch_assoc($result_items_list) ) {
+    while ( $row_items_list = mysqli_fetch_assoc($result_items_list) ) {
 
       if ( ! (isset($_GET['book']) AND ($row_items_list['ID'] == $_GET['book'])) ) {
 
@@ -328,8 +328,8 @@
           WHERE ID = '".$row_items_list['ID_client']."'
         ";
 
-        $result_client_list = mysql_query($sql_client_list) OR die("<pre>".$sql_client_list."</pre>".mysql_error());
-        $row_client_list = mysql_fetch_assoc($result_client_list);
+        $result_client_list = mysqli_query($conn, $sql_client_list) OR die("<pre>".$sql_client_list."</pre>".mysqli_error($conn));
+        $row_client_list = mysqli_fetch_assoc($result_client_list);
 
         $sql_img = "SELECT
           ID,
@@ -342,8 +342,8 @@
           ORDER BY ID ASC
         ";
 
-        $result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
-        $row_img = mysql_fetch_assoc($result_img);
+        $result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
+        $row_img = mysqli_fetch_assoc($result_img);
 
         if(isset($_GET['cat']) AND $_GET['cat'] != "") {
 
@@ -361,9 +361,9 @@
                    title=\"&nbsp;&rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."&nbsp;\">";
 
         if ($detect->isMobile() && !$detect->isTablet()) {
-          echo "    <img src=\"".getThumb($row_items_list['ID'], true)."\"";
+          echo "    <img src=\"".getThumb($conn, $row_items_list['ID'], true)."\"";
         } else {
-          echo "    <img src=\"".getThumb($row_items_list['ID'])."\"";
+          echo "    <img src=\"".getThumb($conn, $row_items_list['ID'])."\"";
         }
         echo "         alt=\"Sabrina Theissen | N&deg;".htmlentities($row_items_list['recordListingID'], ENT_QUOTES)." &rsaquo;".htmlentities($row_items_list['name'], ENT_QUOTES)
                             ."&lsaquo; for ".htmlentities($row_client_list['name'], ENT_QUOTES)."\" />";

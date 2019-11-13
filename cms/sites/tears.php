@@ -15,17 +15,17 @@
 							tears							
 					set	
 					
-							date = '".mysql_real_escape_string(trim($_POST['dd']))." ".mysql_real_escape_string(trim($_POST['month']))." ".mysql_real_escape_string(trim($_POST['yyyy']))."',
-							caption = '".mysql_real_escape_string(trim($_POST['caption']))."',
-							text = '".mysql_real_escape_string(trim($_POST['cut_text']))."'
+							date = '".mysqli_real_escape_string(trim($_POST['dd']))." ".mysqli_real_escape_string(trim($_POST['month']))." ".mysqli_real_escape_string(trim($_POST['yyyy']))."',
+							caption = '".mysqli_real_escape_string(trim($_POST['caption']))."',
+							text = '".mysqli_real_escape_string(trim($_POST['cut_text']))."'
 																				
-					";		mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+					";		mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 		
 					
 			$sql_get_id = "SELECT ID FROM tears ORDER BY ID DESC";
 				
-    		$result_get_id = mysql_query($sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysql_error());
-			$row_get_id = mysql_fetch_assoc($result_get_id);
+    		$result_get_id = mysqli_query($conn, $sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysqli_error($conn));
+			$row_get_id = mysqli_fetch_assoc($result_get_id);
 
 			
 		
@@ -47,12 +47,12 @@
                                 img 
                         SET 
 								id_t = '".$row_get_id['ID']."',
-								content_img = '".mysql_real_escape_string(trim("Sabrina_Theissen_".$Name))."',
+								content_img = '".mysqli_real_escape_string(trim("Sabrina_Theissen_".$Name))."',
 							    date = NOW()
                        
                        ";
                        
-                mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+                mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
                 
 				
 			
@@ -70,19 +70,19 @@
 							tears							
 					set	
 					
-							date = '".mysql_real_escape_string(trim($_POST['dd']))." ".mysql_real_escape_string(trim($_POST['month']))." ".mysql_real_escape_string(trim($_POST['yyyy']))."',
-							caption = '".mysql_real_escape_string(trim($_POST['caption']))."',
-							text = '".mysql_real_escape_string(trim($_POST['cut_text']))."',
-							pager = '".mysql_real_escape_string(trim($_POST['pager']))."',
+							date = '".mysqli_real_escape_string(trim($_POST['dd']))." ".mysqli_real_escape_string(trim($_POST['month']))." ".mysqli_real_escape_string(trim($_POST['yyyy']))."',
+							caption = '".mysqli_real_escape_string(trim($_POST['caption']))."',
+							text = '".mysqli_real_escape_string(trim($_POST['cut_text']))."',
+							pager = '".mysqli_real_escape_string(trim($_POST['pager']))."',
 							vid = 'yes'
 																				
-					";		mysql_query($sql_data) OR die("<pre>".$sql_data."</pre>".mysql_error());
+					";		mysqli_query($conn, $sql_data) OR die("<pre>".$sql_data."</pre>".mysqli_error($conn));
 		
 					
 			$sql_get_id = "SELECT ID FROM tears ORDER BY ID DESC";
 				
-    		$result_get_id = mysql_query($sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysql_error());
-			$row_get_id = mysql_fetch_assoc($result_get_id);
+    		$result_get_id = mysqli_query($conn, $sql_get_id) OR die("<pre>".$sql_get_id."</pre>".mysqli_error($conn));
+			$row_get_id = mysqli_fetch_assoc($result_get_id);
 
 			
 		
@@ -104,12 +104,12 @@
                                 img 
                         SET 
 								id_t = '".$row_get_id['ID']."',
-								content_img = '".mysql_real_escape_string(trim("Sabrina_Theissen_".$Name))."',
+								content_img = '".mysqli_real_escape_string(trim("Sabrina_Theissen_".$Name))."',
 							    date = NOW()
                        
                        ";
                        
-                mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error());
+                mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn));
                 
 				
 			
@@ -280,8 +280,8 @@ echo "<div id=\"bio\">\n";
                                                         
            			";  
            			
-    $result_items = mysql_query($sql_items) OR die("<pre>".$sql_items."</pre>".mysql_error()); 
-	while($row_items = mysql_fetch_assoc($result_items)) {	
+    $result_items = mysqli_query($conn, $sql_items) OR die("<pre>".$sql_items."</pre>".mysqli_error($conn)); 
+	while($row_items = mysqli_fetch_assoc($result_items)) {	
 
 	$sql_img = "SELECT 
 			
@@ -298,8 +298,8 @@ echo "<div id=\"bio\">\n";
                             
            			";  
            			
-    		$result_img = mysql_query($sql_img) OR die("<pre>".$sql_img."</pre>".mysql_error()); 
-			$row_img = mysql_fetch_assoc($result_img);
+    		$result_img = mysqli_query($conn, $sql_img) OR die("<pre>".$sql_img."</pre>".mysqli_error($conn)); 
+			$row_img = mysqli_fetch_assoc($result_img);
 	
 	
 			echo "<div id=\"recordsArray_" . $row_items['ID'] . "\" class=\"item_cuts\" style=\"vertical-align: top\"><img src=\"images/".htmlentities($row_img['content_img'], ENT_QUOTES)."\" /><h2>".htmlentities($row_items['caption'], ENT_QUOTES)."</h2><p class=\"view\"><a href=\"?s=tear_view&id=".$row_items['ID']."\">[ view ]</a></p></div>\n";

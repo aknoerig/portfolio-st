@@ -31,8 +31,8 @@
 					WHERE
 							ID = '1'
                    "; 
-            $result_open = mysql_query($sql_open); 
-            $row_open_ = mysql_fetch_assoc($result_open); 
+            $result_open = mysqli_query($conn, $sql_open); 
+            $row_open_ = mysqli_fetch_assoc($result_open); 
 
 
 			if(isset($_POST['address']) AND $_POST['address'] == "Update") {
@@ -42,21 +42,21 @@
                                 about 
                                 
                         SET 
-                        		name = '".mysql_real_escape_string(trim($_POST['name']))."',
-                                street = '".mysql_real_escape_string(trim($_POST['street']))."',
-                                no = '".mysql_real_escape_string(trim($_POST['no']))."',
-						 		additional = '".mysql_real_escape_string(trim($_POST['additional']))."',
-							    zip = '".mysql_real_escape_string(trim($_POST['zip']))."',
-							    city = '".mysql_real_escape_string(trim($_POST['city']))."',
-							    country = '".mysql_real_escape_string(trim($_POST['country']))."',
-							    ustnr = '".mysql_real_escape_string(trim($_POST['ustnr']))."'
+                        		name = '".mysqli_real_escape_string(trim($_POST['name']))."',
+                                street = '".mysqli_real_escape_string(trim($_POST['street']))."',
+                                no = '".mysqli_real_escape_string(trim($_POST['no']))."',
+						 		additional = '".mysqli_real_escape_string(trim($_POST['additional']))."',
+							    zip = '".mysqli_real_escape_string(trim($_POST['zip']))."',
+							    city = '".mysqli_real_escape_string(trim($_POST['city']))."',
+							    country = '".mysqli_real_escape_string(trim($_POST['country']))."',
+							    ustnr = '".mysqli_real_escape_string(trim($_POST['ustnr']))."'
 							    
 						WHERE 
 								ID = '1'
                        ";
 					   
-            $result_update = mysql_query($sql_update); 
-            $row_update = @mysql_fetch_assoc($result_update);
+            $result_update = mysqli_query($conn, $sql_update); 
+            $row_update = @mysqli_fetch_assoc($result_update);
 			
 			echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n"; 
@@ -111,15 +111,15 @@
 			
                                 about 
                         SET 
-                                mail = '".mysql_real_escape_string(trim($_POST['mail']))."',
-                                phone = '".mysql_real_escape_string(trim($_POST['phone']))."',
-                                mobile = '".mysql_real_escape_string(trim($_POST['mobile']))."'
+                                mail = '".mysqli_real_escape_string(trim($_POST['mail']))."',
+                                phone = '".mysqli_real_escape_string(trim($_POST['phone']))."',
+                                mobile = '".mysqli_real_escape_string(trim($_POST['mobile']))."'
 						WHERE 
 								ID = '1'
                        ";
 					   
-            $result_update = mysql_query($sql_update); 
-            $row_update = @mysql_fetch_assoc($result_update);
+            $result_update = mysqli_query($conn, $sql_update); 
+            $row_update = @mysqli_fetch_assoc($result_update);
 			
 			echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n"; 
@@ -161,17 +161,17 @@
 			
                                 about 
                         SET 
-                                agency = '".mysql_real_escape_string(trim($_POST['agency']))."',
-                                name_r = '".mysql_real_escape_string(trim($_POST['name_r']))."',
-                                phone_r = '".mysql_real_escape_string(trim($_POST['phone_r']))."',
-                                web_r = '".mysql_real_escape_string(trim($_POST['web_r']))."'
+                                agency = '".mysqli_real_escape_string(trim($_POST['agency']))."',
+                                name_r = '".mysqli_real_escape_string(trim($_POST['name_r']))."',
+                                phone_r = '".mysqli_real_escape_string(trim($_POST['phone_r']))."',
+                                web_r = '".mysqli_real_escape_string(trim($_POST['web_r']))."'
 
 						WHERE 
 								ID = '1'
                        ";
 					   
-            $result_update = mysql_query($sql_update); 
-            $row_update = @mysql_fetch_assoc($result_update);
+            $result_update = mysqli_query($conn, $sql_update); 
+            $row_update = @mysqli_fetch_assoc($result_update);
 			
 			echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n"; 
@@ -233,14 +233,14 @@
 				$sql = "UPDATE 
                                 about 
                         SET 
-								about_img = '".mysql_real_escape_string(trim("PIC_".$Name))."',
-                                about_txt = '".mysql_real_escape_string(trim($_POST['about_txt']))."'
+								about_img = '".mysqli_real_escape_string(trim("PIC_".$Name))."',
+                                about_txt = '".mysqli_real_escape_string(trim($_POST['about_txt']))."'
                        WHERE 
 								ID = '1'
                        
                        "; 
                        
-                        mysql_query($sql) OR die("<pre>".$sql."</pre>".mysql_error());
+                        mysqli_query($conn, $sql) OR die("<pre>".$sql."</pre>".mysqli_error($conn));
 
 						echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             			echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n";
@@ -264,13 +264,13 @@
 				$sql = "UPDATE 
                                 about 
                         SET 
-                                about_txt = '".mysql_real_escape_string(trim($_POST['about_txt']))."'
+                                about_txt = '".mysqli_real_escape_string(trim($_POST['about_txt']))."'
                        WHERE 
 								ID = '1'
                        
                        "; 
                        
-                        mysql_query($sql) OR die("<pre>".$sql."</pre>".mysql_error());
+                        mysqli_query($conn, $sql) OR die("<pre>".$sql."</pre>".mysqli_error($conn));
 
 						echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             			echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n";
@@ -344,14 +344,14 @@
 				$sql = "UPDATE 
                                 about 
                         SET 
-								terms = '".mysql_real_escape_string(trim("DOC_".$Name))."',
-								imprint = '".mysql_real_escape_string(trim($_POST['imprint'][$i]))."'
+								terms = '".mysqli_real_escape_string(trim("DOC_".$Name))."',
+								imprint = '".mysqli_real_escape_string(trim($_POST['imprint'][$i]))."'
                        WHERE 
 								ID = '1'
                        
                        "; 
                        
-                        mysql_query($sql) OR die("<pre>".$sql."</pre>".mysql_error());
+                        mysqli_query($conn, $sql) OR die("<pre>".$sql."</pre>".mysqli_error($conn));
 
 						echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             			echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n";
@@ -377,13 +377,13 @@
 				$sql = "UPDATE 
                                 about 
                         SET 
-								imprint = '".mysql_real_escape_string(trim($_POST['imprint'][$i]))."'
+								imprint = '".mysqli_real_escape_string(trim($_POST['imprint'][$i]))."'
                        WHERE 
 								ID = '1'
                        
                        "; 
                        
-                        mysql_query($sql) OR die("<pre>".$sql."</pre>".mysql_error());
+                        mysqli_query($conn, $sql) OR die("<pre>".$sql."</pre>".mysqli_error($conn));
                         
 
 						echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 

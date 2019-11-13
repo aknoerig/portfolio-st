@@ -8,8 +8,8 @@
 						
 								";
 			
-			$delete = mysql_query($loeschen) or die(mysql_error());
-			$row_delete = @mysql_fetch_assoc($delete);
+			$delete = mysqli_query($conn, $loeschen) or die(mysqli_error($conn));
+			$row_delete = @mysqli_fetch_assoc($delete);
 
 
 			echo "<meta http-equiv=\"refresh\" content=\"1; URL=?s=settings\">\n";
@@ -29,8 +29,8 @@
 					WHERE
 							ID = '1'
                    "; 
-            $result_open = mysql_query($sql_open); 
-            $row_open_ = mysql_fetch_assoc($result_open); 
+            $result_open = mysqli_query($conn, $sql_open); 
+            $row_open_ = mysqli_fetch_assoc($result_open); 
 
 
 
@@ -42,14 +42,14 @@
 			
                                 about 
                         SET 
-							    user = '".mysql_real_escape_string(trim($_POST['user']))."',
-							    pass = '".mysql_real_escape_string(trim(md5($_POST['pass'])))."'
+							    user = '".mysqli_real_escape_string(trim($_POST['user']))."',
+							    pass = '".mysqli_real_escape_string(trim(md5($_POST['pass'])))."'
 						WHERE 
 								ID = '1'
                        ";
 					   
-            $result_update = mysql_query($sql_update); 
-            $row_update = @mysql_fetch_assoc($result_update);
+            $result_update = mysqli_query($conn, $sql_update); 
+            $row_update = @mysqli_fetch_assoc($result_update);
 			
 			echo "<p>\n"."<em class=\"em\">loading data&hellip;</em>\n"."</p>\n"; 
             echo "<meta http-equiv=\"refresh\" content=\"1; URL=".curPageURL()."\">\n"; 
@@ -88,12 +88,12 @@
 			
                                 clients
                         set 
-                        		name = '".mysql_real_escape_string(trim($_POST['name']))."',
-                        		public = '".mysql_real_escape_string(trim($_POST['public']))."'
+                        		name = '".mysqli_real_escape_string(trim($_POST['name']))."',
+                        		public = '".mysqli_real_escape_string(trim($_POST['public']))."'
                         		
                        	";		
                        
-                       mysql_query($sql_colour) OR die("<pre>".$sql_colour."</pre>".mysql_error());
+                       mysqli_query($conn, $sql_colour) OR die("<pre>".$sql_colour."</pre>".mysqli_error($conn));
 				
 			}
 	
@@ -133,9 +133,9 @@ echo "<label style=\"width:75px; display:block; float:left; margin-top:2px;\" fo
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					
@@ -159,11 +159,11 @@ echo "<label style=\"width:75px; display:block; float:left; margin-top:2px;\" fo
 			
                                 cat
                         set 
-                        		category = '".mysql_real_escape_string(trim($_POST['category']))."'
+                        		category = '".mysqli_real_escape_string(trim($_POST['category']))."'
                         		
                        	";		
                        
-                       mysql_query($sql_colour) OR die("<pre>".$sql_colour."</pre>".mysql_error());
+                       mysqli_query($conn, $sql_colour) OR die("<pre>".$sql_colour."</pre>".mysqli_error($conn));
 				
 			}
 	
@@ -196,9 +196,9 @@ echo "<label style=\"width:75px; display:block; float:left; margin-top:2px;\" fo
 
 							"; 
             
-			$result_open = mysql_query($sql_open); 
+			$result_open = mysqli_query($conn, $sql_open); 
             
-			while($row_open = mysql_fetch_assoc($result_open)) 
+			while($row_open = mysqli_fetch_assoc($result_open)) 
 				
 				{
 					

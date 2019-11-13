@@ -4,8 +4,7 @@
 	require_once 'dompdf/lib/php-svg-lib/src/autoload.php';
 	require_once 'dompdf/src/Autoloader.php';
 	Dompdf\Autoloader::register();
-
-	#include_once("dompdf/dompdf_config.inc.php");
+	use Dompdf\Dompdf;
 
 	if(isset($_GET['selection']))
 	{
@@ -21,7 +20,6 @@
 
 		$html = $html .'</body></html>';
 
-		use Dompdf\Dompdf;
 		$dompdf = new Dompdf();
 		$dompdf->setPaper('A4', 'portrait');
 		$dompdf->loadHtml($html);
